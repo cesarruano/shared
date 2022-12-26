@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=C:\developer\svn_projects\hound\SW\cpld\HoundCPLD\impact.xsl
+OUTFILE=C:\developer\svn_projects\hound\SW\cpld\HoundCPLD\impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=C:\developer\svn_projects\hound\SW\cpld\HoundCPLD
+LICENSE=iMPACT
+USER_INFO=iMPACT

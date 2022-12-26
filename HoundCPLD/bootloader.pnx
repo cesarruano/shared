@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE ibis [
+<!ELEMENT ibis (part, pin+)>
+<!ELEMENT part EMPTY>
+<!ELEMENT pin EMPTY>
+<!ATTLIST part
+  arch   CDATA #REQUIRED
+  device CDATA #REQUIRED
+  spg    CDATA #REQUIRED
+  pkg    CDATA #REQUIRED>
+<!ATTLIST pin
+  nm     CDATA #REQUIRED
+  no     CDATA #REQUIRED
+  iostd  (LVTTL|SSTL3_I|LVCMOS33|LVCMOS25|SSTL2_I|LVCMOS18|LVCMOS15|HSTL_I|NA) "NA"
+  sr     (SLOW|FAST|slow|fast) "SLOW"
+  dir    (BIDIR|bidir|INPUT|input|OUTPUT|output) "BIDIR">
+]>
+<ibis><part arch="xbr" device="XC2C64A" pkg="VQ44" spg="-5"/><pin dir="input" iostd="LVCMOS18" nm="ftdi_data&lt;7&gt;" no="30"/><pin dir="input" iostd="LVCMOS18" nm="ftdi_rxf_n" no="41"/><pin dir="input" iostd="LVCMOS18" nm="ftdi_clk" no="19"/><pin dir="input" iostd="LVCMOS18" nm="ftdi_data&lt;3&gt;" no="23"/><pin dir="input" iostd="LVCMOS18" nm="ftdi_data&lt;5&gt;" no="28"/><pin dir="input" iostd="LVCMOS18" nm="ftdi_data&lt;1&gt;" no="21"/><pin dir="input" iostd="LVCMOS18" nm="ftdi_data&lt;6&gt;" no="29"/><pin dir="input" iostd="LVCMOS18" nm="ftdi_data&lt;2&gt;" no="22"/><pin dir="input" iostd="LVCMOS18" nm="ftdi_data&lt;4&gt;" no="27"/><pin dir="input" iostd="LVCMOS18" nm="ftdi_data&lt;0&gt;" no="20"/><pin dir="input" iostd="LVCMOS18" nm="ftdi_gpio_0" no="43"/><pin dir="output" iostd="LVCMOS18" nm="dbg" no="40" sr="fast"/><pin dir="output" iostd="LVCMOS18" nm="fpga_bl_clk" no="3" sr="fast"/><pin dir="output" iostd="LVCMOS18" nm="fpga_bl_data" no="5" sr="fast"/><pin dir="output" iostd="LVCMOS18" nm="fpga_program_b" no="8" sr="fast"/><pin dir="output" iostd="LVCMOS18" nm="ftdi_rd_n" no="42" sr="fast"/></ibis>

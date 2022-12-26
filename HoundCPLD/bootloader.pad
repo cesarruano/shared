@@ -1,0 +1,73 @@
+Release 8.1i - Fit P.20131013
+Copyright(c) 1995-2003 Xilinx Inc. All rights reserved
+
+ 3-24-2018 11:43AM
+
+NOTE: This file is designed to be imported into a spreadsheet program
+such as Microsoft Excel for viewing, printing and sorting. The pipe '|'
+character is used as the data field separator.
+This file is also designed to support parsing.
+
+Input file:  bootloader.ngd
+output file: bootloader.pad
+Part type:   xc2c64a
+Speed grade: -5
+Package:     vq44
+
+Pinout by Pin Number:
+
+-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+Pin Number|Signal Name|Pin Usage|Pin Name|Direction|IO Standard|IO Bank Number|{blank}|Slew Rate|Termination|{blank}|Voltage|Constraint|
+P1|KPR||I/O/GCK2|||1|||||||
+P2|KPR||I/O|||1|||||||
+P3|fpga_bl_clk|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P4|GND||GND||||||||||
+P5|fpga_bl_data|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P6|KPR||I/O|||1|||||||
+P7||VCCIO-1.8|VCCIO|||1|||||||
+P8|fpga_program_b|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P9|TDI||TDI||||||||||
+P10|TMS||TMS||||||||||
+P11|TCK||TCK||||||||||
+P12|KPR||I/O|||1|||||||
+P13|KPR||I/O|||1|||||||
+P14|KPR||I/O|||1|||||||
+P15||VCC|VCC||||||||||
+P16|KPR||I/O|||1|||||||
+P17|GND||GND||||||||||
+P18|KPR||I/O|||2|||||||
+P19|ftdi_clk|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P20|ftdi_data<0>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P21|ftdi_data<1>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P22|ftdi_data<2>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P23|ftdi_data<3>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P24|TDO||TDO||||||||||
+P25|GND||GND||||||||||
+P26||VCCIO-1.8|VCCIO|||2|||||||
+P27|ftdi_data<4>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P28|ftdi_data<5>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P29|ftdi_data<6>|I|I/O|INPUT|LVCMOS18|2||FAST||||
+P30|ftdi_data<7>|I|I/O/GSR|INPUT|LVCMOS18|2||FAST||||
+P31|KPR||I/O/GTS2|||2|||||||
+P32|KPR||I/O/GTS3|||2|||||||
+P33|KPR||I/O/GTS0|||2|||||||
+P34|KPR||I/O/GTS1|||2|||||||
+P35||VCCAUX|VAUX||||||||||
+P36|KPR||I/O|||2|||||||
+P37|KPR||I/O|||2|||||||
+P38|KPR||I/O|||2|||||||
+P39|KPR||I/O|||1|||||||
+P40|dbg|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P41|ftdi_rxf_n|I|I/O|INPUT|LVCMOS18|1||FAST||||
+P42|ftdi_rd_n|O|I/O|OUTPUT|LVCMOS18|1||FAST||||
+P43|ftdi_gpio_0|I|I/O/GCK0|INPUT|LVCMOS18|1||FAST||||
+P44|KPR||I/O/GCK1|||1|||||||
+
+To preserve the pinout above for future design iterations in
+Project Navigator simply execute the (Lock Pins) process
+located under the (Implement Design) process in a toolbox named
+(Optional Implementation Tools) or invoke PIN2UCF from the
+command line. The location constraints will be written into your
+specified UCF file
+
+

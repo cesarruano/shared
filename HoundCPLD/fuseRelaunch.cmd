@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "uni9000_ver" -lib "aim_ver" -lib "cpld_ver" -lib "xilinxcorelib_ver" -o "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/sim_isim_beh.exe" -prj "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/sim_beh.prj" "work.sim" "work.glbl" 
