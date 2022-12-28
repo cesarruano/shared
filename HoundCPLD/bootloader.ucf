@@ -5,7 +5,8 @@
 #PACE: Start of PACE I/O Pin Assignments
 
 NET "clk"               LOC = "P1"  ; 
-NET "fpga_done"  	    LOC = "P2"  ; 
+NET "fpga_done"  	      
+LOC = "P2"  ; 
 NET "fpga_bl_clk"       LOC = "P3"  ; 
 #NET "gnd"              LOC = "P4"  ; 
 NET "fpga_bl_data"      LOC = "P5"  ; 
@@ -22,7 +23,7 @@ NET "fpga_program_b"    LOC = "P8"  ;
 #NET "1V8"              LOC = "P15"  ; 
 #NET "nc"               LOC = "P16"  ; 
 #NET "GND"              LOC = "P17"  ; 
-#NET "nc"               LOC = "P18"  ; 
+NET "dbg"               LOC = "P18"  ; 
 #NET "nc"               LOC = "P19"  ; 
 #NET "nc"               LOC = "P20"  ; 
 #NET "nc"               LOC = "P21"  ; 

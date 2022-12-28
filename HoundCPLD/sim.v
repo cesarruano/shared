@@ -28,9 +28,8 @@ module sim;
 	reg clk;
 	reg fpga_done;
 	reg fpga_init_b;
-	reg fpga_program_b;
 	reg ftdi_clk;
-	reg [15:0] ftdi_data;
+	reg [7:0] ftdi_data;
 	reg ftdi_rxf_n;
 	reg ftdi_gpio_0;
 	reg ftdi_gpio_1;
@@ -38,8 +37,12 @@ module sim;
 	// Outputs
 	wire fpga_bl_clk;
 	wire fpga_bl_data;
+	wire fpga_program_b;
+	wire [2:0]cnt_bit_debug;
 	wire dbg;
 	wire ftdi_rd_n;
+	
+	parameter WPS = 256;//4*8*32
 
 	// Instantiate the Unit Under Test (UUT)
 	bootloader uut (
@@ -55,7 +58,8 @@ module sim;
 		.ftdi_rxf_n(ftdi_rxf_n), 
 		.ftdi_rd_n(ftdi_rd_n), 
 		.ftdi_gpio_0(ftdi_gpio_0), 
-		.ftdi_gpio_1(ftdi_gpio_1)
+		.ftdi_gpio_1(ftdi_gpio_1),
+		.cnt_bit_debug(cnt_bit_debug)
 	);
 
 	initial begin
@@ -63,50 +67,54 @@ module sim;
 		clk = 0;
 		fpga_done = 0;
 		fpga_init_b = 0;
-		fpga_program_b = 0;
 		ftdi_clk = 0;
-		ftdi_data = 43605;
+		ftdi_data = 12'hA5A;
 		ftdi_rxf_n = 1;
 		ftdi_gpio_0 = 0;
 		ftdi_gpio_1 = 0;
 
-		ftdi_clk = 1;
-		#100;
+		clk = 1;
+		#1;
 		ftdi_rxf_n = 0;
-		ftdi_clk = 0;
-		#100;
-		ftdi_clk = 1;
-		#100;
-		ftdi_clk = 0;
-		#100;
+		clk = 0;
+		#1;
+		clk = 1;
+		#1;
+		clk = 0;
+		#1;
+		ftdi_gpio_0 = 1;
+		ftdi_gpio_1 = 1;
+		clk = 1;
+		#1;
+		clk = 0;
+		#1;
+		ftdi_gpio_0 = 1;
+		ftdi_gpio_1 = 0;
+		clk = 1;
+		#1;
+		clk = 0;
 		
-		ftdi_data = 49;
+		
+		//ftdi_data = 12'h0;;
 
-		repeat(1024) begin
-			repeat(4096) begin
+		repeat(8) begin
+			repeat(WPS) begin
 			ftdi_clk = 1;
-			#100;
+			#1;
 			ftdi_clk = 0;
-			#100;
+			#1;
 			end
-			repeat(128)begin
-				ftdi_clk = 1;
-				#100;
-				ftdi_clk = 0;
-				ftdi_rxf_n = 1;
-				#100;
-				
-			end
-			ftdi_clk = 1;
-			#100;
-			ftdi_rxf_n = 0;
-			ftdi_clk = 0;
-			#100;
-			ftdi_clk = 1;
-			#100;
-			ftdi_clk = 0;
-			#100;
+			ftdi_data = ftdi_data+1;
 		end
+		ftdi_rxf_n = 1;
+		ftdi_clk = 1;
+		#1;
+		ftdi_clk = 0;
+		#1;
+		ftdi_clk = 1;
+		#1;
+		ftdi_clk = 0;
+		#1;
 	end
       
 endmodule
