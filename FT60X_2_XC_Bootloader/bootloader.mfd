@@ -1,0 +1,704 @@
+MDF Database:  version 1.0
+MDF_INFO | bootloader | XC2C64A-5-VQ44
+MACROCELL | 2 | 14 | dbg_MC
+ATTRIBUTES | 1074004738 | 0
+INPUTS | 1 | fpga_done
+INPUTP | 1 | 25
+EQ | 1 | 
+   dbg = fpga_done;	// (1 pt, 1 inp)
+
+MACROCELL | 1 | 12 | fpga_bl_clk_MC
+ATTRIBUTES | 2357461762 | 0
+OUTPUTMC | 1 | 1 | 12
+INPUTS | 6 | ftdi_rd_n  | data_buffer<5>.COMB  | fpga_bl_clk  | Mtrien_ftdi_rd_n_buffer  | cnt_debounce<0>  | cnt_debounce<1>
+INPUTMC | 6 | 2 | 1 | 0 | 10 | 1 | 12 | 0 | 8 | 0 | 15 | 0 | 5
+LCT | 2 | 2 | Internal_Name | 5 | Internal_Name
+EQ | 9 | 
+   fpga_bl_clk := ftdi_rd_n & data_buffer<5>.COMB & fpga_bl_clk
+	# Mtrien_ftdi_rd_n_buffer & data_buffer<5>.COMB & 
+	fpga_bl_clk
+	# !data_buffer<5>.COMB & cnt_debounce<0> & 
+	!cnt_debounce<1>
+	# !data_buffer<5>.COMB & fpga_bl_clk & 
+	!cnt_debounce<0> & cnt_debounce<1>;	// (4 pt, 6 inp)
+    fpga_bl_clk.OE = !Mtrien_fpga_bl_clk_buffer;	// CTE	(1 pt, 1 inp)
+    fpga_bl_clk.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 1 | ftdi_rd_n_MC
+ATTRIBUTES | 2219049766 | 0
+OUTPUTMC | 13 | 0 | 11 | 0 | 10 | 2 | 1 | 0 | 15 | 0 | 9 | 1 | 12 | 0 | 14 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 0 | 12 | 3 | 0
+INPUTS | 5 | ftdi_rxf_n  | ftdi_rd_n  | data_buffer<5>.COMB  | Mtrien_ftdi_rd_n_buffer  | ftdi_clk
+INPUTMC | 3 | 2 | 1 | 0 | 10 | 0 | 8
+INPUTP | 2 | 73 | 9
+LCT | 1 | 5 | Internal_Name
+EQ | 5 | 
+   ftdi_rd_n.T := !ftdi_rxf_n & ftdi_rd_n & data_buffer<5>.COMB
+	# !ftdi_rd_n & !Mtrien_ftdi_rd_n_buffer & 
+	data_buffer<5>.COMB;	// (2 pt, 4 inp)
+    ftdi_rd_n.OE = !Mtrien_ftdi_rd_n_buffer;	// CTE	(1 pt, 1 inp)
+    ftdi_rd_n.CLK = ftdi_clk;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 10 | data_buffer<5>_MC
+ATTRIBUTES | 679478080 | 5
+OUTPUTMC | 18 | 3 | 0 | 0 | 11 | 0 | 10 | 2 | 1 | 0 | 15 | 0 | 9 | 0 | 5 | 1 | 12 | 0 | 4 | 0 | 6 | 0 | 7 | 0 | 13 | 0 | 14 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 0 | 12
+INPUTS | 8 | ftdi_rd_n  | ftdi_gpio_0  | Mtrien_ftdi_rd_n_buffer  | data_buffer<5>.COMB  | data_buffer_cnt<2>  | data_buffer_cnt<1>  | data_buffer_cnt<0>  | data_buffer_cnt<3>
+INPUTMC | 7 | 2 | 1 | 0 | 8 | 0 | 10 | 0 | 13 | 0 | 7 | 0 | 6 | 0 | 14
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 7 | 
+   data_buffer<5>.COMB =  !data_buffer_cnt<2> & !data_buffer_cnt<1> & 
+	!data_buffer_cnt<0> & !data_buffer_cnt<3>;	// (1 pt, 4 inp)
+// Direct Input Register
+data_buffer<5> := ftdi_data<5>;	// (0 pt, 0 inp)
+    data_buffer<5>.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+    data_buffer<5>.CE = !ftdi_rd_n & ftdi_gpio_0 & 
+	!Mtrien_ftdi_rd_n_buffer & data_buffer<5>.COMB;	// (1 pt, 4 inp)
+
+MACROCELL | 0 | 8 | Mtrien_ftdi_rd_n_buffer_MC
+ATTRIBUTES | 2290090816 | 0
+OUTPUTMC | 13 | 0 | 11 | 0 | 10 | 2 | 1 | 0 | 15 | 0 | 9 | 1 | 12 | 0 | 14 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 0 | 12 | 3 | 0
+INPUTS | 2 | ftdi_gpio_0  | data_buffer<6>.COMB
+INPUTMC | 1 | 0 | 11
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 3 | 
+   Mtrien_ftdi_rd_n_buffer := !ftdi_gpio_0;	// (1 pt, 1 inp)
+    Mtrien_ftdi_rd_n_buffer.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+    Mtrien_ftdi_rd_n_buffer.CE = data_buffer<6>.COMB;	// (1 pt, 1 inp)
+
+MACROCELL | 0 | 11 | data_buffer<6>_MC
+ATTRIBUTES | 679478080 | 5
+OUTPUTMC | 2 | 3 | 0 | 0 | 8
+INPUTS | 5 | ftdi_rd_n  | ftdi_gpio_0  | Mtrien_ftdi_rd_n_buffer  | data_buffer<5>.COMB  | ftdi_rxf_n
+INPUTMC | 3 | 2 | 1 | 0 | 8 | 0 | 10
+INPUTP | 2 | 65 | 73
+LCT | 1 | 2 | Internal_Name
+EQ | 9 | 
+   data_buffer<6>.COMB =  !ftdi_gpio_0
+	# !ftdi_rxf_n & data_buffer<5>.COMB
+	# !ftdi_rd_n & !Mtrien_ftdi_rd_n_buffer & 
+	data_buffer<5>.COMB;	// (3 pt, 5 inp)
+// Direct Input Register
+data_buffer<6> := ftdi_data<6>;	// (0 pt, 0 inp)
+    data_buffer<6>.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+    data_buffer<6>.CE = !ftdi_rd_n & ftdi_gpio_0 & 
+	!Mtrien_ftdi_rd_n_buffer & data_buffer<5>.COMB;	// (1 pt, 4 inp)
+
+MACROCELL | 0 | 15 | cnt_debounce<0>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 10 | 0 | 15 | 0 | 5 | 1 | 12 | 0 | 4 | 0 | 6 | 0 | 7 | 0 | 13 | 0 | 14 | 3 | 0 | 0 | 9
+INPUTS | 5 | ftdi_gpio_0  | data_buffer<5>.COMB  | ftdi_rd_n  | Mtrien_ftdi_rd_n_buffer  | cnt_debounce<0>
+INPUTMC | 4 | 0 | 10 | 2 | 1 | 0 | 8 | 0 | 15
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   cnt_debounce<0>.T := ftdi_gpio_0 & !data_buffer<5>.COMB
+	# !ftdi_rd_n & ftdi_gpio_0 & 
+	!Mtrien_ftdi_rd_n_buffer & cnt_debounce<0>;	// (2 pt, 5 inp)
+    cnt_debounce<0>.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 5 | cnt_debounce<1>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 8 | 0 | 5 | 1 | 12 | 0 | 6 | 0 | 7 | 0 | 13 | 0 | 14 | 3 | 0 | 0 | 9
+INPUTS | 5 | ftdi_gpio_0  | cnt_debounce<1>  | data_buffer<4>.COMB  | data_buffer<5>.COMB  | cnt_debounce<0>
+INPUTMC | 4 | 0 | 5 | 0 | 9 | 0 | 10 | 0 | 15
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 7 | 
+   cnt_debounce<1>.T := ftdi_gpio_0 & cnt_debounce<1> & 
+	data_buffer<4>.COMB
+	# !data_buffer<5>.COMB & cnt_debounce<0> & 
+	!data_buffer<4>.COMB
+	# !data_buffer<5>.COMB & !cnt_debounce<1> & 
+	!data_buffer<4>.COMB;	// (3 pt, 5 inp)
+    cnt_debounce<1>.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 9 | data_buffer<4>_MC
+ATTRIBUTES | 679478080 | 5
+OUTPUTMC | 4 | 3 | 0 | 0 | 5 | 0 | 4 | 0 | 3
+INPUTS | 6 | ftdi_rd_n  | ftdi_gpio_0  | Mtrien_ftdi_rd_n_buffer  | data_buffer<5>.COMB  | cnt_debounce<0>  | cnt_debounce<1>
+INPUTMC | 5 | 2 | 1 | 0 | 8 | 0 | 10 | 0 | 15 | 0 | 5
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 10 | 
+   data_buffer<4>.COMB =  !ftdi_gpio_0
+	# !ftdi_rd_n & !Mtrien_ftdi_rd_n_buffer & 
+	data_buffer<5>.COMB
+	# !data_buffer<5>.COMB & !cnt_debounce<0> & 
+	!cnt_debounce<1>;	// (3 pt, 6 inp)
+// Direct Input Register
+data_buffer<4> := ftdi_data<4>;	// (0 pt, 0 inp)
+    data_buffer<4>.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+    data_buffer<4>.CE = !ftdi_rd_n & ftdi_gpio_0 & 
+	!Mtrien_ftdi_rd_n_buffer & data_buffer<5>.COMB;	// (1 pt, 4 inp)
+
+MACROCELL | 0 | 4 | Mtrien_fpga_bl_clk_buffer_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 1 | 0 | 4
+INPUTS | 5 | ftdi_gpio_0  | data_buffer<4>.COMB  | data_buffer<5>.COMB  | cnt_debounce<0>  | Mtrien_fpga_bl_clk_buffer
+INPUTMC | 4 | 0 | 9 | 0 | 10 | 0 | 15 | 0 | 4
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 8 | 
+   !Mtrien_fpga_bl_clk_buffer := ftdi_gpio_0 & data_buffer<4>.COMB
+	# ftdi_gpio_0 & !data_buffer<5>.COMB & 
+	cnt_debounce<0>
+	# data_buffer<5>.COMB & !data_buffer<4>.COMB & 
+	!Mtrien_fpga_bl_clk_buffer
+	# !cnt_debounce<0> & !data_buffer<4>.COMB & 
+	!Mtrien_fpga_bl_clk_buffer;	// (4 pt, 5 inp)
+    Mtrien_fpga_bl_clk_buffer.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 3 | 0 | fpga_bl_data_MC
+ATTRIBUTES | 2357461762 | 0
+OUTPUTMC | 1 | 3 | 0
+INPUTS | 18 | data_buffer<5>.COMB  | fpga_bl_data  | cnt_debounce<0>  | cnt_debounce<1>  | ftdi_rd_n  | Mtrien_ftdi_rd_n_buffer  | data_buffer_cnt<2>  | data_buffer_cnt<3>  | data_buffer_cnt<1>  | data_buffer_cnt<0>  | data_buffer<7>  | data_buffer<5>  | data_buffer<6>  | data_buffer<4>  | data_buffer<3>  | data_buffer<2>  | data_buffer<1>  | data_buffer<0>
+INPUTMC | 18 | 0 | 10 | 3 | 0 | 0 | 15 | 0 | 5 | 2 | 1 | 0 | 8 | 0 | 13 | 0 | 14 | 0 | 7 | 0 | 6 | 0 | 12 | 0 | 10 | 0 | 11 | 0 | 9 | 1 | 7 | 1 | 6 | 1 | 5 | 1 | 4
+LCT | 2 | 2 | Internal_Name | 5 | Internal_Name
+EQ | 36 | 
+   !fpga_bl_data := data_buffer<5>.COMB & !fpga_bl_data
+	# cnt_debounce<0> & !fpga_bl_data
+	# cnt_debounce<1> & !fpga_bl_data
+	# !ftdi_rd_n & !Mtrien_ftdi_rd_n_buffer & 
+	data_buffer<5>.COMB
+	# !cnt_debounce<0> & !cnt_debounce<1> & 
+	data_buffer_cnt<2> & data_buffer_cnt<3>
+	# !cnt_debounce<0> & !cnt_debounce<1> & 
+	data_buffer_cnt<1> & data_buffer_cnt<3>
+	# !cnt_debounce<0> & !cnt_debounce<1> & 
+	data_buffer_cnt<0> & data_buffer_cnt<3>
+	# !cnt_debounce<0> & !cnt_debounce<1> & 
+	data_buffer_cnt<3> & !data_buffer<7>
+	# !data_buffer<5> & !cnt_debounce<0> & 
+	!cnt_debounce<1> & data_buffer_cnt<2> & data_buffer_cnt<1> & 
+	!data_buffer_cnt<0>
+	# !data_buffer<6> & !cnt_debounce<0> & 
+	!cnt_debounce<1> & data_buffer_cnt<2> & data_buffer_cnt<1> & 
+	data_buffer_cnt<0>
+	# !cnt_debounce<0> & !cnt_debounce<1> & 
+	!data_buffer<4> & data_buffer_cnt<2> & !data_buffer_cnt<1> & 
+	data_buffer_cnt<0>
+	# !cnt_debounce<0> & !cnt_debounce<1> & 
+	data_buffer_cnt<2> & !data_buffer_cnt<1> & !data_buffer_cnt<0> & 
+	!data_buffer<3>
+	# !cnt_debounce<0> & !cnt_debounce<1> & 
+	!data_buffer_cnt<2> & data_buffer_cnt<1> & data_buffer_cnt<0> & 
+	!data_buffer<2>
+	# !cnt_debounce<0> & !cnt_debounce<1> & 
+	!data_buffer_cnt<2> & data_buffer_cnt<1> & !data_buffer_cnt<0> & 
+	!data_buffer<1>
+	# !cnt_debounce<0> & !cnt_debounce<1> & 
+	!data_buffer_cnt<2> & !data_buffer_cnt<1> & data_buffer_cnt<0> & 
+	!data_buffer<0>;	// (15 pt, 18 inp)
+    fpga_bl_data.OE = !Mtrien_fpga_bl_data_buffer;	// CTE	(1 pt, 1 inp)
+    fpga_bl_data.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 13 | data_buffer_cnt<2>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 4 | 0 | 13 | 0 | 14 | 3 | 0 | 0 | 10
+INPUTS | 7 | ftdi_gpio_0  | data_buffer_cnt<2>  | data_buffer<5>.COMB  | cnt_debounce<0>  | cnt_debounce<1>  | data_buffer_cnt<1>  | data_buffer_cnt<0>
+INPUTMC | 6 | 0 | 13 | 0 | 10 | 0 | 15 | 0 | 5 | 0 | 7 | 0 | 6
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 5 | 
+   data_buffer_cnt<2>.T := !ftdi_gpio_0 & data_buffer_cnt<2>
+	# ftdi_gpio_0 & !data_buffer<5>.COMB & 
+	cnt_debounce<0> & cnt_debounce<1> & !data_buffer_cnt<1> & 
+	!data_buffer_cnt<0>;	// (2 pt, 7 inp)
+    data_buffer_cnt<2>.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 7 | data_buffer_cnt<1>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 5 | 0 | 7 | 0 | 13 | 0 | 14 | 3 | 0 | 0 | 10
+INPUTS | 6 | ftdi_gpio_0  | data_buffer_cnt<1>  | data_buffer<5>.COMB  | cnt_debounce<0>  | cnt_debounce<1>  | data_buffer_cnt<0>
+INPUTMC | 5 | 0 | 7 | 0 | 10 | 0 | 15 | 0 | 5 | 0 | 6
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   data_buffer_cnt<1>.T := !ftdi_gpio_0 & data_buffer_cnt<1>
+	# ftdi_gpio_0 & !data_buffer<5>.COMB & 
+	cnt_debounce<0> & cnt_debounce<1> & !data_buffer_cnt<0>;	// (2 pt, 6 inp)
+    data_buffer_cnt<1>.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 6 | data_buffer_cnt<0>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 6 | 0 | 6 | 0 | 7 | 0 | 13 | 0 | 14 | 3 | 0 | 0 | 10
+INPUTS | 5 | ftdi_gpio_0  | data_buffer<5>.COMB  | data_buffer_cnt<0>  | cnt_debounce<0>  | cnt_debounce<1>
+INPUTMC | 4 | 0 | 10 | 0 | 6 | 0 | 15 | 0 | 5
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 5 | 
+   data_buffer_cnt<0>.T := !ftdi_gpio_0 & !data_buffer<5>.COMB & 
+	data_buffer_cnt<0>
+	# ftdi_gpio_0 & !data_buffer<5>.COMB & 
+	cnt_debounce<0> & cnt_debounce<1>;	// (2 pt, 5 inp)
+    data_buffer_cnt<0>.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 14 | data_buffer_cnt<3>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 3 | 0 | 14 | 3 | 0 | 0 | 10
+INPUTS | 10 | ftdi_gpio_0  | data_buffer_cnt<3>  | ftdi_rd_n  | Mtrien_ftdi_rd_n_buffer  | data_buffer<5>.COMB  | cnt_debounce<0>  | cnt_debounce<1>  | data_buffer_cnt<2>  | data_buffer_cnt<1>  | data_buffer_cnt<0>
+INPUTMC | 9 | 0 | 14 | 2 | 1 | 0 | 8 | 0 | 10 | 0 | 15 | 0 | 5 | 0 | 13 | 0 | 7 | 0 | 6
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 7 | 
+   data_buffer_cnt<3>.T := !ftdi_gpio_0 & data_buffer_cnt<3>
+	# !ftdi_rd_n & ftdi_gpio_0 & 
+	!Mtrien_ftdi_rd_n_buffer & data_buffer<5>.COMB
+	# cnt_debounce<0> & cnt_debounce<1> & 
+	!data_buffer_cnt<2> & !data_buffer_cnt<1> & !data_buffer_cnt<0> & 
+	data_buffer_cnt<3>;	// (3 pt, 10 inp)
+    data_buffer_cnt<3>.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 4 | data_buffer<0>_MC
+ATTRIBUTES | 679478080 | 5
+OUTPUTMC | 3 | 3 | 0 | 2 | 2 | 0 | 12
+INPUTS | 7 | ftdi_rd_n  | ftdi_gpio_0  | Mtrien_ftdi_rd_n_buffer  | data_buffer<5>.COMB  | program_b_cnt<13>  | program_b_cnt<14>  | program_b_cnt<15>
+INPUTMC | 6 | 2 | 1 | 0 | 8 | 0 | 10 | 1 | 2 | 1 | 11 | 1 | 9
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 7 | 
+   data_buffer<0>.COMB =  !program_b_cnt<13> & !program_b_cnt<14> & 
+	!program_b_cnt<15>;	// (1 pt, 3 inp)
+// Direct Input Register
+data_buffer<0> := ftdi_data<0>;	// (0 pt, 0 inp)
+    data_buffer<0>.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+    data_buffer<0>.CE = !ftdi_rd_n & ftdi_gpio_0 & 
+	!Mtrien_ftdi_rd_n_buffer & data_buffer<5>.COMB;	// (1 pt, 4 inp)
+
+MACROCELL | 1 | 5 | data_buffer<1>_MC
+ATTRIBUTES | 2290090048 | 4
+OUTPUTMC | 1 | 3 | 0
+INPUTS | 4 | ftdi_rd_n  | ftdi_gpio_0  | Mtrien_ftdi_rd_n_buffer  | data_buffer<5>.COMB
+INPUTMC | 3 | 2 | 1 | 0 | 8 | 0 | 10
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 6 | 
+   
+// Direct Input Register
+data_buffer<1> := ftdi_data<1>;	// (0 pt, 0 inp)
+    data_buffer<1>.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+    data_buffer<1>.CE = !ftdi_rd_n & ftdi_gpio_0 & 
+	!Mtrien_ftdi_rd_n_buffer & data_buffer<5>.COMB;	// (1 pt, 4 inp)
+
+MACROCELL | 1 | 6 | data_buffer<2>_MC
+ATTRIBUTES | 2290090048 | 4
+OUTPUTMC | 1 | 3 | 0
+INPUTS | 4 | ftdi_rd_n  | ftdi_gpio_0  | Mtrien_ftdi_rd_n_buffer  | data_buffer<5>.COMB
+INPUTMC | 3 | 2 | 1 | 0 | 8 | 0 | 10
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 6 | 
+   
+// Direct Input Register
+data_buffer<2> := ftdi_data<2>;	// (0 pt, 0 inp)
+    data_buffer<2>.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+    data_buffer<2>.CE = !ftdi_rd_n & ftdi_gpio_0 & 
+	!Mtrien_ftdi_rd_n_buffer & data_buffer<5>.COMB;	// (1 pt, 4 inp)
+
+MACROCELL | 1 | 7 | data_buffer<3>_MC
+ATTRIBUTES | 2290090048 | 4
+OUTPUTMC | 1 | 3 | 0
+INPUTS | 4 | ftdi_rd_n  | ftdi_gpio_0  | Mtrien_ftdi_rd_n_buffer  | data_buffer<5>.COMB
+INPUTMC | 3 | 2 | 1 | 0 | 8 | 0 | 10
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 6 | 
+   
+// Direct Input Register
+data_buffer<3> := ftdi_data<3>;	// (0 pt, 0 inp)
+    data_buffer<3>.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+    data_buffer<3>.CE = !ftdi_rd_n & ftdi_gpio_0 & 
+	!Mtrien_ftdi_rd_n_buffer & data_buffer<5>.COMB;	// (1 pt, 4 inp)
+
+MACROCELL | 0 | 12 | data_buffer<7>_MC
+ATTRIBUTES | 679478080 | 5
+OUTPUTMC | 19 | 3 | 0 | 3 | 6 | 2 | 5 | 2 | 15 | 2 | 12 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 4 | 2 | 3 | 2 | 13 | 2 | 11 | 2 | 10 | 2 | 9 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 11 | 1 | 9
+INPUTS | 5 | ftdi_rd_n  | ftdi_gpio_0  | Mtrien_ftdi_rd_n_buffer  | data_buffer<5>.COMB  | data_buffer<0>.COMB
+INPUTMC | 4 | 2 | 1 | 0 | 8 | 0 | 10 | 1 | 4
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 6 | 
+   data_buffer<7>.COMB =  ftdi_gpio_0 & data_buffer<0>.COMB;	// (1 pt, 2 inp)
+// Direct Input Register
+data_buffer<7> := ftdi_data<7>;	// (0 pt, 0 inp)
+    data_buffer<7>.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+    data_buffer<7>.CE = !ftdi_rd_n & ftdi_gpio_0 & 
+	!Mtrien_ftdi_rd_n_buffer & data_buffer<5>.COMB;	// (1 pt, 4 inp)
+
+MACROCELL | 0 | 3 | Mtrien_fpga_bl_data_buffer_MC
+ATTRIBUTES | 2290090816 | 0
+INPUTS | 2 | ftdi_gpio_0  | data_buffer<4>.COMB
+INPUTMC | 1 | 0 | 9
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 3 | 
+   Mtrien_fpga_bl_data_buffer := !ftdi_gpio_0;	// (1 pt, 1 inp)
+    Mtrien_fpga_bl_data_buffer.CLK = ftdi_clk;	// CTC	(1 pt, 1 inp)
+    Mtrien_fpga_bl_data_buffer.CE = data_buffer<4>.COMB;	// (1 pt, 1 inp)
+
+MACROCELL | 3 | 6 | fpga_program_b_MC
+ATTRIBUTES | 8651554 | 0
+INPUTS | 2 | data_buffer<7>.COMB  | clk_prescaled
+INPUTMC | 2 | 0 | 12 | 1 | 3
+EQ | 2 | 
+   !fpga_program_b := data_buffer<7>.COMB;	// (1 pt, 1 inp)
+    fpga_program_b.CLK = clk_prescaled;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 3 | clk_prescaled_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 6 | 3 | 6 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 11 | 1 | 9
+INPUTS | 8 | clk_prescaler_cnt<7>  | clk_prescaler_cnt<0>  | clk_prescaler_cnt<1>  | clk_prescaler_cnt<2>  | clk_prescaler_cnt<3>  | clk_prescaler_cnt<4>  | clk_prescaler_cnt<5>  | clk_prescaler_cnt<6>
+INPUTMC | 8 | 1 | 8 | 0 | 2 | 0 | 1 | 0 | 0 | 1 | 15 | 1 | 14 | 1 | 13 | 1 | 10
+EQ | 5 | 
+   !clk_prescaled := !clk_prescaler_cnt<7>
+	# clk_prescaler_cnt<0> & clk_prescaler_cnt<1> & 
+	clk_prescaler_cnt<2> & clk_prescaler_cnt<3> & clk_prescaler_cnt<4> & 
+	clk_prescaler_cnt<5> & clk_prescaler_cnt<6>;	// (2 pt, 8 inp)
+   clk_prescaled.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 0 | 2 | clk_prescaler_cnt<0>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 8 | 0 | 1 | 0 | 0 | 1 | 15 | 1 | 14 | 1 | 13 | 1 | 10 | 1 | 8 | 1 | 3
+INPUTS | 0
+EQ | 2 | 
+   !clk_prescaler_cnt<0>.T := Gnd;	// (0 pt, 0 inp)
+   clk_prescaler_cnt<0>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 0 | 1 | clk_prescaler_cnt<1>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 7 | 0 | 0 | 1 | 15 | 1 | 14 | 1 | 13 | 1 | 10 | 1 | 8 | 1 | 3
+INPUTS | 1 | clk_prescaler_cnt<0>
+INPUTMC | 1 | 0 | 2
+EQ | 2 | 
+   clk_prescaler_cnt<1>.T := clk_prescaler_cnt<0>;	// (1 pt, 1 inp)
+   clk_prescaler_cnt<1>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 0 | 0 | clk_prescaler_cnt<2>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 6 | 1 | 15 | 1 | 14 | 1 | 13 | 1 | 10 | 1 | 8 | 1 | 3
+INPUTS | 2 | clk_prescaler_cnt<0>  | clk_prescaler_cnt<1>
+INPUTMC | 2 | 0 | 2 | 0 | 1
+EQ | 2 | 
+   clk_prescaler_cnt<2>.T := clk_prescaler_cnt<0> & clk_prescaler_cnt<1>;	// (1 pt, 2 inp)
+   clk_prescaler_cnt<2>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 15 | clk_prescaler_cnt<3>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 5 | 1 | 14 | 1 | 13 | 1 | 10 | 1 | 8 | 1 | 3
+INPUTS | 3 | clk_prescaler_cnt<0>  | clk_prescaler_cnt<1>  | clk_prescaler_cnt<2>
+INPUTMC | 3 | 0 | 2 | 0 | 1 | 0 | 0
+EQ | 3 | 
+   clk_prescaler_cnt<3>.T := clk_prescaler_cnt<0> & clk_prescaler_cnt<1> & 
+	clk_prescaler_cnt<2>;	// (1 pt, 3 inp)
+   clk_prescaler_cnt<3>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 14 | clk_prescaler_cnt<4>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 4 | 1 | 13 | 1 | 10 | 1 | 8 | 1 | 3
+INPUTS | 4 | clk_prescaler_cnt<0>  | clk_prescaler_cnt<1>  | clk_prescaler_cnt<2>  | clk_prescaler_cnt<3>
+INPUTMC | 4 | 0 | 2 | 0 | 1 | 0 | 0 | 1 | 15
+EQ | 3 | 
+   clk_prescaler_cnt<4>.T := clk_prescaler_cnt<0> & clk_prescaler_cnt<1> & 
+	clk_prescaler_cnt<2> & clk_prescaler_cnt<3>;	// (1 pt, 4 inp)
+   clk_prescaler_cnt<4>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 13 | clk_prescaler_cnt<5>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 3 | 1 | 10 | 1 | 8 | 1 | 3
+INPUTS | 5 | clk_prescaler_cnt<0>  | clk_prescaler_cnt<1>  | clk_prescaler_cnt<2>  | clk_prescaler_cnt<3>  | clk_prescaler_cnt<4>
+INPUTMC | 5 | 0 | 2 | 0 | 1 | 0 | 0 | 1 | 15 | 1 | 14
+EQ | 3 | 
+   clk_prescaler_cnt<5>.T := clk_prescaler_cnt<0> & clk_prescaler_cnt<1> & 
+	clk_prescaler_cnt<2> & clk_prescaler_cnt<3> & clk_prescaler_cnt<4>;	// (1 pt, 5 inp)
+   clk_prescaler_cnt<5>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 10 | clk_prescaler_cnt<6>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 2 | 1 | 8 | 1 | 3
+INPUTS | 6 | clk_prescaler_cnt<0>  | clk_prescaler_cnt<1>  | clk_prescaler_cnt<2>  | clk_prescaler_cnt<3>  | clk_prescaler_cnt<4>  | clk_prescaler_cnt<5>
+INPUTMC | 6 | 0 | 2 | 0 | 1 | 0 | 0 | 1 | 15 | 1 | 14 | 1 | 13
+EQ | 4 | 
+   clk_prescaler_cnt<6>.T := clk_prescaler_cnt<0> & clk_prescaler_cnt<1> & 
+	clk_prescaler_cnt<2> & clk_prescaler_cnt<3> & clk_prescaler_cnt<4> & 
+	clk_prescaler_cnt<5>;	// (1 pt, 6 inp)
+   clk_prescaler_cnt<6>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 8 | clk_prescaler_cnt<7>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 1 | 1 | 3
+INPUTS | 7 | clk_prescaler_cnt<0>  | clk_prescaler_cnt<1>  | clk_prescaler_cnt<2>  | clk_prescaler_cnt<3>  | clk_prescaler_cnt<4>  | clk_prescaler_cnt<5>  | clk_prescaler_cnt<6>
+INPUTMC | 7 | 0 | 2 | 0 | 1 | 0 | 0 | 1 | 15 | 1 | 14 | 1 | 13 | 1 | 10
+EQ | 4 | 
+   clk_prescaler_cnt<7>.T := clk_prescaler_cnt<0> & clk_prescaler_cnt<1> & 
+	clk_prescaler_cnt<2> & clk_prescaler_cnt<3> & clk_prescaler_cnt<4> & 
+	clk_prescaler_cnt<5> & clk_prescaler_cnt<6>;	// (1 pt, 7 inp)
+   clk_prescaler_cnt<7>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 2 | 2 | ftdi_gpio_1_MC
+ATTRIBUTES | 142869314 | 0
+INPUTS | 3 | fpga_done  | data_buffer<0>.COMB  | Mtrien_ftdi_gpio_1_buffer
+INPUTMC | 2 | 1 | 4 | 2 | 5
+INPUTP | 1 | 25
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   ftdi_gpio_1 := fpga_done;	// (1 pt, 1 inp)
+    ftdi_gpio_1.OE = !Mtrien_ftdi_gpio_1_buffer;	// PTB	(1 pt, 1 inp)
+    ftdi_gpio_1.CLK = clk_prescaled;	// CTC	(1 pt, 1 inp)
+    ftdi_gpio_1.CE = !data_buffer<0>.COMB;	// (1 pt, 1 inp)
+
+MACROCELL | 2 | 5 | Mtrien_ftdi_gpio_1_buffer_MC
+ATTRIBUTES | 2290090816 | 0
+OUTPUTMC | 1 | 2 | 2
+INPUTS | 2 | ftdi_gpio_0  | data_buffer<7>.COMB
+INPUTMC | 1 | 0 | 12
+INPUTP | 1 | 65
+LCT | 1 | 2 | Internal_Name
+EQ | 3 | 
+   Mtrien_ftdi_gpio_1_buffer := !ftdi_gpio_0;	// (1 pt, 1 inp)
+    Mtrien_ftdi_gpio_1_buffer.CLK = clk_prescaled;	// CTC	(1 pt, 1 inp)
+    Mtrien_ftdi_gpio_1_buffer.CE = !data_buffer<7>.COMB;	// (1 pt, 1 inp)
+
+MACROCELL | 1 | 2 | program_b_cnt<13>_MC
+ATTRIBUTES | 2151678752 | 0
+OUTPUTMC | 4 | 1 | 2 | 1 | 11 | 1 | 9 | 1 | 4
+INPUTS | 17 | ftdi_gpio_0  | program_b_cnt<13>  | data_buffer<7>.COMB  | program_b_cnt<0>  | program_b_cnt<10>  | program_b_cnt<1>  | program_b_cnt<2>  | program_b_cnt<3>  | program_b_cnt<4>  | program_b_cnt<5>  | program_b_cnt<6>  | program_b_cnt<7>  | program_b_cnt<8>  | program_b_cnt<9>  | program_b_cnt<11>  | program_b_cnt<12>  | clk_prescaled
+INPUTMC | 16 | 1 | 2 | 0 | 12 | 2 | 15 | 2 | 9 | 2 | 12 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 4 | 2 | 3 | 2 | 13 | 2 | 11 | 2 | 10 | 1 | 0 | 1 | 1 | 1 | 3
+INPUTP | 1 | 65
+EQ | 9 | 
+   program_b_cnt<13>.T := !ftdi_gpio_0 & program_b_cnt<13>
+	# ftdi_gpio_0 & !data_buffer<7>.COMB & 
+	!program_b_cnt<13>
+	# data_buffer<7>.COMB & program_b_cnt<0> & 
+	program_b_cnt<10> & program_b_cnt<1> & program_b_cnt<2> & 
+	program_b_cnt<3> & program_b_cnt<4> & program_b_cnt<5> & 
+	program_b_cnt<6> & program_b_cnt<7> & program_b_cnt<8> & 
+	program_b_cnt<9> & program_b_cnt<11> & program_b_cnt<12>;	// (3 pt, 16 inp)
+    program_b_cnt<13>.CLK = clk_prescaled;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 15 | program_b_cnt<0>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 16 | 2 | 15 | 2 | 12 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 4 | 2 | 3 | 2 | 13 | 2 | 11 | 2 | 10 | 2 | 9 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 11 | 1 | 9
+INPUTS | 2 | data_buffer<7>.COMB  | program_b_cnt<0>
+INPUTMC | 2 | 0 | 12 | 2 | 15
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   program_b_cnt<0> := data_buffer<7>.COMB & !program_b_cnt<0>;	// (1 pt, 2 inp)
+    program_b_cnt<0>.CLK = clk_prescaled;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 9 | program_b_cnt<10>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 6 | 2 | 9 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 11 | 1 | 9
+INPUTS | 12 | data_buffer<7>.COMB  | program_b_cnt<10>  | program_b_cnt<0>  | program_b_cnt<1>  | program_b_cnt<2>  | program_b_cnt<3>  | program_b_cnt<4>  | program_b_cnt<5>  | program_b_cnt<6>  | program_b_cnt<7>  | program_b_cnt<8>  | program_b_cnt<9>
+INPUTMC | 12 | 0 | 12 | 2 | 9 | 2 | 15 | 2 | 12 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 4 | 2 | 3 | 2 | 13 | 2 | 11 | 2 | 10
+LCT | 1 | 2 | Internal_Name
+EQ | 6 | 
+   program_b_cnt<10>.T := !data_buffer<7>.COMB & program_b_cnt<10>
+	# data_buffer<7>.COMB & program_b_cnt<0> & 
+	program_b_cnt<1> & program_b_cnt<2> & program_b_cnt<3> & 
+	program_b_cnt<4> & program_b_cnt<5> & program_b_cnt<6> & 
+	program_b_cnt<7> & program_b_cnt<8> & program_b_cnt<9>;	// (2 pt, 12 inp)
+    program_b_cnt<10>.CLK = clk_prescaled;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 12 | program_b_cnt<1>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 15 | 2 | 12 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 4 | 2 | 3 | 2 | 13 | 2 | 11 | 2 | 10 | 2 | 9 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 11 | 1 | 9
+INPUTS | 3 | data_buffer<7>.COMB  | program_b_cnt<0>  | program_b_cnt<1>
+INPUTMC | 3 | 0 | 12 | 2 | 15 | 2 | 12
+LCT | 1 | 2 | Internal_Name
+EQ | 5 | 
+   program_b_cnt<1> := data_buffer<7>.COMB & program_b_cnt<0> & 
+	!program_b_cnt<1>
+	# data_buffer<7>.COMB & !program_b_cnt<0> & 
+	program_b_cnt<1>;	// (2 pt, 3 inp)
+    program_b_cnt<1>.CLK = clk_prescaled;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 8 | program_b_cnt<2>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 14 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 4 | 2 | 3 | 2 | 13 | 2 | 11 | 2 | 10 | 2 | 9 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 11 | 1 | 9
+INPUTS | 4 | data_buffer<7>.COMB  | program_b_cnt<2>  | program_b_cnt<0>  | program_b_cnt<1>
+INPUTMC | 4 | 0 | 12 | 2 | 8 | 2 | 15 | 2 | 12
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   program_b_cnt<2>.T := !data_buffer<7>.COMB & program_b_cnt<2>
+	# data_buffer<7>.COMB & program_b_cnt<0> & 
+	program_b_cnt<1>;	// (2 pt, 4 inp)
+    program_b_cnt<2>.CLK = clk_prescaled;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 7 | program_b_cnt<3>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 13 | 2 | 7 | 2 | 6 | 2 | 4 | 2 | 3 | 2 | 13 | 2 | 11 | 2 | 10 | 2 | 9 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 11 | 1 | 9
+INPUTS | 5 | data_buffer<7>.COMB  | program_b_cnt<3>  | program_b_cnt<0>  | program_b_cnt<1>  | program_b_cnt<2>
+INPUTMC | 5 | 0 | 12 | 2 | 7 | 2 | 15 | 2 | 12 | 2 | 8
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   program_b_cnt<3>.T := !data_buffer<7>.COMB & program_b_cnt<3>
+	# data_buffer<7>.COMB & program_b_cnt<0> & 
+	program_b_cnt<1> & program_b_cnt<2>;	// (2 pt, 5 inp)
+    program_b_cnt<3>.CLK = clk_prescaled;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 6 | program_b_cnt<4>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 12 | 2 | 6 | 2 | 4 | 2 | 3 | 2 | 13 | 2 | 11 | 2 | 10 | 2 | 9 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 11 | 1 | 9
+INPUTS | 6 | data_buffer<7>.COMB  | program_b_cnt<4>  | program_b_cnt<0>  | program_b_cnt<1>  | program_b_cnt<2>  | program_b_cnt<3>
+INPUTMC | 6 | 0 | 12 | 2 | 6 | 2 | 15 | 2 | 12 | 2 | 8 | 2 | 7
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   program_b_cnt<4>.T := !data_buffer<7>.COMB & program_b_cnt<4>
+	# data_buffer<7>.COMB & program_b_cnt<0> & 
+	program_b_cnt<1> & program_b_cnt<2> & program_b_cnt<3>;	// (2 pt, 6 inp)
+    program_b_cnt<4>.CLK = clk_prescaled;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 4 | program_b_cnt<5>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 11 | 2 | 4 | 2 | 3 | 2 | 13 | 2 | 11 | 2 | 10 | 2 | 9 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 11 | 1 | 9
+INPUTS | 7 | data_buffer<7>.COMB  | program_b_cnt<5>  | program_b_cnt<0>  | program_b_cnt<1>  | program_b_cnt<2>  | program_b_cnt<3>  | program_b_cnt<4>
+INPUTMC | 7 | 0 | 12 | 2 | 4 | 2 | 15 | 2 | 12 | 2 | 8 | 2 | 7 | 2 | 6
+LCT | 1 | 2 | Internal_Name
+EQ | 5 | 
+   program_b_cnt<5>.T := !data_buffer<7>.COMB & program_b_cnt<5>
+	# data_buffer<7>.COMB & program_b_cnt<0> & 
+	program_b_cnt<1> & program_b_cnt<2> & program_b_cnt<3> & 
+	program_b_cnt<4>;	// (2 pt, 7 inp)
+    program_b_cnt<5>.CLK = clk_prescaled;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 3 | program_b_cnt<6>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 10 | 2 | 3 | 2 | 13 | 2 | 11 | 2 | 10 | 2 | 9 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 11 | 1 | 9
+INPUTS | 8 | data_buffer<7>.COMB  | program_b_cnt<6>  | program_b_cnt<0>  | program_b_cnt<1>  | program_b_cnt<2>  | program_b_cnt<3>  | program_b_cnt<4>  | program_b_cnt<5>
+INPUTMC | 8 | 0 | 12 | 2 | 3 | 2 | 15 | 2 | 12 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 4
+LCT | 1 | 2 | Internal_Name
+EQ | 5 | 
+   program_b_cnt<6>.T := !data_buffer<7>.COMB & program_b_cnt<6>
+	# data_buffer<7>.COMB & program_b_cnt<0> & 
+	program_b_cnt<1> & program_b_cnt<2> & program_b_cnt<3> & 
+	program_b_cnt<4> & program_b_cnt<5>;	// (2 pt, 8 inp)
+    program_b_cnt<6>.CLK = clk_prescaled;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 13 | program_b_cnt<7>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 9 | 2 | 13 | 2 | 11 | 2 | 10 | 2 | 9 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 11 | 1 | 9
+INPUTS | 9 | data_buffer<7>.COMB  | program_b_cnt<7>  | program_b_cnt<0>  | program_b_cnt<1>  | program_b_cnt<2>  | program_b_cnt<3>  | program_b_cnt<4>  | program_b_cnt<5>  | program_b_cnt<6>
+INPUTMC | 9 | 0 | 12 | 2 | 13 | 2 | 15 | 2 | 12 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 4 | 2 | 3
+LCT | 1 | 2 | Internal_Name
+EQ | 5 | 
+   program_b_cnt<7>.T := !data_buffer<7>.COMB & program_b_cnt<7>
+	# data_buffer<7>.COMB & program_b_cnt<0> & 
+	program_b_cnt<1> & program_b_cnt<2> & program_b_cnt<3> & 
+	program_b_cnt<4> & program_b_cnt<5> & program_b_cnt<6>;	// (2 pt, 9 inp)
+    program_b_cnt<7>.CLK = clk_prescaled;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 11 | program_b_cnt<8>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 8 | 2 | 11 | 2 | 10 | 2 | 9 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 11 | 1 | 9
+INPUTS | 10 | data_buffer<7>.COMB  | program_b_cnt<8>  | program_b_cnt<0>  | program_b_cnt<1>  | program_b_cnt<2>  | program_b_cnt<3>  | program_b_cnt<4>  | program_b_cnt<5>  | program_b_cnt<6>  | program_b_cnt<7>
+INPUTMC | 10 | 0 | 12 | 2 | 11 | 2 | 15 | 2 | 12 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 4 | 2 | 3 | 2 | 13
+LCT | 1 | 2 | Internal_Name
+EQ | 6 | 
+   program_b_cnt<8>.T := !data_buffer<7>.COMB & program_b_cnt<8>
+	# data_buffer<7>.COMB & program_b_cnt<0> & 
+	program_b_cnt<1> & program_b_cnt<2> & program_b_cnt<3> & 
+	program_b_cnt<4> & program_b_cnt<5> & program_b_cnt<6> & 
+	program_b_cnt<7>;	// (2 pt, 10 inp)
+    program_b_cnt<8>.CLK = clk_prescaled;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 10 | program_b_cnt<9>_MC
+ATTRIBUTES | 2285896448 | 0
+OUTPUTMC | 7 | 2 | 10 | 2 | 9 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 11 | 1 | 9
+INPUTS | 11 | data_buffer<7>.COMB  | program_b_cnt<9>  | program_b_cnt<0>  | program_b_cnt<1>  | program_b_cnt<2>  | program_b_cnt<3>  | program_b_cnt<4>  | program_b_cnt<5>  | program_b_cnt<6>  | program_b_cnt<7>  | program_b_cnt<8>
+INPUTMC | 11 | 0 | 12 | 2 | 10 | 2 | 15 | 2 | 12 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 4 | 2 | 3 | 2 | 13 | 2 | 11
+LCT | 1 | 2 | Internal_Name
+EQ | 6 | 
+   program_b_cnt<9>.T := !data_buffer<7>.COMB & program_b_cnt<9>
+	# data_buffer<7>.COMB & program_b_cnt<0> & 
+	program_b_cnt<1> & program_b_cnt<2> & program_b_cnt<3> & 
+	program_b_cnt<4> & program_b_cnt<5> & program_b_cnt<6> & 
+	program_b_cnt<7> & program_b_cnt<8>;	// (2 pt, 11 inp)
+    program_b_cnt<9>.CLK = clk_prescaled;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 0 | program_b_cnt<11>_MC
+ATTRIBUTES | 2151678752 | 0
+OUTPUTMC | 5 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 11 | 1 | 9
+INPUTS | 14 | data_buffer<7>.COMB  | program_b_cnt<11>  | program_b_cnt<0>  | program_b_cnt<10>  | program_b_cnt<1>  | program_b_cnt<2>  | program_b_cnt<3>  | program_b_cnt<4>  | program_b_cnt<5>  | program_b_cnt<6>  | program_b_cnt<7>  | program_b_cnt<8>  | program_b_cnt<9>  | clk_prescaled
+INPUTMC | 14 | 0 | 12 | 1 | 0 | 2 | 15 | 2 | 9 | 2 | 12 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 4 | 2 | 3 | 2 | 13 | 2 | 11 | 2 | 10 | 1 | 3
+EQ | 7 | 
+   program_b_cnt<11>.T := !data_buffer<7>.COMB & program_b_cnt<11>
+	# data_buffer<7>.COMB & program_b_cnt<0> & 
+	program_b_cnt<10> & program_b_cnt<1> & program_b_cnt<2> & 
+	program_b_cnt<3> & program_b_cnt<4> & program_b_cnt<5> & 
+	program_b_cnt<6> & program_b_cnt<7> & program_b_cnt<8> & 
+	program_b_cnt<9>;	// (2 pt, 13 inp)
+    program_b_cnt<11>.CLK = clk_prescaled;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 1 | program_b_cnt<12>_MC
+ATTRIBUTES | 2151678752 | 0
+OUTPUTMC | 4 | 1 | 1 | 1 | 2 | 1 | 11 | 1 | 9
+INPUTS | 15 | data_buffer<7>.COMB  | program_b_cnt<12>  | program_b_cnt<0>  | program_b_cnt<10>  | program_b_cnt<1>  | program_b_cnt<2>  | program_b_cnt<3>  | program_b_cnt<4>  | program_b_cnt<5>  | program_b_cnt<6>  | program_b_cnt<7>  | program_b_cnt<8>  | program_b_cnt<9>  | program_b_cnt<11>  | clk_prescaled
+INPUTMC | 15 | 0 | 12 | 1 | 1 | 2 | 15 | 2 | 9 | 2 | 12 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 4 | 2 | 3 | 2 | 13 | 2 | 11 | 2 | 10 | 1 | 0 | 1 | 3
+EQ | 7 | 
+   program_b_cnt<12>.T := !data_buffer<7>.COMB & program_b_cnt<12>
+	# data_buffer<7>.COMB & program_b_cnt<0> & 
+	program_b_cnt<10> & program_b_cnt<1> & program_b_cnt<2> & 
+	program_b_cnt<3> & program_b_cnt<4> & program_b_cnt<5> & 
+	program_b_cnt<6> & program_b_cnt<7> & program_b_cnt<8> & 
+	program_b_cnt<9> & program_b_cnt<11>;	// (2 pt, 14 inp)
+    program_b_cnt<12>.CLK = clk_prescaled;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 11 | program_b_cnt<14>_MC
+ATTRIBUTES | 2151678752 | 0
+OUTPUTMC | 3 | 1 | 11 | 1 | 9 | 1 | 4
+INPUTS | 17 | data_buffer<7>.COMB  | program_b_cnt<14>  | program_b_cnt<13>  | program_b_cnt<0>  | program_b_cnt<10>  | program_b_cnt<1>  | program_b_cnt<2>  | program_b_cnt<3>  | program_b_cnt<4>  | program_b_cnt<5>  | program_b_cnt<6>  | program_b_cnt<7>  | program_b_cnt<8>  | program_b_cnt<9>  | program_b_cnt<11>  | program_b_cnt<12>  | clk_prescaled
+INPUTMC | 17 | 0 | 12 | 1 | 11 | 1 | 2 | 2 | 15 | 2 | 9 | 2 | 12 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 4 | 2 | 3 | 2 | 13 | 2 | 11 | 2 | 10 | 1 | 0 | 1 | 1 | 1 | 3
+EQ | 8 | 
+   program_b_cnt<14>.T := !data_buffer<7>.COMB & program_b_cnt<14>
+	# data_buffer<7>.COMB & program_b_cnt<13> & 
+	program_b_cnt<0> & program_b_cnt<10> & program_b_cnt<1> & 
+	program_b_cnt<2> & program_b_cnt<3> & program_b_cnt<4> & 
+	program_b_cnt<5> & program_b_cnt<6> & program_b_cnt<7> & 
+	program_b_cnt<8> & program_b_cnt<9> & program_b_cnt<11> & 
+	program_b_cnt<12>;	// (2 pt, 16 inp)
+    program_b_cnt<14>.CLK = clk_prescaled;	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 9 | program_b_cnt<15>_MC
+ATTRIBUTES | 2151678752 | 0
+OUTPUTMC | 2 | 1 | 9 | 1 | 4
+INPUTS | 18 | data_buffer<7>.COMB  | program_b_cnt<15>  | program_b_cnt<13>  | program_b_cnt<0>  | program_b_cnt<10>  | program_b_cnt<1>  | program_b_cnt<2>  | program_b_cnt<3>  | program_b_cnt<4>  | program_b_cnt<5>  | program_b_cnt<6>  | program_b_cnt<7>  | program_b_cnt<8>  | program_b_cnt<9>  | program_b_cnt<11>  | program_b_cnt<12>  | program_b_cnt<14>  | clk_prescaled
+INPUTMC | 18 | 0 | 12 | 1 | 9 | 1 | 2 | 2 | 15 | 2 | 9 | 2 | 12 | 2 | 8 | 2 | 7 | 2 | 6 | 2 | 4 | 2 | 3 | 2 | 13 | 2 | 11 | 2 | 10 | 1 | 0 | 1 | 1 | 1 | 11 | 1 | 3
+EQ | 8 | 
+   program_b_cnt<15>.T := !data_buffer<7>.COMB & program_b_cnt<15>
+	# data_buffer<7>.COMB & program_b_cnt<13> & 
+	program_b_cnt<0> & program_b_cnt<10> & program_b_cnt<1> & 
+	program_b_cnt<2> & program_b_cnt<3> & program_b_cnt<4> & 
+	program_b_cnt<5> & program_b_cnt<6> & program_b_cnt<7> & 
+	program_b_cnt<8> & program_b_cnt<9> & program_b_cnt<11> & 
+	program_b_cnt<12> & program_b_cnt<14>;	// (2 pt, 17 inp)
+    program_b_cnt<15>.CLK = clk_prescaled;	// PTC	(1 pt, 1 inp)
+
+PIN | clk | 16384 | 16 | LVCMOS18 | 23 | 9 | 0 | 2 | 0 | 1 | 0 | 0 | 1 | 15 | 1 | 14 | 1 | 13 | 1 | 10 | 1 | 8 | 1 | 3
+PIN | fpga_done | 64 | 16 | LVCMOS18 | 25 | 2 | 2 | 14 | 2 | 2
+PIN | ftdi_rxf_n | 64 | 16 | LVCMOS18 | 73 | 2 | 2 | 1 | 0 | 11
+PIN | ftdi_gpio_0 | 64 | 16 | LVCMOS18 | 65 | 19 | 0 | 8 | 0 | 11 | 0 | 10 | 0 | 15 | 0 | 9 | 0 | 5 | 0 | 4 | 0 | 6 | 0 | 7 | 0 | 13 | 0 | 14 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 0 | 12 | 0 | 3 | 2 | 5 | 1 | 2
+PIN | ftdi_clk | 64 | 16 | LVCMOS18 | 9 | 1 | 2 | 1
+PIN | ftdi_data<0> | 64 | 16 | LVCMOS18 | 16 | 1 | 1 | 4
+PIN | ftdi_data<1> | 64 | 16 | LVCMOS18 | 17 | 1 | 1 | 5
+PIN | ftdi_data<2> | 64 | 16 | LVCMOS18 | 19 | 1 | 1 | 6
+PIN | ftdi_data<3> | 64 | 16 | LVCMOS18 | 20 | 1 | 1 | 7
+PIN | ftdi_data<4> | 64 | 16 | LVCMOS18 | 1 | 1 | 0 | 9
+PIN | ftdi_data<5> | 64 | 16 | LVCMOS18 | 81 | 1 | 0 | 10
+PIN | ftdi_data<6> | 64 | 16 | LVCMOS18 | 80 | 1 | 0 | 11
+PIN | ftdi_data<7> | 64 | 16 | LVCMOS18 | 78 | 1 | 0 | 12
+PIN | dbg | 536871040 | 0 | LVCMOS18 | 55
+PIN | fpga_bl_clk | 536871040 | 16 | LVCMOS18 | 26
+PIN | fpga_bl_data | 536871040 | 16 | LVCMOS18 | 31
+PIN | fpga_program_b | 536871040 | 0 | LVCMOS18 | 38
+PIN | ftdi_gpio_1 | 536871040 | 16 | LVCMOS18 | 71
+PIN | ftdi_rd_n | 536871040 | 16 | LVCMOS18 | 72

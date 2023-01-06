@@ -1,0 +1,5 @@
+# begin LFP file C:\developer\svn_projects\hound\SW\cpld\HoundCPLD\bootloader.lfp
+designfile bootloader.v
+parttype xc2c64a-vq44-5
+bus_delimiter 0;
+set_busdelim_onsave 1;

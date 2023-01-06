@@ -1,0 +1,90 @@
+
+----------------------------------------
+|  P a r t i t i o n    S u c c e e d  |
+----------------------------------------
+0 Group(s)
+
+GCLK2: 12=clk.p
+----------------- B l o c k 0 ------------------
+PLApt(32/56), Fanin(18/38), Clk(1/3), Bct(1/4), Pin(5/8), Mcell(16/16)
+PLApts[32/47] 19 56 15 20 1 13 61 14 60 57 38 59 3 35 53 64 68 71 72 66 58 67 69 70 16 49 47 () () () () () () () 65 () () 54 () () 54 () () 54 () () 54
+Fanins[18] ftdi_rd_n.n Mtrien_fpga_bl_clk_buffer.n Mtrien_fpga_bl_data_buffer_not0001.n Mtrien_ftdi_rd_n_buffer.n Mtrien_ftdi_rd_n_buffer_and0000.n N_PZ_212.n clk_prescaler_cnt<0>.n clk_prescaler_cnt<1>.n cnt_debounce<0>.n cnt_debounce<1>.n data_buffer_cnt<0>.n data_buffer_cnt<1>.n data_buffer_cnt<2>.n data_buffer_cnt<3>.n program_b_cnt_cmp_ge0000.n ftdi_clk.p ftdi_gpio_0.p ftdi_rxf_n.p
+clk[1] clk 
+CTC: (pt=1) ftdi_clk ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[25] [ftdi_clk(36)] [Mtrien_fpga_bl_data_buffer_not0001(54),data_buffer<4>,ftdi_data<4>(33)]  
+           [N_PZ_212(55),data_buffer<5>,ftdi_data<5>(32)]  
+           [Mtrien_ftdi_rd_n_buffer_and0000(56),data_buffer<6>,ftdi_data<6>(31)]  
+           [N_PZ_211(57),data_buffer<7>,ftdi_data<7>(30)] [cnt_debounce<0>(60)] [data_buffer_cnt<3>(59)]  
+           [data_buffer_cnt<2>(58)] [data_buffer_cnt<1>(52)] [data_buffer_cnt<0>(51)] [cnt_debounce<1>(50)]  
+           [Mtrien_fpga_bl_clk_buffer(49)] [Mtrien_fpga_bl_data_buffer(48)] [Mtrien_ftdi_rd_n_buffer(53)]  
+           [clk_prescaler_cnt<0>(47)] [clk_prescaler_cnt<1>(46)] [clk_prescaler_cnt<2>(45)] 
+Signal[25] [ 0: clk_prescaler_cnt<2>(45) (38)  ][ 1: clk_prescaler_cnt<1>(46) (37)  ][ 2:  
+           clk_prescaler_cnt<0>(47) ftdi_clk(36)  ][ 3: Mtrien_fpga_bl_data_buffer(48)  ][ 4:  
+           Mtrien_fpga_bl_clk_buffer(49)  ][ 5: cnt_debounce<1>(50)  ][ 6: data_buffer_cnt<0>(51)  ][ 7:  
+           data_buffer_cnt<1>(52)  ][ 8: Mtrien_ftdi_rd_n_buffer(53) (34)  ][ 9:  
+           Mtrien_fpga_bl_data_buffer_not0001(54) data_buffer<4>(54) ftdi_data<4>(33)  ][ 10: N_PZ_212(55)  
+           data_buffer<5>(55) ftdi_data<5>(32)  ][ 11: Mtrien_ftdi_rd_n_buffer_and0000(56)  
+           data_buffer<6>(56) ftdi_data<6>(31)  ][ 12: N_PZ_211(57) data_buffer<7>(57) ftdi_data<7>(30)  ] 
+           [ 13: data_buffer_cnt<2>(58)  ][ 14: data_buffer_cnt<3>(59)  ][ 15: cnt_debounce<0>(60)  ]
+----------------- B l o c k 1 ------------------
+PLApt(33/56), Fanin(35/38), Clk(1/3), Bct(2/4), Pin(7/9), Mcell(16/16)
+PLApts[33/56] 51 52 62 63 1 44 36 17 88 92 34 89 93 34 90 97 34 87 96 86 95 37 54 () () 54 () () 54 () () 54 () () 43 () () 34 () () 42 () () 34 () () () () () 41 () () 40 () () 39
+Fanins[35] fpga_bl_clk.n ftdi_rd_n.n Mtrien_fpga_bl_clk_buffer.n Mtrien_ftdi_rd_n_buffer.n N_PZ_211.n N_PZ_212.n clk_prescaled.n clk_prescaler_cnt<0>.n clk_prescaler_cnt<1>.n clk_prescaler_cnt<2>.n clk_prescaler_cnt<3>.n clk_prescaler_cnt<4>.n clk_prescaler_cnt<5>.n clk_prescaler_cnt<6>.n clk_prescaler_cnt<7>.n cnt_debounce<0>.n cnt_debounce<1>.n program_b_cnt<0>.n program_b_cnt<10>.n program_b_cnt<11>.n program_b_cnt<12>.n program_b_cnt<13>.n program_b_cnt<14>.n program_b_cnt<15>.n program_b_cnt<1>.n program_b_cnt<2>.n program_b_cnt<3>.n program_b_cnt<4>.n program_b_cnt<5>.n program_b_cnt<6>.n program_b_cnt<7>.n program_b_cnt<8>.n program_b_cnt<9>.n ftdi_clk.p ftdi_gpio_0.p
+clk[1] clk 
+CTC: (pt=1) ftdi_clk ;
+CTR: 
+CTS: 
+CTE: (pt=17) Mtrien_fpga_bl_clk_buffer' ;
+vref: [0]
+Signal[23] [fpga_bl_clk(73),fpga_bl_clk(3)] [clk(1)] [fpga_done(2)]  
+           [program_b_cnt_cmp_ge0000(65),data_buffer<0>,ftdi_data<0>(41)] [data_buffer<1>,ftdi_data<1>(42)]  
+           [data_buffer<2>,ftdi_data<2>(43)] [data_buffer<3>,ftdi_data<3>(44)] [clk_prescaler_cnt<3>(76)]  
+           [clk_prescaler_cnt<4>(75)] [clk_prescaler_cnt<5>(74)] [clk_prescaler_cnt<6>(71)]  
+           [clk_prescaler_cnt<7>(69)] [clk_prescaled(64)] [program_b_cnt<13>(63)] [program_b_cnt<14>(72)]  
+           [program_b_cnt<15>(70)] [program_b_cnt<12>(62)] [program_b_cnt<11>(61)] 
+Signal[23] [ 0: program_b_cnt<11>(61) (39)  ][ 1: program_b_cnt<12>(62) (40)  ][ 2: program_b_cnt<13>(63)  ] 
+           [ 3: clk_prescaled(64)  ][ 4: program_b_cnt_cmp_ge0000(65) data_buffer<0>(65) ftdi_data<0>(41)  ] 
+           [ 5: data_buffer<1>(66) ftdi_data<1>(42)  ][ 6: data_buffer<2>(67) ftdi_data<2>(43)  ][ 7:  
+           data_buffer<3>(68) ftdi_data<3>(44)  ][ 8: clk_prescaler_cnt<7>(69)  ][ 9: program_b_cnt<15>(70)  
+           clk(1)  ][ 10: clk_prescaler_cnt<6>(71)  ][ 11: program_b_cnt<14>(72) fpga_done(2)  ][ 12:  
+           fpga_bl_clk(73) fpga_bl_clk(3)  ][ 13: clk_prescaler_cnt<5>(74)  ][ 14: clk_prescaler_cnt<4>(75)  
+            ][ 15: clk_prescaler_cnt<3>(76)  ]
+----------------- B l o c k 2 ------------------
+PLApt(31/56), Fanin(22/38), Clk(0/3), Bct(2/4), Pin(5/9), Mcell(15/16)
+PLApts[31/56] 50 53 76 77 34 75 98 18 78 99 79 100 80 1 101 25 48 81 102 82 103 83 104 84 105 91 85 94 3 () () () () () () () () () () () () () () () () () () () () () () () 2 () () 74
+Fanins[22] ftdi_rd_n.n Mtrien_ftdi_gpio_1_buffer.n Mtrien_ftdi_rd_n_buffer.n N_PZ_211.n N_PZ_212.n clk_prescaled.n program_b_cnt<0>.n program_b_cnt<10>.n program_b_cnt<1>.n program_b_cnt<2>.n program_b_cnt<3>.n program_b_cnt<4>.n program_b_cnt<5>.n program_b_cnt<6>.n program_b_cnt<7>.n program_b_cnt<8>.n program_b_cnt<9>.n program_b_cnt_cmp_ge0000.n fpga_done.p ftdi_clk.p ftdi_gpio_0.p ftdi_rxf_n.p
+clk[0] 
+CTC: (pt=34) clk_prescaled ;
+CTR: 
+CTS: 
+CTE: (pt=18) Mtrien_ftdi_rd_n_buffer' ;
+vref: [0]
+Signal[17] [ftdi_rd_n(78),ftdi_rd_n(28)] [ftdi_gpio_1(79),ftdi_gpio_1(27)] [dbg(91),dbg(18)]  
+           [ftdi_gpio_0(23)] [ftdi_rxf_n(29)] [program_b_cnt<0>(92)] [program_b_cnt<1>(89)]  
+           [program_b_cnt<2>(85)] [program_b_cnt<3>(84)] [program_b_cnt<4>(83)] [program_b_cnt<5>(81)]  
+           [program_b_cnt<6>(80)] [program_b_cnt<7>(90)] [program_b_cnt<8>(88)] [program_b_cnt<9>(87)]  
+           [program_b_cnt<10>(86)] [Mtrien_ftdi_gpio_1_buffer(82)] 
+Signal[17] [ 0: ftdi_rxf_n(29)  ][ 1: ftdi_rd_n(78) ftdi_rd_n(28)  ][ 2: ftdi_gpio_1(79) ftdi_gpio_1(27)  ] 
+           [ 3: program_b_cnt<6>(80)  ][ 4: program_b_cnt<5>(81)  ][ 5: Mtrien_ftdi_gpio_1_buffer(82)  
+           ftdi_gpio_0(23)  ][ 6: program_b_cnt<4>(83)  ][ 7: program_b_cnt<3>(84)  ][ 8:  
+           program_b_cnt<2>(85)  ][ 9: program_b_cnt<10>(86) (22)  ][ 10: program_b_cnt<9>(87) (21)  ][ 11:  
+           program_b_cnt<8>(88) (20)  ][ 12: program_b_cnt<1>(89)  ][ 13: program_b_cnt<7>(90) (19)  ][ 14:  
+           dbg(91) dbg(18)  ][ 15: program_b_cnt<0>(92)  ]
+----------------- B l o c k 3 ------------------
+PLApt(19/56), Fanin(22/38), Clk(0/3), Bct(2/4), Pin(2/7), Mcell(2/16)
+PLApts[19/29] 21 22 23 26 1 27 28 24 29 30 31 32 33 45 46 53 55 73 () () () () () () () () () () 34
+Fanins[22] fpga_bl_data.n ftdi_rd_n.n Mtrien_fpga_bl_data_buffer.n Mtrien_ftdi_rd_n_buffer.n N_PZ_211.n N_PZ_212.n clk_prescaled.n cnt_debounce<0>.n cnt_debounce<1>.n data_buffer<0>.n data_buffer<1>.n data_buffer<2>.n data_buffer<3>.n data_buffer<4>.n data_buffer<5>.n data_buffer<6>.n data_buffer<7>.n data_buffer_cnt<0>.n data_buffer_cnt<1>.n data_buffer_cnt<2>.n data_buffer_cnt<3>.n ftdi_clk.p
+clk[0] 
+CTC: (pt=1) ftdi_clk ;
+CTR: 
+CTS: 
+CTE: (pt=24) Mtrien_fpga_bl_data_buffer' ;
+vref: [0]
+Signal[ 2] [fpga_bl_data(93),fpga_bl_data(5)] [fpga_program_b(99),fpga_program_b(8)] 
+Signal[ 2] [ 0: fpga_bl_data(93) fpga_bl_data(5)  ][ 1: (6)  ][ 2:  ][ 3:  ][ 4:  ][ 5:  ][ 6:  
+           fpga_program_b(99) fpga_program_b(8)  ][ 7:  ][ 8:  ][ 9:  ][ 10: (12)  ][ 11:  ][ 12: (13)  ] 
+           [ 13: (14)  ][ 14: (16)  ][ 15:  ]

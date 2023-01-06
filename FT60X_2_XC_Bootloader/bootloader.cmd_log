@@ -1,0 +1,792 @@
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+taengine -intstyle ise -f bootloader -w --format html1 -l bootloader_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -i bootloader 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.xst" -ofn "C:/developer/svn_projects/hound/SW/cpld/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1149 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/HoundCPLD/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 
+xst -intstyle ise -ifn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.xst" -ofn "C:/Users/despacho/Downloads/shared-main/FT60X_2_XC_Bootloader/bootloader.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc bootloader.ucf -p xc2c64a-VQ44-5 bootloader.ngc bootloader.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 bootloader.ngd 
+XSLTProcess bootloader_build.xml 
+tsim -intstyle ise bootloader bootloader.nga 
+hprep6 -s IEEE1532 -i bootloader 

@@ -1,0 +1,328 @@
+<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>
+<h3 align='center'>Equations</h3>
+<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>
+<tr><td>
+</td></tr><tr><td>
+********** Mapped Logic **********
+</td></tr><tr><td>
+FDCPE_Mtrien_fpga_bl_clk_buffer: FDCPE port map (Mtrien_fpga_bl_clk_buffer,Mtrien_fpga_bl_clk_buffer_D,ftdi_clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mtrien_fpga_bl_clk_buffer_D <= NOT (((ftdi_gpio_0 AND data_buffer(4).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ftdi_gpio_0 AND NOT data_buffer(5).COMB AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	cnt_debounce(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (data_buffer(5).COMB AND NOT data_buffer(4).COMB AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Mtrien_fpga_bl_clk_buffer)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT cnt_debounce(0) AND NOT data_buffer(4).COMB AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Mtrien_fpga_bl_clk_buffer)));
+</td></tr><tr><td>
+FDCPE_Mtrien_fpga_bl_data_buffer: FDCPE port map (Mtrien_fpga_bl_data_buffer,NOT ftdi_gpio_0,ftdi_clk,'0','0',data_buffer(4).COMB);
+</td></tr><tr><td>
+FDCPE_Mtrien_ftdi_gpio_1_buffer: FDCPE port map (Mtrien_ftdi_gpio_1_buffer,NOT ftdi_gpio_0,clk_prescaled,'0','0',NOT data_buffer(7).COMB);
+</td></tr><tr><td>
+FDCPE_Mtrien_ftdi_rd_n_buffer: FDCPE port map (Mtrien_ftdi_rd_n_buffer,NOT ftdi_gpio_0,ftdi_clk,'0','0',data_buffer(6).COMB);
+</td></tr><tr><td>
+FDCPE_clk_prescaled: FDCPE port map (clk_prescaled,clk_prescaled_D,clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clk_prescaled_D <= NOT (((NOT clk_prescaler_cnt(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (clk_prescaler_cnt(0) AND clk_prescaler_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	clk_prescaler_cnt(2) AND clk_prescaler_cnt(3) AND clk_prescaler_cnt(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	clk_prescaler_cnt(5) AND clk_prescaler_cnt(6))));
+</td></tr><tr><td>
+FTCPE_clk_prescaler_cnt0: FTCPE port map (clk_prescaler_cnt(0),'0',clk,'0','0','1');
+</td></tr><tr><td>
+FTCPE_clk_prescaler_cnt1: FTCPE port map (clk_prescaler_cnt(1),clk_prescaler_cnt(0),clk,'0','0','1');
+</td></tr><tr><td>
+FTCPE_clk_prescaler_cnt2: FTCPE port map (clk_prescaler_cnt(2),clk_prescaler_cnt_T(2),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clk_prescaler_cnt_T(2) <= (clk_prescaler_cnt(0) AND clk_prescaler_cnt(1));
+</td></tr><tr><td>
+FTCPE_clk_prescaler_cnt3: FTCPE port map (clk_prescaler_cnt(3),clk_prescaler_cnt_T(3),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clk_prescaler_cnt_T(3) <= (clk_prescaler_cnt(0) AND clk_prescaler_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	clk_prescaler_cnt(2));
+</td></tr><tr><td>
+FTCPE_clk_prescaler_cnt4: FTCPE port map (clk_prescaler_cnt(4),clk_prescaler_cnt_T(4),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clk_prescaler_cnt_T(4) <= (clk_prescaler_cnt(0) AND clk_prescaler_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	clk_prescaler_cnt(2) AND clk_prescaler_cnt(3));
+</td></tr><tr><td>
+FTCPE_clk_prescaler_cnt5: FTCPE port map (clk_prescaler_cnt(5),clk_prescaler_cnt_T(5),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clk_prescaler_cnt_T(5) <= (clk_prescaler_cnt(0) AND clk_prescaler_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	clk_prescaler_cnt(2) AND clk_prescaler_cnt(3) AND clk_prescaler_cnt(4));
+</td></tr><tr><td>
+FTCPE_clk_prescaler_cnt6: FTCPE port map (clk_prescaler_cnt(6),clk_prescaler_cnt_T(6),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clk_prescaler_cnt_T(6) <= (clk_prescaler_cnt(0) AND clk_prescaler_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	clk_prescaler_cnt(2) AND clk_prescaler_cnt(3) AND clk_prescaler_cnt(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	clk_prescaler_cnt(5));
+</td></tr><tr><td>
+FTCPE_clk_prescaler_cnt7: FTCPE port map (clk_prescaler_cnt(7),clk_prescaler_cnt_T(7),clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clk_prescaler_cnt_T(7) <= (clk_prescaler_cnt(0) AND clk_prescaler_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	clk_prescaler_cnt(2) AND clk_prescaler_cnt(3) AND clk_prescaler_cnt(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	clk_prescaler_cnt(5) AND clk_prescaler_cnt(6));
+</td></tr><tr><td>
+FTCPE_cnt_debounce0: FTCPE port map (cnt_debounce(0),cnt_debounce_T(0),ftdi_clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cnt_debounce_T(0) <= ((ftdi_gpio_0 AND NOT data_buffer(5).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Mtrien_ftdi_rd_n_buffer AND cnt_debounce(0)));
+</td></tr><tr><td>
+FTCPE_cnt_debounce1: FTCPE port map (cnt_debounce(1),cnt_debounce_T(1),ftdi_clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cnt_debounce_T(1) <= ((ftdi_gpio_0 AND cnt_debounce(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data_buffer(4).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT data_buffer(5).COMB AND cnt_debounce(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data_buffer(4).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT data_buffer(5).COMB AND NOT cnt_debounce(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data_buffer(4).COMB));
+</td></tr><tr><td>
+</td></tr><tr><td>
+data_buffer(0).COMB <= (NOT program_b_cnt(13) AND NOT program_b_cnt(14) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT program_b_cnt(15));FDCPE_data_buffer0: FDCPE port map (data_buffer(0),ftdi_data(0),ftdi_clk,'0','0',data_buffer_CE(0));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_buffer_CE(0) <= (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB);
+</td></tr><tr><td>
+FDCPE_data_buffer1: FDCPE port map (data_buffer(1),ftdi_data(1),ftdi_clk,'0','0',data_buffer_CE(1));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_buffer_CE(1) <= (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB);
+</td></tr><tr><td>
+FDCPE_data_buffer2: FDCPE port map (data_buffer(2),ftdi_data(2),ftdi_clk,'0','0',data_buffer_CE(2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_buffer_CE(2) <= (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB);
+</td></tr><tr><td>
+FDCPE_data_buffer3: FDCPE port map (data_buffer(3),ftdi_data(3),ftdi_clk,'0','0',data_buffer_CE(3));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_buffer_CE(3) <= (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB);
+</td></tr><tr><td>
+</td></tr><tr><td>
+data_buffer(4).COMB <= ((NOT ftdi_gpio_0)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ftdi_rd_n AND NOT Mtrien_ftdi_rd_n_buffer AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data_buffer(5).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT data_buffer(5).COMB AND NOT cnt_debounce(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT cnt_debounce(1)));FDCPE_data_buffer4: FDCPE port map (data_buffer(4),ftdi_data(4),ftdi_clk,'0','0',data_buffer_CE(4));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_buffer_CE(4) <= (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB);
+</td></tr><tr><td>
+</td></tr><tr><td>
+data_buffer(5).COMB <= (NOT data_buffer_cnt(2) AND NOT data_buffer_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data_buffer_cnt(0) AND NOT data_buffer_cnt(3));FDCPE_data_buffer5: FDCPE port map (data_buffer(5),ftdi_data(5),ftdi_clk,'0','0',data_buffer_CE(5));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_buffer_CE(5) <= (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB);
+</td></tr><tr><td>
+</td></tr><tr><td>
+data_buffer(6).COMB <= ((NOT ftdi_gpio_0)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ftdi_rxf_n AND data_buffer(5).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ftdi_rd_n AND NOT Mtrien_ftdi_rd_n_buffer AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data_buffer(5).COMB));FDCPE_data_buffer6: FDCPE port map (data_buffer(6),ftdi_data(6),ftdi_clk,'0','0',data_buffer_CE(6));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_buffer_CE(6) <= (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB);
+</td></tr><tr><td>
+</td></tr><tr><td>
+data_buffer(7).COMB <= (ftdi_gpio_0 AND data_buffer(0).COMB);FDCPE_data_buffer7: FDCPE port map (data_buffer(7),ftdi_data(7),ftdi_clk,'0','0',data_buffer_CE(7));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_buffer_CE(7) <= (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB);
+</td></tr><tr><td>
+FTCPE_data_buffer_cnt0: FTCPE port map (data_buffer_cnt(0),data_buffer_cnt_T(0),ftdi_clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_buffer_cnt_T(0) <= ((NOT ftdi_gpio_0 AND NOT data_buffer(5).COMB AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data_buffer_cnt(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ftdi_gpio_0 AND NOT data_buffer(5).COMB AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	cnt_debounce(0) AND cnt_debounce(1)));
+</td></tr><tr><td>
+FTCPE_data_buffer_cnt1: FTCPE port map (data_buffer_cnt(1),data_buffer_cnt_T(1),ftdi_clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_buffer_cnt_T(1) <= ((NOT ftdi_gpio_0 AND data_buffer_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ftdi_gpio_0 AND NOT data_buffer(5).COMB AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	cnt_debounce(0) AND cnt_debounce(1) AND NOT data_buffer_cnt(0)));
+</td></tr><tr><td>
+FTCPE_data_buffer_cnt2: FTCPE port map (data_buffer_cnt(2),data_buffer_cnt_T(2),ftdi_clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_buffer_cnt_T(2) <= ((NOT ftdi_gpio_0 AND data_buffer_cnt(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ftdi_gpio_0 AND NOT data_buffer(5).COMB AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	cnt_debounce(0) AND cnt_debounce(1) AND NOT data_buffer_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data_buffer_cnt(0)));
+</td></tr><tr><td>
+FTCPE_data_buffer_cnt3: FTCPE port map (data_buffer_cnt(3),data_buffer_cnt_T(3),ftdi_clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_buffer_cnt_T(3) <= ((NOT ftdi_gpio_0 AND data_buffer_cnt(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (cnt_debounce(0) AND cnt_debounce(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data_buffer_cnt(2) AND NOT data_buffer_cnt(1) AND NOT data_buffer_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data_buffer_cnt(3)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+dbg <= fpga_done;
+</td></tr><tr><td>
+FDCPE_fpga_bl_clk: FDCPE port map (fpga_bl_clk_I,fpga_bl_clk,ftdi_clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fpga_bl_clk <= ((ftdi_rd_n AND data_buffer(5).COMB AND fpga_bl_clk)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fpga_bl_clk)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT data_buffer(5).COMB AND cnt_debounce(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT cnt_debounce(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT data_buffer(5).COMB AND fpga_bl_clk AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT cnt_debounce(0) AND cnt_debounce(1)));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fpga_bl_clk <= fpga_bl_clk_I when fpga_bl_clk_OE = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fpga_bl_clk_OE <= NOT Mtrien_fpga_bl_clk_buffer;
+</td></tr><tr><td>
+FDCPE_fpga_bl_data: FDCPE port map (fpga_bl_data_I,fpga_bl_data,ftdi_clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fpga_bl_data <= NOT (((data_buffer(5).COMB AND NOT fpga_bl_data)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (cnt_debounce(0) AND NOT fpga_bl_data)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (cnt_debounce(1) AND NOT fpga_bl_data)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ftdi_rd_n AND NOT Mtrien_ftdi_rd_n_buffer AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data_buffer(5).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data_buffer_cnt(2) AND data_buffer_cnt(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data_buffer_cnt(1) AND data_buffer_cnt(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data_buffer_cnt(0) AND data_buffer_cnt(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data_buffer_cnt(3) AND NOT data_buffer(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT data_buffer(5) AND NOT cnt_debounce(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT cnt_debounce(1) AND data_buffer_cnt(2) AND data_buffer_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data_buffer_cnt(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT data_buffer(6) AND NOT cnt_debounce(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT cnt_debounce(1) AND data_buffer_cnt(2) AND data_buffer_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data_buffer_cnt(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data_buffer(4) AND data_buffer_cnt(2) AND NOT data_buffer_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data_buffer_cnt(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data_buffer_cnt(2) AND NOT data_buffer_cnt(1) AND NOT data_buffer_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data_buffer(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data_buffer_cnt(2) AND data_buffer_cnt(1) AND data_buffer_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data_buffer(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data_buffer_cnt(2) AND data_buffer_cnt(1) AND NOT data_buffer_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data_buffer(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data_buffer_cnt(2) AND NOT data_buffer_cnt(1) AND data_buffer_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data_buffer(0))));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fpga_bl_data <= fpga_bl_data_I when fpga_bl_data_OE = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fpga_bl_data_OE <= NOT Mtrien_fpga_bl_data_buffer;
+</td></tr><tr><td>
+FDCPE_fpga_program_b: FDCPE port map (fpga_program_b,NOT data_buffer(7).COMB,clk_prescaled,'0','0','1');
+</td></tr><tr><td>
+FDCPE_ftdi_gpio_1: FDCPE port map (ftdi_gpio_1_I,fpga_done,clk_prescaled,'0','0',NOT data_buffer(0).COMB);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ftdi_gpio_1 <= ftdi_gpio_1_I when ftdi_gpio_1_OE = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ftdi_gpio_1_OE <= NOT Mtrien_ftdi_gpio_1_buffer;
+</td></tr><tr><td>
+FTCPE_ftdi_rd_n: FTCPE port map (ftdi_rd_n_I,ftdi_rd_n_T,ftdi_clk,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ftdi_rd_n_T <= ((NOT ftdi_rxf_n AND ftdi_rd_n AND data_buffer(5).COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT ftdi_rd_n AND NOT Mtrien_ftdi_rd_n_buffer AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data_buffer(5).COMB));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ftdi_rd_n <= ftdi_rd_n_I when ftdi_rd_n_OE = '1' else 'Z';
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ftdi_rd_n_OE <= NOT Mtrien_ftdi_rd_n_buffer;
+</td></tr><tr><td>
+FDCPE_program_b_cnt0: FDCPE port map (program_b_cnt(0),program_b_cnt_D(0),clk_prescaled,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;program_b_cnt_D(0) <= (data_buffer(7).COMB AND NOT program_b_cnt(0));
+</td></tr><tr><td>
+FDCPE_program_b_cnt1: FDCPE port map (program_b_cnt(1),program_b_cnt_D(1),clk_prescaled,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;program_b_cnt_D(1) <= ((data_buffer(7).COMB AND program_b_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT program_b_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (data_buffer(7).COMB AND NOT program_b_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(1)));
+</td></tr><tr><td>
+FTCPE_program_b_cnt2: FTCPE port map (program_b_cnt(2),program_b_cnt_T(2),clk_prescaled,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;program_b_cnt_T(2) <= ((NOT data_buffer(7).COMB AND program_b_cnt(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(1)));
+</td></tr><tr><td>
+FTCPE_program_b_cnt3: FTCPE port map (program_b_cnt(3),program_b_cnt_T(3),clk_prescaled,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;program_b_cnt_T(3) <= ((NOT data_buffer(7).COMB AND program_b_cnt(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(1) AND program_b_cnt(2)));
+</td></tr><tr><td>
+FTCPE_program_b_cnt4: FTCPE port map (program_b_cnt(4),program_b_cnt_T(4),clk_prescaled,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;program_b_cnt_T(4) <= ((NOT data_buffer(7).COMB AND program_b_cnt(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(1) AND program_b_cnt(2) AND program_b_cnt(3)));
+</td></tr><tr><td>
+FTCPE_program_b_cnt5: FTCPE port map (program_b_cnt(5),program_b_cnt_T(5),clk_prescaled,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;program_b_cnt_T(5) <= ((NOT data_buffer(7).COMB AND program_b_cnt(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(1) AND program_b_cnt(2) AND program_b_cnt(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(4)));
+</td></tr><tr><td>
+FTCPE_program_b_cnt6: FTCPE port map (program_b_cnt(6),program_b_cnt_T(6),clk_prescaled,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;program_b_cnt_T(6) <= ((NOT data_buffer(7).COMB AND program_b_cnt(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(1) AND program_b_cnt(2) AND program_b_cnt(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(4) AND program_b_cnt(5)));
+</td></tr><tr><td>
+FTCPE_program_b_cnt7: FTCPE port map (program_b_cnt(7),program_b_cnt_T(7),clk_prescaled,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;program_b_cnt_T(7) <= ((NOT data_buffer(7).COMB AND program_b_cnt(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(1) AND program_b_cnt(2) AND program_b_cnt(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(4) AND program_b_cnt(5) AND program_b_cnt(6)));
+</td></tr><tr><td>
+FTCPE_program_b_cnt8: FTCPE port map (program_b_cnt(8),program_b_cnt_T(8),clk_prescaled,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;program_b_cnt_T(8) <= ((NOT data_buffer(7).COMB AND program_b_cnt(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(1) AND program_b_cnt(2) AND program_b_cnt(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(4) AND program_b_cnt(5) AND program_b_cnt(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(7)));
+</td></tr><tr><td>
+FTCPE_program_b_cnt9: FTCPE port map (program_b_cnt(9),program_b_cnt_T(9),clk_prescaled,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;program_b_cnt_T(9) <= ((NOT data_buffer(7).COMB AND program_b_cnt(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(1) AND program_b_cnt(2) AND program_b_cnt(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(4) AND program_b_cnt(5) AND program_b_cnt(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(7) AND program_b_cnt(8)));
+</td></tr><tr><td>
+FTCPE_program_b_cnt10: FTCPE port map (program_b_cnt(10),program_b_cnt_T(10),clk_prescaled,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;program_b_cnt_T(10) <= ((NOT data_buffer(7).COMB AND program_b_cnt(10))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(1) AND program_b_cnt(2) AND program_b_cnt(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(4) AND program_b_cnt(5) AND program_b_cnt(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(7) AND program_b_cnt(8) AND program_b_cnt(9)));
+</td></tr><tr><td>
+FTCPE_program_b_cnt11: FTCPE port map (program_b_cnt(11),program_b_cnt_T(11),clk_prescaled,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;program_b_cnt_T(11) <= ((NOT data_buffer(7).COMB AND program_b_cnt(11))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(10) AND program_b_cnt(1) AND program_b_cnt(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(3) AND program_b_cnt(4) AND program_b_cnt(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(6) AND program_b_cnt(7) AND program_b_cnt(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(9)));
+</td></tr><tr><td>
+FTCPE_program_b_cnt12: FTCPE port map (program_b_cnt(12),program_b_cnt_T(12),clk_prescaled,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;program_b_cnt_T(12) <= ((NOT data_buffer(7).COMB AND program_b_cnt(12))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(10) AND program_b_cnt(1) AND program_b_cnt(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(3) AND program_b_cnt(4) AND program_b_cnt(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(6) AND program_b_cnt(7) AND program_b_cnt(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(9) AND program_b_cnt(11)));
+</td></tr><tr><td>
+FTCPE_program_b_cnt13: FTCPE port map (program_b_cnt(13),program_b_cnt_T(13),clk_prescaled,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;program_b_cnt_T(13) <= ((NOT ftdi_gpio_0 AND program_b_cnt(13))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (ftdi_gpio_0 AND NOT data_buffer(7).COMB AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT program_b_cnt(13))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(10) AND program_b_cnt(1) AND program_b_cnt(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(3) AND program_b_cnt(4) AND program_b_cnt(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(6) AND program_b_cnt(7) AND program_b_cnt(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(9) AND program_b_cnt(11) AND program_b_cnt(12)));
+</td></tr><tr><td>
+FTCPE_program_b_cnt14: FTCPE port map (program_b_cnt(14),program_b_cnt_T(14),clk_prescaled,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;program_b_cnt_T(14) <= ((NOT data_buffer(7).COMB AND program_b_cnt(14))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (data_buffer(7).COMB AND program_b_cnt(13) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(0) AND program_b_cnt(10) AND program_b_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(2) AND program_b_cnt(3) AND program_b_cnt(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(5) AND program_b_cnt(6) AND program_b_cnt(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(8) AND program_b_cnt(9) AND program_b_cnt(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(12)));
+</td></tr><tr><td>
+FTCPE_program_b_cnt15: FTCPE port map (program_b_cnt(15),program_b_cnt_T(15),clk_prescaled,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;program_b_cnt_T(15) <= ((NOT data_buffer(7).COMB AND program_b_cnt(15))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (data_buffer(7).COMB AND program_b_cnt(13) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(0) AND program_b_cnt(10) AND program_b_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(2) AND program_b_cnt(3) AND program_b_cnt(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(5) AND program_b_cnt(6) AND program_b_cnt(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(8) AND program_b_cnt(9) AND program_b_cnt(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	program_b_cnt(12) AND program_b_cnt(14)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+Register Legend:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LDCP  (Q,D,G,CLR,PRE); 
+</td></tr><tr><td>
+</td></tr>
+</table>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

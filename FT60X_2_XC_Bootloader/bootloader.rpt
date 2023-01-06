@@ -1,0 +1,828 @@
+ 
+cpldfit:  version P.20131013                        Xilinx Inc.
+                                  Fitter Report
+Design Name: bootloader                          Date: 12-30-2022,  4:03PM
+Device Used: XC2C64A-5-VQ44
+Fitting Status: Successful
+
+*************************  Mapped Resource Summary  **************************
+
+Macrocells     Product Terms    Function Block   Registers      Pins           
+Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
+49 /64  ( 77%) 115 /224  ( 51%) 97  /160  ( 61%) 48 /64  ( 75%) 19 /33  ( 58%)
+
+** Function Block Resources **
+
+Function Mcells   FB Inps  Pterms   IO       CTC      CTR      CTS      CTE     
+Block    Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot
+FB1      16/16*    18/40    32/56     0/ 8    1/1*     0/1      0/1      0/1
+FB2      16/16*    35/40    33/56     1/ 9    1/1*     0/1      0/1      1/1*
+FB3      15/16     22/40    31/56     3/ 9    1/1*     0/1      0/1      1/1*
+FB4       2/16     22/40    19/56     2/ 7    1/1*     0/1      0/1      1/1*
+         -----    -------  -------   -----    ---      ---      ---      ---
+Total    49/64     97/160  115/224    6/33    4/4      0/4      0/4      3/4 
+
+CTC - Control Term Clock
+CTR - Control Term Reset
+CTS - Control Term Set
+CTE - Control Term Output Enable
+
+* - Resource is exhausted
+
+** Global Control Resources **
+
+GCK         GSR         GTS         DGE         
+Used/Tot    Used/Tot    Used/Tot    Used/Tot    
+1/3         0/1         0/4         0/0
+
+Signal 'clk' mapped onto global clock net GCK2.
+
+** Pin Resources **
+
+Signal Type    Required     Mapped  |  Pin Type            Used    Total 
+------------------------------------|------------------------------------
+Input         :   12          12    |  I/O              :    12     25
+Output        :    6           6    |  GCK/IO           :     3      3
+Bidirectional :    0           0    |  GTS/IO           :     3      4
+GCK           :    1           1    |  GSR/IO           :     1      1
+GTS           :    0           0    |  
+GSR           :    0           0    |  
+                 ----        ----
+        Total     19          19
+
+End of Mapped Resource Summary
+**************************  Errors and Warnings  ***************************
+
+WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
+   use the default filename of 'bootloader.ise'.
+INFO:Cpld - Inferring BUFG constraint for signal 'clk' based upon the LOC
+   constraint 'P1'. It is recommended that you declare this BUFG explicitedly in
+   your design. Note that for certain device families the output of a BUFG
+   constraint can not drive a gated clock, and the BUFG constraint will be
+   ignored.
+INFO:Cpld - Inferring BUFG constraint for signal 'ftdi_data<2>' based upon the
+   LOC constraint 'P43'. It is recommended that you declare this BUFG
+   explicitedly in your design. Note that for certain device families the output
+   of a BUFG constraint can not drive a gated clock, and the BUFG constraint
+   will be ignored.
+INFO:Cpld - Inferring BUFG constraint for signal 'ftdi_data<3>' based upon the
+   LOC constraint 'P44'. It is recommended that you declare this BUFG
+   explicitedly in your design. Note that for certain device families the output
+   of a BUFG constraint can not drive a gated clock, and the BUFG constraint
+   will be ignored.
+WARNING:Cpld:987 - An internal tristate buffer 'N2' is detected.  The logic is
+   being translated to a mux implementation.
+WARNING:Cpld:1007 - Removing unused input(s) 'fpga_init_b'.  The input(s) are
+   unused after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'ftdi_data<10>'.  The input(s) are
+   unused after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'ftdi_data<11>'.  The input(s) are
+   unused after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'ftdi_data<8>'.  The input(s) are
+   unused after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'ftdi_data<9>'.  The input(s) are
+   unused after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1239 - The global clock designation (BUFG) on signal
+   'ftdi_data_3_IBUF' is ignored. Most likely the signal is gated and therefore
+   cannot be used as a global control signal.
+WARNING:Cpld:1239 - The global clock designation (BUFG) on signal
+   'ftdi_data_2_IBUF' is ignored. Most likely the signal is gated and therefore
+   cannot be used as a global control signal.
+*************************  Summary of Mapped Logic  ************************
+
+** 6 Outputs **
+
+Signal                      Total Total Bank Loc     Pin   Pin       Pin     I/O      I/O       Slew Reg     Reg Init
+Name                        Pts   Inps               No.   Type      Use     STD      Style     Rate Use     State
+fpga_bl_clk                 6     8     1    FB2_13  3     I/O       O       LVCMOS18 KPR       FAST DFF     RESET
+ftdi_rd_n                   4     5     2    FB3_2   28    I/O       O       LVCMOS18 KPR       FAST TFF/S   SET
+ftdi_gpio_1                 4     4     2    FB3_3   27    I/O       O       LVCMOS18 KPR       FAST DEFF    RESET
+dbg                         1     1     2    FB3_15  18    I/O       O       LVCMOS18           FAST         
+fpga_bl_data                17    20    1    FB4_1   5     I/O       O       LVCMOS18 KPR       FAST DFF     RESET
+fpga_program_b              2     2     1    FB4_7   8     I/O       O       LVCMOS18           FAST DFF     RESET
+
+** 43 Buried Nodes **
+
+Signal                      Total Total Loc     Reg     Reg Init
+Name                        Pts   Inps          Use     State
+clk_prescaler_cnt<2>        1     2     FB1_1   TFF     RESET
+clk_prescaler_cnt<1>        1     1     FB1_2   TFF     RESET
+clk_prescaler_cnt<0>        0     0     FB1_3   TFF     RESET
+Mtrien_fpga_bl_data_buffer  3     3     FB1_4   DEFF    RESET
+Mtrien_fpga_bl_clk_buffer   5     6     FB1_5   DFF     RESET
+cnt_debounce<1>             4     6     FB1_6   TFF     RESET
+data_buffer_cnt<0>          3     6     FB1_7   TFF     RESET
+data_buffer_cnt<1>          3     7     FB1_8   TFF     RESET
+Mtrien_ftdi_rd_n_buffer     3     3     FB1_9   DEFF    RESET
+data_buffer<4>              5     7     FB1_10  DEFF    RESET
+data_buffer<5>              3     9     FB1_11  DEFF    RESET
+data_buffer<6>              5     6     FB1_12  DEFF    RESET
+data_buffer<7>              3     6     FB1_13  DEFF    RESET
+data_buffer_cnt<2>          3     8     FB1_14  TFF     RESET
+data_buffer_cnt<3>          4     11    FB1_15  TFF     RESET
+cnt_debounce<0>             3     6     FB1_16  TFF     RESET
+program_b_cnt<11>           3     14    FB2_1   TFF     RESET
+program_b_cnt<12>           3     15    FB2_2   TFF     RESET
+program_b_cnt<13>           4     17    FB2_3   TFF     RESET
+clk_prescaled               2     8     FB2_4   DFF     RESET
+data_buffer<0>              3     8     FB2_5   DEFF    RESET
+data_buffer<1>              2     5     FB2_6   DEFF    RESET
+data_buffer<2>              2     5     FB2_7   DEFF    RESET
+data_buffer<3>              2     5     FB2_8   DEFF    RESET
+clk_prescaler_cnt<7>        1     7     FB2_9   TFF     RESET
+program_b_cnt<15>           3     18    FB2_10  TFF     RESET
+clk_prescaler_cnt<6>        1     6     FB2_11  TFF     RESET
+program_b_cnt<14>           3     17    FB2_12  TFF     RESET
+clk_prescaler_cnt<5>        1     5     FB2_14  TFF     RESET
+clk_prescaler_cnt<4>        1     4     FB2_15  TFF     RESET
+clk_prescaler_cnt<3>        1     3     FB2_16  TFF     RESET
+program_b_cnt<6>            3     9     FB3_4   TFF     RESET
+program_b_cnt<5>            3     8     FB3_5   TFF     RESET
+Mtrien_ftdi_gpio_1_buffer   3     3     FB3_6   DEFF    RESET
+program_b_cnt<4>            3     7     FB3_7   TFF     RESET
+program_b_cnt<3>            3     6     FB3_8   TFF     RESET
+program_b_cnt<2>            3     5     FB3_9   TFF     RESET
+program_b_cnt<10>           3     13    FB3_10  TFF     RESET
+program_b_cnt<9>            3     12    FB3_11  TFF     RESET
+program_b_cnt<8>            3     11    FB3_12  TFF     RESET
+
+Signal                      Total Total Loc     Reg     Reg Init
+Name                        Pts   Inps          Use     State
+program_b_cnt<1>            3     4     FB3_13  DFF     RESET
+program_b_cnt<7>            3     10    FB3_14  TFF     RESET
+program_b_cnt<0>            2     3     FB3_16  DFF     RESET
+
+** 13 Inputs **
+
+Signal                      Bank Loc     Pin   Pin       Pin     I/O      I/O
+Name                                     No.   Type      Use     STD      Style
+ftdi_clk                    2    FB1_3   36    I/O       I       LVCMOS18 KPR
+ftdi_data<4>                2    FB1_10  33    GTS/I/O   I       LVCMOS18 KPR
+ftdi_data<5>                2    FB1_11  32    GTS/I/O   I       LVCMOS18 KPR
+ftdi_data<6>                2    FB1_12  31    GTS/I/O   I       LVCMOS18 KPR
+ftdi_data<7>                2    FB1_13  30    GSR/I/O   I       LVCMOS18 KPR
+ftdi_data<0>                1    FB2_5   41    I/O       I       LVCMOS18 KPR
+ftdi_data<1>                1    FB2_6   42    I/O       I       LVCMOS18 KPR
+ftdi_data<2>                1    FB2_7   43    GCK/I/O   I       LVCMOS18 KPR
+ftdi_data<3>                1    FB2_8   44    GCK/I/O   I       LVCMOS18 KPR
+clk                         1    FB2_10  1     GCK/I/O   GCK     LVCMOS18 KPR
+fpga_done                   1    FB2_12  2     I/O       I       LVCMOS18 KPR
+ftdi_rxf_n                  2    FB3_1   29    I/O       I       LVCMOS18 KPR
+ftdi_gpio_0                 2    FB3_6   23    I/O       I       LVCMOS18 KPR
+
+Legend:
+Pin No.   - ~     - User Assigned
+I/O Style - OD    - OpenDrain
+          - PU    - Pullup
+          - KPR   - Keeper
+          - S     - SchmittTrigger
+          - DG    - DataGate
+Reg Use   - LATCH - Transparent latch
+          - DFF   - D-flip-flop
+          - DEFF  - D-flip-flop with clock enable
+          - TFF   - T-flip-flop
+          - TDFF  - Dual-edge-triggered T-flip-flop
+          - DDFF  - Dual-edge-triggered flip-flop
+          - DDEFF - Dual-edge-triggered flip-flop with clock enable
+          /S (after any above flop/latch type) indicates initial state is Set
+**************************  Function Block Details  ************************
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Loc          - Location where logic was mapped in device
+Pin Type/Use - I  - Input             GCK - Global clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+              VRF - Vref
+Pin No.      - ~  - User Assigned
+*********************************** FB1  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               18/22
+Number of function block control terms used/remaining:        1/3
+Number of PLA product terms used/remaining:                   32/24
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+clk_prescaler_cnt<2>          1     FB1_1   38   I/O     (b)               
+clk_prescaler_cnt<1>          1     FB1_2   37   I/O     (b)               
+clk_prescaler_cnt<0>          0     FB1_3   36   I/O     I                 
+Mtrien_fpga_bl_data_buffer    3     FB1_4        (b)     (b)    +          
+Mtrien_fpga_bl_clk_buffer     5     FB1_5        (b)     (b)    +          
+cnt_debounce<1>               4     FB1_6        (b)     (b)    +          
+data_buffer_cnt<0>            3     FB1_7        (b)     (b)    +          
+data_buffer_cnt<1>            3     FB1_8        (b)     (b)    +          
+Mtrien_ftdi_rd_n_buffer       3     FB1_9   34   GTS/I/O (b)    +          
+data_buffer<4>                5     FB1_10  33   GTS/I/O I      +          
+data_buffer<5>                3     FB1_11  32   GTS/I/O I      +          
+data_buffer<6>                5     FB1_12  31   GTS/I/O I      +          
+data_buffer<7>                3     FB1_13  30   GSR/I/O I      +          
+data_buffer_cnt<2>            3     FB1_14       (b)     (b)    +          
+data_buffer_cnt<3>            4     FB1_15       (b)     (b)    +          
+cnt_debounce<0>               3     FB1_16       (b)     (b)    +          
+
+Signals Used by Logic in Function Block
+  1: Mtrien_fpga_bl_clk_buffer   7: data_buffer<0>.COMB  13: data_buffer_cnt<2> 
+  2: Mtrien_ftdi_rd_n_buffer     8: data_buffer<4>.COMB  14: data_buffer_cnt<3> 
+  3: clk_prescaler_cnt<0>        9: data_buffer<5>.COMB  15: ftdi_clk 
+  4: clk_prescaler_cnt<1>       10: data_buffer<6>.COMB  16: ftdi_gpio_0 
+  5: cnt_debounce<0>            11: data_buffer_cnt<0>   17: ftdi_rd_n 
+  6: cnt_debounce<1>            12: data_buffer_cnt<1>   18: ftdi_rxf_n 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+clk_prescaler_cnt<2> 
+                  ..XX.................................... 2       
+clk_prescaler_cnt<1> 
+                  ..X..................................... 1       
+clk_prescaler_cnt<0> 
+                  ........................................ 0       
+Mtrien_fpga_bl_data_buffer 
+                  .......X......XX........................ 3       
+Mtrien_fpga_bl_clk_buffer 
+                  X...X..XX.....XX........................ 6       
+cnt_debounce<1>   ....XX.XX.....XX........................ 6       
+data_buffer_cnt<0> 
+                  ....XX..X.X...XX........................ 6       
+data_buffer_cnt<1> 
+                  ....XX..X.XX..XX........................ 7       
+Mtrien_ftdi_rd_n_buffer 
+                  .........X....XX........................ 3       
+data_buffer<4>    .X..XX..X.....XXX....................... 7       
+data_buffer<5>    .X......X.XXXXXXX....................... 9       
+data_buffer<6>    .X......X.....XXXX...................... 6       
+data_buffer<7>    .X....X.X.....XXX....................... 6       
+data_buffer_cnt<2> 
+                  ....XX..X.XXX.XX........................ 8       
+data_buffer_cnt<3> 
+                  .X..XX..X.XXXXXXX....................... 11      
+cnt_debounce<0>   .X..X...X.....XXX....................... 6       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB2  ***********************************
+This function block is part of I/O Bank number:               1
+Number of function block inputs used/remaining:               35/5
+Number of function block control terms used/remaining:        2/2
+Number of PLA product terms used/remaining:                   33/23
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+program_b_cnt<11>             3     FB2_1   39   I/O     (b)               
+program_b_cnt<12>             3     FB2_2   40   I/O     (b)               
+program_b_cnt<13>             4     FB2_3        (b)     (b)               
+clk_prescaled                 2     FB2_4        (b)     (b)               
+data_buffer<0>                3     FB2_5   41   I/O     I      +          
+data_buffer<1>                2     FB2_6   42   I/O     I      +          
+data_buffer<2>                2     FB2_7   43   GCK/I/O I      +          
+data_buffer<3>                2     FB2_8   44   GCK/I/O I      +          
+clk_prescaler_cnt<7>          1     FB2_9        (b)     (b)               
+program_b_cnt<15>             3     FB2_10  1    GCK/I/O GCK               
+clk_prescaler_cnt<6>          1     FB2_11       (b)     (b)               
+program_b_cnt<14>             3     FB2_12  2    I/O     I                 
+fpga_bl_clk                   6     FB2_13  3    I/O     O      +           +  
+clk_prescaler_cnt<5>          1     FB2_14       (b)     (b)               
+clk_prescaler_cnt<4>          1     FB2_15       (b)     (b)               
+clk_prescaler_cnt<3>          1     FB2_16       (b)     (b)               
+
+Signals Used by Logic in Function Block
+  1: Mtrien_fpga_bl_clk_buffer  13: cnt_debounce<1>      25: program_b_cnt<14> 
+  2: Mtrien_ftdi_rd_n_buffer    14: data_buffer<5>.COMB  26: program_b_cnt<15> 
+  3: clk_prescaled              15: data_buffer<7>.COMB  27: program_b_cnt<1> 
+  4: clk_prescaler_cnt<0>       16: fpga_bl_clk          28: program_b_cnt<2> 
+  5: clk_prescaler_cnt<1>       17: ftdi_clk             29: program_b_cnt<3> 
+  6: clk_prescaler_cnt<2>       18: ftdi_gpio_0          30: program_b_cnt<4> 
+  7: clk_prescaler_cnt<3>       19: ftdi_rd_n            31: program_b_cnt<5> 
+  8: clk_prescaler_cnt<4>       20: program_b_cnt<0>     32: program_b_cnt<6> 
+  9: clk_prescaler_cnt<5>       21: program_b_cnt<10>    33: program_b_cnt<7> 
+ 10: clk_prescaler_cnt<6>       22: program_b_cnt<11>    34: program_b_cnt<8> 
+ 11: clk_prescaler_cnt<7>       23: program_b_cnt<12>    35: program_b_cnt<9> 
+ 12: cnt_debounce<0>            24: program_b_cnt<13>   
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+program_b_cnt<11> 
+                  ..X...........X....XXX....XXXXXXXXX..... 14      
+program_b_cnt<12> 
+                  ..X...........X....XXXX...XXXXXXXXX..... 15      
+program_b_cnt<13> 
+                  ..X...........X..X.XXXXX..XXXXXXXXX..... 17      
+clk_prescaled     ...XXXXXXXX............................. 8       
+data_buffer<0>    .X...........X..XXX....XXX.............. 8       
+clk_prescaler_cnt<7> 
+                  ...XXXXXXX.............................. 7       
+program_b_cnt<15> 
+                  ..X...........X....XXXXXXXXXXXXXXXX..... 18      
+clk_prescaler_cnt<6> 
+                  ...XXXXXX............................... 6       
+program_b_cnt<14> 
+                  ..X...........X....XXXXXX.XXXXXXXXX..... 17      
+fpga_bl_clk       XX.........XXX.XX.X..................... 8       
+clk_prescaler_cnt<5> 
+                  ...XXXXX................................ 5       
+clk_prescaler_cnt<4> 
+                  ...XXXX................................. 4       
+clk_prescaler_cnt<3> 
+                  ...XXX.................................. 3       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB3  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               22/18
+Number of function block control terms used/remaining:        2/2
+Number of PLA product terms used/remaining:                   31/25
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+(unused)                      0     FB3_1   29   I/O     I     
+ftdi_rd_n                     4     FB3_2   28   I/O     O                  +  
+ftdi_gpio_1                   4     FB3_3   27   I/O     O      +          
+program_b_cnt<6>              3     FB3_4        (b)     (b)    +          
+program_b_cnt<5>              3     FB3_5        (b)     (b)    +          
+Mtrien_ftdi_gpio_1_buffer     3     FB3_6   23   I/O     I      +          
+program_b_cnt<4>              3     FB3_7        (b)     (b)    +          
+program_b_cnt<3>              3     FB3_8        (b)     (b)    +          
+program_b_cnt<2>              3     FB3_9        (b)     (b)    +          
+program_b_cnt<10>             3     FB3_10  22   I/O     (b)    +          
+program_b_cnt<9>              3     FB3_11  21   I/O     (b)    +          
+program_b_cnt<8>              3     FB3_12  20   I/O     (b)    +          
+program_b_cnt<1>              3     FB3_13       (b)     (b)    +          
+program_b_cnt<7>              3     FB3_14  19   I/O     (b)    +          
+dbg                           1     FB3_15  18   I/O     O                 
+program_b_cnt<0>              2     FB3_16       (b)     (b)    +          
+
+Signals Used by Logic in Function Block
+  1: Mtrien_ftdi_gpio_1_buffer   9: ftdi_gpio_0        16: program_b_cnt<3> 
+  2: Mtrien_ftdi_rd_n_buffer    10: ftdi_rd_n          17: program_b_cnt<4> 
+  3: clk_prescaled              11: ftdi_rxf_n         18: program_b_cnt<5> 
+  4: data_buffer<0>.COMB        12: program_b_cnt<0>   19: program_b_cnt<6> 
+  5: data_buffer<5>.COMB        13: program_b_cnt<10>  20: program_b_cnt<7> 
+  6: data_buffer<7>.COMB        14: program_b_cnt<1>   21: program_b_cnt<8> 
+  7: fpga_done                  15: program_b_cnt<2>   22: program_b_cnt<9> 
+  8: ftdi_clk                  
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+ftdi_rd_n         .X..X..X.XX............................. 5       
+ftdi_gpio_1       X.XX..X................................. 4       
+program_b_cnt<6>  ..X..X.....X.XXXXXX..................... 9       
+program_b_cnt<5>  ..X..X.....X.XXXXX...................... 8       
+Mtrien_ftdi_gpio_1_buffer 
+                  ..X..X..X............................... 3       
+program_b_cnt<4>  ..X..X.....X.XXXX....................... 7       
+program_b_cnt<3>  ..X..X.....X.XXX........................ 6       
+program_b_cnt<2>  ..X..X.....X.XX......................... 5       
+program_b_cnt<10> 
+                  ..X..X.....XXXXXXXXXXX.................. 13      
+program_b_cnt<9>  ..X..X.....X.XXXXXXXXX.................. 12      
+program_b_cnt<8>  ..X..X.....X.XXXXXXXX................... 11      
+program_b_cnt<1>  ..X..X.....X.X.......................... 4       
+program_b_cnt<7>  ..X..X.....X.XXXXXXX.................... 10      
+dbg               ......X................................. 1       
+program_b_cnt<0>  ..X..X.....X............................ 3       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB4  ***********************************
+This function block is part of I/O Bank number:               1
+Number of function block inputs used/remaining:               22/18
+Number of function block control terms used/remaining:        2/2
+Number of PLA product terms used/remaining:                   19/37
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+fpga_bl_data                  17    FB4_1   5    I/O     O      +           +  
+(unused)                      0     FB4_2   6    I/O           
+(unused)                      0     FB4_3        (b)           
+(unused)                      0     FB4_4        (b)           
+(unused)                      0     FB4_5        (b)           
+(unused)                      0     FB4_6        (b)           
+fpga_program_b                2     FB4_7   8    I/O     O                 
+(unused)                      0     FB4_8        (b)           
+(unused)                      0     FB4_9        (b)           
+(unused)                      0     FB4_10       (b)           
+(unused)                      0     FB4_11  12   I/O           
+(unused)                      0     FB4_12       (b)           
+(unused)                      0     FB4_13  13   I/O           
+(unused)                      0     FB4_14  14   I/O           
+(unused)                      0     FB4_15  16   I/O           
+(unused)                      0     FB4_16       (b)           
+
+Signals Used by Logic in Function Block
+  1: Mtrien_fpga_bl_data_buffer   9: data_buffer<3>       16: data_buffer_cnt<0> 
+  2: Mtrien_ftdi_rd_n_buffer     10: data_buffer<4>       17: data_buffer_cnt<1> 
+  3: clk_prescaled               11: data_buffer<5>       18: data_buffer_cnt<2> 
+  4: cnt_debounce<0>             12: data_buffer<5>.COMB  19: data_buffer_cnt<3> 
+  5: cnt_debounce<1>             13: data_buffer<6>       20: fpga_bl_data 
+  6: data_buffer<0>              14: data_buffer<7>       21: ftdi_clk 
+  7: data_buffer<1>              15: data_buffer<7>.COMB  22: ftdi_rd_n 
+  8: data_buffer<2>             
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+fpga_bl_data      XX.XXXXXXXXXXX.XXXXXXX.................. 20      
+fpga_program_b    ..X...........X......................... 2       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*******************************  Equations  ********************************
+
+********** Mapped Logic **********
+
+FDCPE_Mtrien_fpga_bl_clk_buffer: FDCPE port map (Mtrien_fpga_bl_clk_buffer,Mtrien_fpga_bl_clk_buffer_D,ftdi_clk,'0','0','1');
+Mtrien_fpga_bl_clk_buffer_D <= NOT (((ftdi_gpio_0 AND data_buffer(4).COMB)
+	OR (ftdi_gpio_0 AND NOT data_buffer(5).COMB AND 
+	cnt_debounce(0))
+	OR (data_buffer(5).COMB AND NOT data_buffer(4).COMB AND 
+	NOT Mtrien_fpga_bl_clk_buffer)
+	OR (NOT cnt_debounce(0) AND NOT data_buffer(4).COMB AND 
+	NOT Mtrien_fpga_bl_clk_buffer)));
+
+FDCPE_Mtrien_fpga_bl_data_buffer: FDCPE port map (Mtrien_fpga_bl_data_buffer,NOT ftdi_gpio_0,ftdi_clk,'0','0',data_buffer(4).COMB);
+
+FDCPE_Mtrien_ftdi_gpio_1_buffer: FDCPE port map (Mtrien_ftdi_gpio_1_buffer,NOT ftdi_gpio_0,clk_prescaled,'0','0',NOT data_buffer(7).COMB);
+
+FDCPE_Mtrien_ftdi_rd_n_buffer: FDCPE port map (Mtrien_ftdi_rd_n_buffer,NOT ftdi_gpio_0,ftdi_clk,'0','0',data_buffer(6).COMB);
+
+FDCPE_clk_prescaled: FDCPE port map (clk_prescaled,clk_prescaled_D,clk,'0','0','1');
+clk_prescaled_D <= NOT (((NOT clk_prescaler_cnt(7))
+	OR (clk_prescaler_cnt(0) AND clk_prescaler_cnt(1) AND 
+	clk_prescaler_cnt(2) AND clk_prescaler_cnt(3) AND clk_prescaler_cnt(4) AND 
+	clk_prescaler_cnt(5) AND clk_prescaler_cnt(6))));
+
+FTCPE_clk_prescaler_cnt0: FTCPE port map (clk_prescaler_cnt(0),'0',clk,'0','0','1');
+
+FTCPE_clk_prescaler_cnt1: FTCPE port map (clk_prescaler_cnt(1),clk_prescaler_cnt(0),clk,'0','0','1');
+
+FTCPE_clk_prescaler_cnt2: FTCPE port map (clk_prescaler_cnt(2),clk_prescaler_cnt_T(2),clk,'0','0','1');
+clk_prescaler_cnt_T(2) <= (clk_prescaler_cnt(0) AND clk_prescaler_cnt(1));
+
+FTCPE_clk_prescaler_cnt3: FTCPE port map (clk_prescaler_cnt(3),clk_prescaler_cnt_T(3),clk,'0','0','1');
+clk_prescaler_cnt_T(3) <= (clk_prescaler_cnt(0) AND clk_prescaler_cnt(1) AND 
+	clk_prescaler_cnt(2));
+
+FTCPE_clk_prescaler_cnt4: FTCPE port map (clk_prescaler_cnt(4),clk_prescaler_cnt_T(4),clk,'0','0','1');
+clk_prescaler_cnt_T(4) <= (clk_prescaler_cnt(0) AND clk_prescaler_cnt(1) AND 
+	clk_prescaler_cnt(2) AND clk_prescaler_cnt(3));
+
+FTCPE_clk_prescaler_cnt5: FTCPE port map (clk_prescaler_cnt(5),clk_prescaler_cnt_T(5),clk,'0','0','1');
+clk_prescaler_cnt_T(5) <= (clk_prescaler_cnt(0) AND clk_prescaler_cnt(1) AND 
+	clk_prescaler_cnt(2) AND clk_prescaler_cnt(3) AND clk_prescaler_cnt(4));
+
+FTCPE_clk_prescaler_cnt6: FTCPE port map (clk_prescaler_cnt(6),clk_prescaler_cnt_T(6),clk,'0','0','1');
+clk_prescaler_cnt_T(6) <= (clk_prescaler_cnt(0) AND clk_prescaler_cnt(1) AND 
+	clk_prescaler_cnt(2) AND clk_prescaler_cnt(3) AND clk_prescaler_cnt(4) AND 
+	clk_prescaler_cnt(5));
+
+FTCPE_clk_prescaler_cnt7: FTCPE port map (clk_prescaler_cnt(7),clk_prescaler_cnt_T(7),clk,'0','0','1');
+clk_prescaler_cnt_T(7) <= (clk_prescaler_cnt(0) AND clk_prescaler_cnt(1) AND 
+	clk_prescaler_cnt(2) AND clk_prescaler_cnt(3) AND clk_prescaler_cnt(4) AND 
+	clk_prescaler_cnt(5) AND clk_prescaler_cnt(6));
+
+FTCPE_cnt_debounce0: FTCPE port map (cnt_debounce(0),cnt_debounce_T(0),ftdi_clk,'0','0','1');
+cnt_debounce_T(0) <= ((ftdi_gpio_0 AND NOT data_buffer(5).COMB)
+	OR (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+	NOT Mtrien_ftdi_rd_n_buffer AND cnt_debounce(0)));
+
+FTCPE_cnt_debounce1: FTCPE port map (cnt_debounce(1),cnt_debounce_T(1),ftdi_clk,'0','0','1');
+cnt_debounce_T(1) <= ((ftdi_gpio_0 AND cnt_debounce(1) AND 
+	data_buffer(4).COMB)
+	OR (NOT data_buffer(5).COMB AND cnt_debounce(0) AND 
+	NOT data_buffer(4).COMB)
+	OR (NOT data_buffer(5).COMB AND NOT cnt_debounce(1) AND 
+	NOT data_buffer(4).COMB));
+
+
+data_buffer(0).COMB <= (NOT program_b_cnt(13) AND NOT program_b_cnt(14) AND 
+	NOT program_b_cnt(15));FDCPE_data_buffer0: FDCPE port map (data_buffer(0),ftdi_data(0),ftdi_clk,'0','0',data_buffer_CE(0));
+data_buffer_CE(0) <= (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB);
+
+FDCPE_data_buffer1: FDCPE port map (data_buffer(1),ftdi_data(1),ftdi_clk,'0','0',data_buffer_CE(1));
+data_buffer_CE(1) <= (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB);
+
+FDCPE_data_buffer2: FDCPE port map (data_buffer(2),ftdi_data(2),ftdi_clk,'0','0',data_buffer_CE(2));
+data_buffer_CE(2) <= (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB);
+
+FDCPE_data_buffer3: FDCPE port map (data_buffer(3),ftdi_data(3),ftdi_clk,'0','0',data_buffer_CE(3));
+data_buffer_CE(3) <= (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB);
+
+
+data_buffer(4).COMB <= ((NOT ftdi_gpio_0)
+	OR (NOT ftdi_rd_n AND NOT Mtrien_ftdi_rd_n_buffer AND 
+	data_buffer(5).COMB)
+	OR (NOT data_buffer(5).COMB AND NOT cnt_debounce(0) AND 
+	NOT cnt_debounce(1)));FDCPE_data_buffer4: FDCPE port map (data_buffer(4),ftdi_data(4),ftdi_clk,'0','0',data_buffer_CE(4));
+data_buffer_CE(4) <= (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB);
+
+
+data_buffer(5).COMB <= (NOT data_buffer_cnt(2) AND NOT data_buffer_cnt(1) AND 
+	NOT data_buffer_cnt(0) AND NOT data_buffer_cnt(3));FDCPE_data_buffer5: FDCPE port map (data_buffer(5),ftdi_data(5),ftdi_clk,'0','0',data_buffer_CE(5));
+data_buffer_CE(5) <= (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB);
+
+
+data_buffer(6).COMB <= ((NOT ftdi_gpio_0)
+	OR (NOT ftdi_rxf_n AND data_buffer(5).COMB)
+	OR (NOT ftdi_rd_n AND NOT Mtrien_ftdi_rd_n_buffer AND 
+	data_buffer(5).COMB));FDCPE_data_buffer6: FDCPE port map (data_buffer(6),ftdi_data(6),ftdi_clk,'0','0',data_buffer_CE(6));
+data_buffer_CE(6) <= (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB);
+
+
+data_buffer(7).COMB <= (ftdi_gpio_0 AND data_buffer(0).COMB);FDCPE_data_buffer7: FDCPE port map (data_buffer(7),ftdi_data(7),ftdi_clk,'0','0',data_buffer_CE(7));
+data_buffer_CE(7) <= (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB);
+
+FTCPE_data_buffer_cnt0: FTCPE port map (data_buffer_cnt(0),data_buffer_cnt_T(0),ftdi_clk,'0','0','1');
+data_buffer_cnt_T(0) <= ((NOT ftdi_gpio_0 AND NOT data_buffer(5).COMB AND 
+	data_buffer_cnt(0))
+	OR (ftdi_gpio_0 AND NOT data_buffer(5).COMB AND 
+	cnt_debounce(0) AND cnt_debounce(1)));
+
+FTCPE_data_buffer_cnt1: FTCPE port map (data_buffer_cnt(1),data_buffer_cnt_T(1),ftdi_clk,'0','0','1');
+data_buffer_cnt_T(1) <= ((NOT ftdi_gpio_0 AND data_buffer_cnt(1))
+	OR (ftdi_gpio_0 AND NOT data_buffer(5).COMB AND 
+	cnt_debounce(0) AND cnt_debounce(1) AND NOT data_buffer_cnt(0)));
+
+FTCPE_data_buffer_cnt2: FTCPE port map (data_buffer_cnt(2),data_buffer_cnt_T(2),ftdi_clk,'0','0','1');
+data_buffer_cnt_T(2) <= ((NOT ftdi_gpio_0 AND data_buffer_cnt(2))
+	OR (ftdi_gpio_0 AND NOT data_buffer(5).COMB AND 
+	cnt_debounce(0) AND cnt_debounce(1) AND NOT data_buffer_cnt(1) AND 
+	NOT data_buffer_cnt(0)));
+
+FTCPE_data_buffer_cnt3: FTCPE port map (data_buffer_cnt(3),data_buffer_cnt_T(3),ftdi_clk,'0','0','1');
+data_buffer_cnt_T(3) <= ((NOT ftdi_gpio_0 AND data_buffer_cnt(3))
+	OR (NOT ftdi_rd_n AND ftdi_gpio_0 AND 
+	NOT Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB)
+	OR (cnt_debounce(0) AND cnt_debounce(1) AND 
+	NOT data_buffer_cnt(2) AND NOT data_buffer_cnt(1) AND NOT data_buffer_cnt(0) AND 
+	data_buffer_cnt(3)));
+
+
+dbg <= fpga_done;
+
+FDCPE_fpga_bl_clk: FDCPE port map (fpga_bl_clk_I,fpga_bl_clk,ftdi_clk,'0','0','1');
+fpga_bl_clk <= ((ftdi_rd_n AND data_buffer(5).COMB AND fpga_bl_clk)
+	OR (Mtrien_ftdi_rd_n_buffer AND data_buffer(5).COMB AND 
+	fpga_bl_clk)
+	OR (NOT data_buffer(5).COMB AND cnt_debounce(0) AND 
+	NOT cnt_debounce(1))
+	OR (NOT data_buffer(5).COMB AND fpga_bl_clk AND 
+	NOT cnt_debounce(0) AND cnt_debounce(1)));
+fpga_bl_clk <= fpga_bl_clk_I when fpga_bl_clk_OE = '1' else 'Z';
+fpga_bl_clk_OE <= NOT Mtrien_fpga_bl_clk_buffer;
+
+FDCPE_fpga_bl_data: FDCPE port map (fpga_bl_data_I,fpga_bl_data,ftdi_clk,'0','0','1');
+fpga_bl_data <= NOT (((data_buffer(5).COMB AND NOT fpga_bl_data)
+	OR (cnt_debounce(0) AND NOT fpga_bl_data)
+	OR (cnt_debounce(1) AND NOT fpga_bl_data)
+	OR (NOT ftdi_rd_n AND NOT Mtrien_ftdi_rd_n_buffer AND 
+	data_buffer(5).COMB)
+	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+	data_buffer_cnt(2) AND data_buffer_cnt(3))
+	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+	data_buffer_cnt(1) AND data_buffer_cnt(3))
+	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+	data_buffer_cnt(0) AND data_buffer_cnt(3))
+	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+	data_buffer_cnt(3) AND NOT data_buffer(7))
+	OR (NOT data_buffer(5) AND NOT cnt_debounce(0) AND 
+	NOT cnt_debounce(1) AND data_buffer_cnt(2) AND data_buffer_cnt(1) AND 
+	NOT data_buffer_cnt(0))
+	OR (NOT data_buffer(6) AND NOT cnt_debounce(0) AND 
+	NOT cnt_debounce(1) AND data_buffer_cnt(2) AND data_buffer_cnt(1) AND 
+	data_buffer_cnt(0))
+	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+	NOT data_buffer(4) AND data_buffer_cnt(2) AND NOT data_buffer_cnt(1) AND 
+	data_buffer_cnt(0))
+	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+	data_buffer_cnt(2) AND NOT data_buffer_cnt(1) AND NOT data_buffer_cnt(0) AND 
+	NOT data_buffer(3))
+	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+	NOT data_buffer_cnt(2) AND data_buffer_cnt(1) AND data_buffer_cnt(0) AND 
+	NOT data_buffer(2))
+	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+	NOT data_buffer_cnt(2) AND data_buffer_cnt(1) AND NOT data_buffer_cnt(0) AND 
+	NOT data_buffer(1))
+	OR (NOT cnt_debounce(0) AND NOT cnt_debounce(1) AND 
+	NOT data_buffer_cnt(2) AND NOT data_buffer_cnt(1) AND data_buffer_cnt(0) AND 
+	NOT data_buffer(0))));
+fpga_bl_data <= fpga_bl_data_I when fpga_bl_data_OE = '1' else 'Z';
+fpga_bl_data_OE <= NOT Mtrien_fpga_bl_data_buffer;
+
+FDCPE_fpga_program_b: FDCPE port map (fpga_program_b,NOT data_buffer(7).COMB,clk_prescaled,'0','0','1');
+
+FDCPE_ftdi_gpio_1: FDCPE port map (ftdi_gpio_1_I,fpga_done,clk_prescaled,'0','0',NOT data_buffer(0).COMB);
+ftdi_gpio_1 <= ftdi_gpio_1_I when ftdi_gpio_1_OE = '1' else 'Z';
+ftdi_gpio_1_OE <= NOT Mtrien_ftdi_gpio_1_buffer;
+
+FTCPE_ftdi_rd_n: FTCPE port map (ftdi_rd_n_I,ftdi_rd_n_T,ftdi_clk,'0','0','1');
+ftdi_rd_n_T <= ((NOT ftdi_rxf_n AND ftdi_rd_n AND data_buffer(5).COMB)
+	OR (NOT ftdi_rd_n AND NOT Mtrien_ftdi_rd_n_buffer AND 
+	data_buffer(5).COMB));
+ftdi_rd_n <= ftdi_rd_n_I when ftdi_rd_n_OE = '1' else 'Z';
+ftdi_rd_n_OE <= NOT Mtrien_ftdi_rd_n_buffer;
+
+FDCPE_program_b_cnt0: FDCPE port map (program_b_cnt(0),program_b_cnt_D(0),clk_prescaled,'0','0','1');
+program_b_cnt_D(0) <= (data_buffer(7).COMB AND NOT program_b_cnt(0));
+
+FDCPE_program_b_cnt1: FDCPE port map (program_b_cnt(1),program_b_cnt_D(1),clk_prescaled,'0','0','1');
+program_b_cnt_D(1) <= ((data_buffer(7).COMB AND program_b_cnt(0) AND 
+	NOT program_b_cnt(1))
+	OR (data_buffer(7).COMB AND NOT program_b_cnt(0) AND 
+	program_b_cnt(1)));
+
+FTCPE_program_b_cnt2: FTCPE port map (program_b_cnt(2),program_b_cnt_T(2),clk_prescaled,'0','0','1');
+program_b_cnt_T(2) <= ((NOT data_buffer(7).COMB AND program_b_cnt(2))
+	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+	program_b_cnt(1)));
+
+FTCPE_program_b_cnt3: FTCPE port map (program_b_cnt(3),program_b_cnt_T(3),clk_prescaled,'0','0','1');
+program_b_cnt_T(3) <= ((NOT data_buffer(7).COMB AND program_b_cnt(3))
+	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+	program_b_cnt(1) AND program_b_cnt(2)));
+
+FTCPE_program_b_cnt4: FTCPE port map (program_b_cnt(4),program_b_cnt_T(4),clk_prescaled,'0','0','1');
+program_b_cnt_T(4) <= ((NOT data_buffer(7).COMB AND program_b_cnt(4))
+	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+	program_b_cnt(1) AND program_b_cnt(2) AND program_b_cnt(3)));
+
+FTCPE_program_b_cnt5: FTCPE port map (program_b_cnt(5),program_b_cnt_T(5),clk_prescaled,'0','0','1');
+program_b_cnt_T(5) <= ((NOT data_buffer(7).COMB AND program_b_cnt(5))
+	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+	program_b_cnt(1) AND program_b_cnt(2) AND program_b_cnt(3) AND 
+	program_b_cnt(4)));
+
+FTCPE_program_b_cnt6: FTCPE port map (program_b_cnt(6),program_b_cnt_T(6),clk_prescaled,'0','0','1');
+program_b_cnt_T(6) <= ((NOT data_buffer(7).COMB AND program_b_cnt(6))
+	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+	program_b_cnt(1) AND program_b_cnt(2) AND program_b_cnt(3) AND 
+	program_b_cnt(4) AND program_b_cnt(5)));
+
+FTCPE_program_b_cnt7: FTCPE port map (program_b_cnt(7),program_b_cnt_T(7),clk_prescaled,'0','0','1');
+program_b_cnt_T(7) <= ((NOT data_buffer(7).COMB AND program_b_cnt(7))
+	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+	program_b_cnt(1) AND program_b_cnt(2) AND program_b_cnt(3) AND 
+	program_b_cnt(4) AND program_b_cnt(5) AND program_b_cnt(6)));
+
+FTCPE_program_b_cnt8: FTCPE port map (program_b_cnt(8),program_b_cnt_T(8),clk_prescaled,'0','0','1');
+program_b_cnt_T(8) <= ((NOT data_buffer(7).COMB AND program_b_cnt(8))
+	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+	program_b_cnt(1) AND program_b_cnt(2) AND program_b_cnt(3) AND 
+	program_b_cnt(4) AND program_b_cnt(5) AND program_b_cnt(6) AND 
+	program_b_cnt(7)));
+
+FTCPE_program_b_cnt9: FTCPE port map (program_b_cnt(9),program_b_cnt_T(9),clk_prescaled,'0','0','1');
+program_b_cnt_T(9) <= ((NOT data_buffer(7).COMB AND program_b_cnt(9))
+	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+	program_b_cnt(1) AND program_b_cnt(2) AND program_b_cnt(3) AND 
+	program_b_cnt(4) AND program_b_cnt(5) AND program_b_cnt(6) AND 
+	program_b_cnt(7) AND program_b_cnt(8)));
+
+FTCPE_program_b_cnt10: FTCPE port map (program_b_cnt(10),program_b_cnt_T(10),clk_prescaled,'0','0','1');
+program_b_cnt_T(10) <= ((NOT data_buffer(7).COMB AND program_b_cnt(10))
+	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+	program_b_cnt(1) AND program_b_cnt(2) AND program_b_cnt(3) AND 
+	program_b_cnt(4) AND program_b_cnt(5) AND program_b_cnt(6) AND 
+	program_b_cnt(7) AND program_b_cnt(8) AND program_b_cnt(9)));
+
+FTCPE_program_b_cnt11: FTCPE port map (program_b_cnt(11),program_b_cnt_T(11),clk_prescaled,'0','0','1');
+program_b_cnt_T(11) <= ((NOT data_buffer(7).COMB AND program_b_cnt(11))
+	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+	program_b_cnt(10) AND program_b_cnt(1) AND program_b_cnt(2) AND 
+	program_b_cnt(3) AND program_b_cnt(4) AND program_b_cnt(5) AND 
+	program_b_cnt(6) AND program_b_cnt(7) AND program_b_cnt(8) AND 
+	program_b_cnt(9)));
+
+FTCPE_program_b_cnt12: FTCPE port map (program_b_cnt(12),program_b_cnt_T(12),clk_prescaled,'0','0','1');
+program_b_cnt_T(12) <= ((NOT data_buffer(7).COMB AND program_b_cnt(12))
+	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+	program_b_cnt(10) AND program_b_cnt(1) AND program_b_cnt(2) AND 
+	program_b_cnt(3) AND program_b_cnt(4) AND program_b_cnt(5) AND 
+	program_b_cnt(6) AND program_b_cnt(7) AND program_b_cnt(8) AND 
+	program_b_cnt(9) AND program_b_cnt(11)));
+
+FTCPE_program_b_cnt13: FTCPE port map (program_b_cnt(13),program_b_cnt_T(13),clk_prescaled,'0','0','1');
+program_b_cnt_T(13) <= ((NOT ftdi_gpio_0 AND program_b_cnt(13))
+	OR (ftdi_gpio_0 AND NOT data_buffer(7).COMB AND 
+	NOT program_b_cnt(13))
+	OR (data_buffer(7).COMB AND program_b_cnt(0) AND 
+	program_b_cnt(10) AND program_b_cnt(1) AND program_b_cnt(2) AND 
+	program_b_cnt(3) AND program_b_cnt(4) AND program_b_cnt(5) AND 
+	program_b_cnt(6) AND program_b_cnt(7) AND program_b_cnt(8) AND 
+	program_b_cnt(9) AND program_b_cnt(11) AND program_b_cnt(12)));
+
+FTCPE_program_b_cnt14: FTCPE port map (program_b_cnt(14),program_b_cnt_T(14),clk_prescaled,'0','0','1');
+program_b_cnt_T(14) <= ((NOT data_buffer(7).COMB AND program_b_cnt(14))
+	OR (data_buffer(7).COMB AND program_b_cnt(13) AND 
+	program_b_cnt(0) AND program_b_cnt(10) AND program_b_cnt(1) AND 
+	program_b_cnt(2) AND program_b_cnt(3) AND program_b_cnt(4) AND 
+	program_b_cnt(5) AND program_b_cnt(6) AND program_b_cnt(7) AND 
+	program_b_cnt(8) AND program_b_cnt(9) AND program_b_cnt(11) AND 
+	program_b_cnt(12)));
+
+FTCPE_program_b_cnt15: FTCPE port map (program_b_cnt(15),program_b_cnt_T(15),clk_prescaled,'0','0','1');
+program_b_cnt_T(15) <= ((NOT data_buffer(7).COMB AND program_b_cnt(15))
+	OR (data_buffer(7).COMB AND program_b_cnt(13) AND 
+	program_b_cnt(0) AND program_b_cnt(10) AND program_b_cnt(1) AND 
+	program_b_cnt(2) AND program_b_cnt(3) AND program_b_cnt(4) AND 
+	program_b_cnt(5) AND program_b_cnt(6) AND program_b_cnt(7) AND 
+	program_b_cnt(8) AND program_b_cnt(9) AND program_b_cnt(11) AND 
+	program_b_cnt(12) AND program_b_cnt(14)));
+
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE,CE); 
+ FDDCPE (Q,D,C,CLR,PRE,CE); 
+ FTCPE (Q,D,C,CLR,PRE,CE); 
+ FTDCPE (Q,D,C,CLR,PRE,CE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+******************************  Device Pin Out *****************************
+
+Device : XC2C64A-5-VQ44
+
+
+   --------------------------------  
+  /44 43 42 41 40 39 38 37 36 35 34 \
+ | 1                             33 | 
+ | 2                             32 | 
+ | 3                             31 | 
+ | 4                             30 | 
+ | 5         XC2C64A-5-VQ44      29 | 
+ | 6                             28 | 
+ | 7                             27 | 
+ | 8                             26 | 
+ | 9                             25 | 
+ | 10                            24 | 
+ | 11                            23 | 
+ \ 12 13 14 15 16 17 18 19 20 21 22 /
+   --------------------------------  
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 clk                              23 ftdi_gpio_0                   
+  2 fpga_done                        24 TDO                           
+  3 fpga_bl_clk                      25 GND                           
+  4 GND                              26 VCCIO-1.8                     
+  5 fpga_bl_data                     27 ftdi_gpio_1                   
+  6 KPR                              28 ftdi_rd_n                     
+  7 VCCIO-1.8                        29 ftdi_rxf_n                    
+  8 fpga_program_b                   30 ftdi_data<7>                  
+  9 TDI                              31 ftdi_data<6>                  
+ 10 TMS                              32 ftdi_data<5>                  
+ 11 TCK                              33 ftdi_data<4>                  
+ 12 KPR                              34 KPR                           
+ 13 KPR                              35 VCCAUX                        
+ 14 KPR                              36 ftdi_clk                      
+ 15 VCC                              37 KPR                           
+ 16 KPR                              38 KPR                           
+ 17 GND                              39 KPR                           
+ 18 dbg                              40 KPR                           
+ 19 KPR                              41 ftdi_data<0>                  
+ 20 KPR                              42 ftdi_data<1>                  
+ 21 KPR                              43 ftdi_data<2>                  
+ 22 KPR                              44 ftdi_data<3>                  
+
+
+Legend :  NC  = Not Connected, unbonded pin
+        PGND  = Unused I/O configured as additional Ground pin
+         KPR  = Unused I/O with weak keeper (leave unconnected)
+         WPU  = Unused I/O with weak pull up (leave unconnected)
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         VCC  = Dedicated Power Pin
+      VCCAUX  = Power supply for JTAG pins
+   VCCIO-3.3  = I/O supply voltage for LVTTL, LVCMOS33, SSTL3_I
+   VCCIO-2.5  = I/O supply voltage for LVCMOS25, SSTL2_I
+   VCCIO-1.8  = I/O supply voltage for LVCMOS18
+   VCCIO-1.5  = I/O supply voltage for LVCMOS15, HSTL_I
+        VREF  = Reference voltage for indicated input standard
+       *VREF  = Reference voltage pin selected by software
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xc2c64a-5-VQ44
+Optimization Method                         : DENSITY
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : OFF
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Set Unused I/O Pin Termination              : KEEPER
+Global Clock Optimization                   : ON
+Global Set/Reset Optimization               : ON
+Global Ouput Enable Optimization            : ON
+Enable Input Registers                      : ON
+Function Block Fan-in Limit                 : 38
+Use DATA_GATE Attribute                     : ON
+Set Tristate Outputs to Termination Mode    : KEEPER
+Default Voltage Standard for All Outputs    : LVCMOS18
+Input Limit                                 : 32
+Pterm Limit                                 : 28

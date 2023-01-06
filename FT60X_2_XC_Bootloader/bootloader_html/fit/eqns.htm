@@ -1,0 +1,681 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="paths.js"></script><script src="eqns.js"></script><script>
+      var design = "bootloader";
+      var device = "XC2C64A";
+      signals = new Array("Mtrien_fpga_bl_clk_buffer","Mtrien_fpga_bl_data_buffer","Mtrien_ftdi_gpio_1_buffer","Mtrien_ftdi_rd_n_buffer","clk_prescaled","clk_prescaler_cnt0_SPECSIG","clk_prescaler_cnt1_SPECSIG","clk_prescaler_cnt2_SPECSIG","clk_prescaler_cnt3_SPECSIG","clk_prescaler_cnt4_SPECSIG","clk_prescaler_cnt5_SPECSIG","clk_prescaler_cnt6_SPECSIG","clk_prescaler_cnt7_SPECSIG","cnt_debounce0_SPECSIG","cnt_debounce1_SPECSIG","data_buffer0COMB_SPECSIG","data_buffer0_SPECSIG","data_buffer1_SPECSIG","data_buffer2_SPECSIG","data_buffer3_SPECSIG","data_buffer4COMB_SPECSIG","data_buffer4_SPECSIG","data_buffer5COMB_SPECSIG","data_buffer5_SPECSIG","data_buffer6COMB_SPECSIG","data_buffer6_SPECSIG","data_buffer7COMB_SPECSIG","data_buffer7_SPECSIG","data_buffer_cnt0_SPECSIG","data_buffer_cnt1_SPECSIG","data_buffer_cnt2_SPECSIG","data_buffer_cnt3_SPECSIG","dbg","fpga_bl_clk","fpga_bl_data","fpga_program_b","ftdi_gpio_1","ftdi_rd_n","program_b_cnt0_SPECSIG","program_b_cnt10_SPECSIG","program_b_cnt11_SPECSIG","program_b_cnt12_SPECSIG","program_b_cnt13_SPECSIG","program_b_cnt14_SPECSIG","program_b_cnt15_SPECSIG","program_b_cnt1_SPECSIG","program_b_cnt2_SPECSIG","program_b_cnt3_SPECSIG","program_b_cnt4_SPECSIG","program_b_cnt5_SPECSIG","program_b_cnt6_SPECSIG","program_b_cnt7_SPECSIG","program_b_cnt8_SPECSIG","program_b_cnt9_SPECSIG");
+      sigNegs = new Array("ON","OFF","OFF","OFF","ON","ON","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","ON","ON","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF");
+      sigTypes = new Array("DFF","DEFF","DEFF","DEFF","DFF","TFF","TFF","TFF","TFF","TFF","TFF","TFF","TFF","TFF","TFF","","DEFF","DEFF","DEFF","DEFF","","DEFF","","DEFF","","DEFF","","DEFF","TFF","TFF","TFF","TFF","","DFF","DFF","DFF","DEFF","TFFS_SPECSIG","DFF","TFF","TFF","TFF","TFF","TFF","TFF","DFF","TFF","TFF","TFF","TFF","TFF","TFF","TFF","TFF");
+
+      
+           iostyle["ftdi_clk"]=new Array("KPR");
+        
+           iostyle["ftdi_data4_SPECSIG"]=new Array("KPR");
+        
+           iostyle["ftdi_data5_SPECSIG"]=new Array("KPR");
+        
+           iostyle["ftdi_data6_SPECSIG"]=new Array("KPR");
+        
+           iostyle["ftdi_data7_SPECSIG"]=new Array("KPR");
+        
+           iostyle["ftdi_data0_SPECSIG"]=new Array("KPR");
+        
+           iostyle["ftdi_data1_SPECSIG"]=new Array("KPR");
+        
+           iostyle["ftdi_data2_SPECSIG"]=new Array("KPR");
+        
+           iostyle["ftdi_data3_SPECSIG"]=new Array("KPR");
+        
+           iostyle["clk"]=new Array("KPR");
+        
+           iostyle["fpga_done"]=new Array("KPR");
+        
+           iostyle["fpga_bl_clk"]=new Array("KPR");
+        
+           iostyle["ftdi_rxf_n"]=new Array("KPR");
+        
+           iostyle["ftdi_rd_n"]=new Array("KPR");
+        
+           iostyle["ftdi_gpio_1"]=new Array("KPR");
+        
+           iostyle["ftdi_gpio_0"]=new Array("KPR");
+        
+           iostyle["fpga_bl_data"]=new Array("KPR");
+        
+        specSig["ftdi_data0_SPECSIG"]=new Array("ftdi_data<0>");
+      
+        specSig["ftdi_data1_SPECSIG"]=new Array("ftdi_data<1>");
+      
+        specSig["ftdi_data2_SPECSIG"]=new Array("ftdi_data<2>");
+      
+        specSig["ftdi_data3_SPECSIG"]=new Array("ftdi_data<3>");
+      
+        specSig["ftdi_data4_SPECSIG"]=new Array("ftdi_data<4>");
+      
+        specSig["ftdi_data5_SPECSIG"]=new Array("ftdi_data<5>");
+      
+        specSig["ftdi_data6_SPECSIG"]=new Array("ftdi_data<6>");
+      
+        specSig["ftdi_data7_SPECSIG"]=new Array("ftdi_data<7>");
+      
+        specSig["b_SPECSIG"]=new Array("(b)");
+      
+        specSig["clk_prescaler_cnt2_SPECSIG"]=new Array("clk_prescaler_cnt<2>");
+      
+        specSig["clk_prescaler_cnt1_SPECSIG"]=new Array("clk_prescaler_cnt<1>");
+      
+        specSig["program_b_cnt11_SPECSIG"]=new Array("program_b_cnt<11>");
+      
+        specSig["program_b_cnt12_SPECSIG"]=new Array("program_b_cnt<12>");
+      
+        specSig["program_b_cnt10_SPECSIG"]=new Array("program_b_cnt<10>");
+      
+        specSig["program_b_cnt9_SPECSIG"]=new Array("program_b_cnt<9>");
+      
+        specSig["program_b_cnt8_SPECSIG"]=new Array("program_b_cnt<8>");
+      
+        specSig["program_b_cnt7_SPECSIG"]=new Array("program_b_cnt<7>");
+      
+        specSig["clk_prescaler_cnt0_SPECSIG"]=new Array("clk_prescaler_cnt<0>");
+      
+        specSig["cnt_debounce1_SPECSIG"]=new Array("cnt_debounce<1>");
+      
+        specSig["data_buffer_cnt0_SPECSIG"]=new Array("data_buffer_cnt<0>");
+      
+        specSig["data_buffer_cnt1_SPECSIG"]=new Array("data_buffer_cnt<1>");
+      
+        specSig["data_buffer4COMB_SPECSIG"]=new Array("data_buffer<4>.COMB");
+      
+        specSig["data_buffer4_SPECSIG"]=new Array("data_buffer<4>");
+      
+        specSig["data_buffer5COMB_SPECSIG"]=new Array("data_buffer<5>.COMB");
+      
+        specSig["data_buffer5_SPECSIG"]=new Array("data_buffer<5>");
+      
+        specSig["data_buffer6COMB_SPECSIG"]=new Array("data_buffer<6>.COMB");
+      
+        specSig["data_buffer6_SPECSIG"]=new Array("data_buffer<6>");
+      
+        specSig["data_buffer7COMB_SPECSIG"]=new Array("data_buffer<7>.COMB");
+      
+        specSig["data_buffer7_SPECSIG"]=new Array("data_buffer<7>");
+      
+        specSig["data_buffer_cnt2_SPECSIG"]=new Array("data_buffer_cnt<2>");
+      
+        specSig["data_buffer_cnt3_SPECSIG"]=new Array("data_buffer_cnt<3>");
+      
+        specSig["cnt_debounce0_SPECSIG"]=new Array("cnt_debounce<0>");
+      
+        specSig["data_buffer0COMB_SPECSIG"]=new Array("data_buffer<0>.COMB");
+      
+        specSig["program_b_cnt13_SPECSIG"]=new Array("program_b_cnt<13>");
+      
+        specSig["data_buffer0_SPECSIG"]=new Array("data_buffer<0>");
+      
+        specSig["data_buffer1_SPECSIG"]=new Array("data_buffer<1>");
+      
+        specSig["data_buffer2_SPECSIG"]=new Array("data_buffer<2>");
+      
+        specSig["data_buffer3_SPECSIG"]=new Array("data_buffer<3>");
+      
+        specSig["clk_prescaler_cnt7_SPECSIG"]=new Array("clk_prescaler_cnt<7>");
+      
+        specSig["program_b_cnt15_SPECSIG"]=new Array("program_b_cnt<15>");
+      
+        specSig["clk_prescaler_cnt6_SPECSIG"]=new Array("clk_prescaler_cnt<6>");
+      
+        specSig["program_b_cnt14_SPECSIG"]=new Array("program_b_cnt<14>");
+      
+        specSig["clk_prescaler_cnt5_SPECSIG"]=new Array("clk_prescaler_cnt<5>");
+      
+        specSig["clk_prescaler_cnt4_SPECSIG"]=new Array("clk_prescaler_cnt<4>");
+      
+        specSig["clk_prescaler_cnt3_SPECSIG"]=new Array("clk_prescaler_cnt<3>");
+      
+        specSig["program_b_cnt0_SPECSIG"]=new Array("program_b_cnt<0>");
+      
+        specSig["program_b_cnt1_SPECSIG"]=new Array("program_b_cnt<1>");
+      
+        specSig["program_b_cnt2_SPECSIG"]=new Array("program_b_cnt<2>");
+      
+        specSig["program_b_cnt3_SPECSIG"]=new Array("program_b_cnt<3>");
+      
+        specSig["program_b_cnt4_SPECSIG"]=new Array("program_b_cnt<4>");
+      
+        specSig["program_b_cnt5_SPECSIG"]=new Array("program_b_cnt<5>");
+      
+        specSig["program_b_cnt6_SPECSIG"]=new Array("program_b_cnt<6>");
+      
+        specSig["TFFS_SPECSIG"]=new Array("TFF/S");
+      
+            pterms["FB1_0"]=new Array("/ftdi_rd_n","ftdi_gpio_0","/Mtrien_ftdi_rd_n_buffer","cnt_debounce0_SPECSIG");
+          
+            pterms["FB1_1"]=new Array("ftdi_gpio_0","/data_buffer5COMB_SPECSIG");
+          
+            pterms["FB1_2"]=new Array("/ftdi_gpio_0","data_buffer_cnt3_SPECSIG");
+          
+            pterms["FB1_3"]=new Array("cnt_debounce0_SPECSIG","cnt_debounce1_SPECSIG","/data_buffer_cnt2_SPECSIG","/data_buffer_cnt1_SPECSIG","/data_buffer_cnt0_SPECSIG","data_buffer_cnt3_SPECSIG");
+          
+            pterms["FB1_4"]=new Array("ftdi_clk");
+          
+            pterms["FB1_5"]=new Array("/ftdi_gpio_0","data_buffer_cnt2_SPECSIG");
+          
+            pterms["FB1_6"]=new Array("ftdi_gpio_0","/data_buffer5COMB_SPECSIG","cnt_debounce0_SPECSIG","cnt_debounce1_SPECSIG","/data_buffer_cnt1_SPECSIG","/data_buffer_cnt0_SPECSIG");
+          
+            pterms["FB1_7"]=new Array("/ftdi_gpio_0","data_buffer_cnt1_SPECSIG");
+          
+            pterms["FB1_8"]=new Array("ftdi_gpio_0","/data_buffer5COMB_SPECSIG","cnt_debounce0_SPECSIG","cnt_debounce1_SPECSIG","/data_buffer_cnt0_SPECSIG");
+          
+            pterms["FB1_9"]=new Array("/ftdi_gpio_0","/data_buffer5COMB_SPECSIG","data_buffer_cnt0_SPECSIG");
+          
+            pterms["FB1_10"]=new Array("clk_prescaler_cnt0_SPECSIG","clk_prescaler_cnt1_SPECSIG");
+          
+            pterms["FB1_11"]=new Array("ftdi_gpio_0","/data_buffer5COMB_SPECSIG","cnt_debounce0_SPECSIG","cnt_debounce1_SPECSIG");
+          
+            pterms["FB1_12"]=new Array("/ftdi_gpio_0");
+          
+            pterms["FB1_13"]=new Array("clk_prescaler_cnt0_SPECSIG");
+          
+            pterms["FB1_14"]=new Array("/ftdi_rd_n","/Mtrien_ftdi_rd_n_buffer","data_buffer5COMB_SPECSIG");
+          
+            pterms["FB1_15"]=new Array("/data_buffer5COMB_SPECSIG","/cnt_debounce0_SPECSIG","/cnt_debounce1_SPECSIG");
+          
+            pterms["FB1_16"]=new Array("ftdi_gpio_0","cnt_debounce1_SPECSIG","data_buffer4COMB_SPECSIG");
+          
+            pterms["FB1_17"]=new Array("/data_buffer5COMB_SPECSIG","cnt_debounce0_SPECSIG","/data_buffer4COMB_SPECSIG");
+          
+            pterms["FB1_18"]=new Array("/data_buffer5COMB_SPECSIG","/cnt_debounce1_SPECSIG","/data_buffer4COMB_SPECSIG");
+          
+            pterms["FB1_19"]=new Array("data_buffer4COMB_SPECSIG");
+          
+            pterms["FB1_20"]=new Array("ftdi_gpio_0","/data_buffer5COMB_SPECSIG","cnt_debounce0_SPECSIG");
+          
+            pterms["FB1_21"]=new Array("ftdi_gpio_0","data_buffer4COMB_SPECSIG");
+          
+            pterms["FB1_22"]=new Array("/cnt_debounce0_SPECSIG","/data_buffer4COMB_SPECSIG","/Mtrien_fpga_bl_clk_buffer");
+          
+            pterms["FB1_23"]=new Array("data_buffer5COMB_SPECSIG","/data_buffer4COMB_SPECSIG","/Mtrien_fpga_bl_clk_buffer");
+          
+            pterms["FB1_24"]=new Array("/data_buffer_cnt2_SPECSIG","/data_buffer_cnt1_SPECSIG","/data_buffer_cnt0_SPECSIG","/data_buffer_cnt3_SPECSIG");
+          
+            pterms["FB1_25"]=new Array("/ftdi_rxf_n","data_buffer5COMB_SPECSIG");
+          
+            pterms["FB1_26"]=new Array("ftdi_gpio_0","data_buffer0COMB_SPECSIG");
+          
+            pterms["FB1_34"]=new Array("data_buffer6COMB_SPECSIG");
+          
+            pterms["FB1_37"]=new Array("/ftdi_rd_n","ftdi_gpio_0","/Mtrien_ftdi_rd_n_buffer","data_buffer5COMB_SPECSIG");
+          
+            pterms["FB1_40"]=new Array("/ftdi_rd_n","ftdi_gpio_0","/Mtrien_ftdi_rd_n_buffer","data_buffer5COMB_SPECSIG");
+          
+            pterms["FB1_43"]=new Array("/ftdi_rd_n","ftdi_gpio_0","/Mtrien_ftdi_rd_n_buffer","data_buffer5COMB_SPECSIG");
+          
+            pterms["FB1_46"]=new Array("/ftdi_rd_n","ftdi_gpio_0","/Mtrien_ftdi_rd_n_buffer","data_buffer5COMB_SPECSIG");
+          
+            pterms["FB2_0"]=new Array("ftdi_rd_n","data_buffer5COMB_SPECSIG","fpga_bl_clk");
+          
+            pterms["FB2_1"]=new Array("Mtrien_ftdi_rd_n_buffer","data_buffer5COMB_SPECSIG","fpga_bl_clk");
+          
+            pterms["FB2_2"]=new Array("/data_buffer5COMB_SPECSIG","fpga_bl_clk","/cnt_debounce0_SPECSIG","cnt_debounce1_SPECSIG");
+          
+            pterms["FB2_3"]=new Array("/data_buffer5COMB_SPECSIG","cnt_debounce0_SPECSIG","/cnt_debounce1_SPECSIG");
+          
+            pterms["FB2_4"]=new Array("ftdi_clk");
+          
+            pterms["FB2_5"]=new Array("/clk_prescaler_cnt7_SPECSIG");
+          
+            pterms["FB2_6"]=new Array("/ftdi_gpio_0","program_b_cnt13_SPECSIG");
+          
+            pterms["FB2_7"]=new Array("/Mtrien_fpga_bl_clk_buffer");
+          
+            pterms["FB2_8"]=new Array("data_buffer7COMB_SPECSIG","program_b_cnt0_SPECSIG","program_b_cnt10_SPECSIG","program_b_cnt1_SPECSIG","program_b_cnt2_SPECSIG","program_b_cnt3_SPECSIG","program_b_cnt4_SPECSIG","program_b_cnt5_SPECSIG","program_b_cnt6_SPECSIG","program_b_cnt7_SPECSIG","program_b_cnt8_SPECSIG","program_b_cnt9_SPECSIG","program_b_cnt11_SPECSIG","program_b_cnt12_SPECSIG");
+          
+            pterms["FB2_9"]=new Array("ftdi_gpio_0","/data_buffer7COMB_SPECSIG","/program_b_cnt13_SPECSIG");
+          
+            pterms["FB2_10"]=new Array("clk_prescaled");
+          
+            pterms["FB2_11"]=new Array("data_buffer7COMB_SPECSIG","program_b_cnt13_SPECSIG","program_b_cnt0_SPECSIG","program_b_cnt10_SPECSIG","program_b_cnt1_SPECSIG","program_b_cnt2_SPECSIG","program_b_cnt3_SPECSIG","program_b_cnt4_SPECSIG","program_b_cnt5_SPECSIG","program_b_cnt6_SPECSIG","program_b_cnt7_SPECSIG","program_b_cnt8_SPECSIG","program_b_cnt9_SPECSIG","program_b_cnt11_SPECSIG","program_b_cnt12_SPECSIG");
+          
+            pterms["FB2_12"]=new Array("/data_buffer7COMB_SPECSIG","program_b_cnt14_SPECSIG");
+          
+            pterms["FB2_13"]=new Array("clk_prescaled");
+          
+            pterms["FB2_14"]=new Array("data_buffer7COMB_SPECSIG","program_b_cnt13_SPECSIG","program_b_cnt0_SPECSIG","program_b_cnt10_SPECSIG","program_b_cnt1_SPECSIG","program_b_cnt2_SPECSIG","program_b_cnt3_SPECSIG","program_b_cnt4_SPECSIG","program_b_cnt5_SPECSIG","program_b_cnt6_SPECSIG","program_b_cnt7_SPECSIG","program_b_cnt8_SPECSIG","program_b_cnt9_SPECSIG","program_b_cnt11_SPECSIG","program_b_cnt12_SPECSIG","program_b_cnt14_SPECSIG");
+          
+            pterms["FB2_15"]=new Array("/data_buffer7COMB_SPECSIG","program_b_cnt15_SPECSIG");
+          
+            pterms["FB2_16"]=new Array("clk_prescaled");
+          
+            pterms["FB2_17"]=new Array("data_buffer7COMB_SPECSIG","program_b_cnt0_SPECSIG","program_b_cnt10_SPECSIG","program_b_cnt1_SPECSIG","program_b_cnt2_SPECSIG","program_b_cnt3_SPECSIG","program_b_cnt4_SPECSIG","program_b_cnt5_SPECSIG","program_b_cnt6_SPECSIG","program_b_cnt7_SPECSIG","program_b_cnt8_SPECSIG","program_b_cnt9_SPECSIG","program_b_cnt11_SPECSIG");
+          
+            pterms["FB2_18"]=new Array("/data_buffer7COMB_SPECSIG","program_b_cnt12_SPECSIG");
+          
+            pterms["FB2_19"]=new Array("data_buffer7COMB_SPECSIG","program_b_cnt0_SPECSIG","program_b_cnt10_SPECSIG","program_b_cnt1_SPECSIG","program_b_cnt2_SPECSIG","program_b_cnt3_SPECSIG","program_b_cnt4_SPECSIG","program_b_cnt5_SPECSIG","program_b_cnt6_SPECSIG","program_b_cnt7_SPECSIG","program_b_cnt8_SPECSIG","program_b_cnt9_SPECSIG");
+          
+            pterms["FB2_20"]=new Array("/data_buffer7COMB_SPECSIG","program_b_cnt11_SPECSIG");
+          
+            pterms["FB2_21"]=new Array("/program_b_cnt13_SPECSIG","/program_b_cnt14_SPECSIG","/program_b_cnt15_SPECSIG");
+          
+            pterms["FB2_22"]=new Array("/ftdi_rd_n","ftdi_gpio_0","/Mtrien_ftdi_rd_n_buffer","data_buffer5COMB_SPECSIG");
+          
+            pterms["FB2_25"]=new Array("/ftdi_rd_n","ftdi_gpio_0","/Mtrien_ftdi_rd_n_buffer","data_buffer5COMB_SPECSIG");
+          
+            pterms["FB2_28"]=new Array("/ftdi_rd_n","ftdi_gpio_0","/Mtrien_ftdi_rd_n_buffer","data_buffer5COMB_SPECSIG");
+          
+            pterms["FB2_31"]=new Array("/ftdi_rd_n","ftdi_gpio_0","/Mtrien_ftdi_rd_n_buffer","data_buffer5COMB_SPECSIG");
+          
+            pterms["FB2_34"]=new Array("clk_prescaler_cnt0_SPECSIG","clk_prescaler_cnt1_SPECSIG","clk_prescaler_cnt2_SPECSIG","clk_prescaler_cnt3_SPECSIG","clk_prescaler_cnt4_SPECSIG","clk_prescaler_cnt5_SPECSIG","clk_prescaler_cnt6_SPECSIG");
+          
+            pterms["FB2_37"]=new Array("clk_prescaled");
+          
+            pterms["FB2_40"]=new Array("clk_prescaler_cnt0_SPECSIG","clk_prescaler_cnt1_SPECSIG","clk_prescaler_cnt2_SPECSIG","clk_prescaler_cnt3_SPECSIG","clk_prescaler_cnt4_SPECSIG","clk_prescaler_cnt5_SPECSIG");
+          
+            pterms["FB2_43"]=new Array("clk_prescaled");
+          
+            pterms["FB2_49"]=new Array("clk_prescaler_cnt0_SPECSIG","clk_prescaler_cnt1_SPECSIG","clk_prescaler_cnt2_SPECSIG","clk_prescaler_cnt3_SPECSIG","clk_prescaler_cnt4_SPECSIG");
+          
+            pterms["FB2_52"]=new Array("clk_prescaler_cnt0_SPECSIG","clk_prescaler_cnt1_SPECSIG","clk_prescaler_cnt2_SPECSIG","clk_prescaler_cnt3_SPECSIG");
+          
+            pterms["FB2_55"]=new Array("clk_prescaler_cnt0_SPECSIG","clk_prescaler_cnt1_SPECSIG","clk_prescaler_cnt2_SPECSIG");
+          
+            pterms["FB3_0"]=new Array("/ftdi_rxf_n","ftdi_rd_n","data_buffer5COMB_SPECSIG");
+          
+            pterms["FB3_1"]=new Array("/ftdi_rd_n","/Mtrien_ftdi_rd_n_buffer","data_buffer5COMB_SPECSIG");
+          
+            pterms["FB3_2"]=new Array("data_buffer7COMB_SPECSIG","/program_b_cnt0_SPECSIG","program_b_cnt1_SPECSIG");
+          
+            pterms["FB3_3"]=new Array("data_buffer7COMB_SPECSIG","program_b_cnt0_SPECSIG","/program_b_cnt1_SPECSIG");
+          
+            pterms["FB3_4"]=new Array("clk_prescaled");
+          
+            pterms["FB3_5"]=new Array("data_buffer7COMB_SPECSIG","program_b_cnt0_SPECSIG","program_b_cnt1_SPECSIG");
+          
+            pterms["FB3_6"]=new Array("/data_buffer7COMB_SPECSIG","program_b_cnt2_SPECSIG");
+          
+            pterms["FB3_7"]=new Array("/Mtrien_ftdi_rd_n_buffer");
+          
+            pterms["FB3_8"]=new Array("data_buffer7COMB_SPECSIG","program_b_cnt0_SPECSIG","program_b_cnt1_SPECSIG","program_b_cnt2_SPECSIG");
+          
+            pterms["FB3_9"]=new Array("/data_buffer7COMB_SPECSIG","program_b_cnt3_SPECSIG");
+          
+            pterms["FB3_10"]=new Array("data_buffer7COMB_SPECSIG","program_b_cnt0_SPECSIG","program_b_cnt1_SPECSIG","program_b_cnt2_SPECSIG","program_b_cnt3_SPECSIG");
+          
+            pterms["FB3_11"]=new Array("/data_buffer7COMB_SPECSIG","program_b_cnt4_SPECSIG");
+          
+            pterms["FB3_12"]=new Array("data_buffer7COMB_SPECSIG","program_b_cnt0_SPECSIG","program_b_cnt1_SPECSIG","program_b_cnt2_SPECSIG","program_b_cnt3_SPECSIG","program_b_cnt4_SPECSIG");
+          
+            pterms["FB3_13"]=new Array("ftdi_clk");
+          
+            pterms["FB3_14"]=new Array("/data_buffer7COMB_SPECSIG","program_b_cnt5_SPECSIG");
+          
+            pterms["FB3_15"]=new Array("/Mtrien_ftdi_gpio_1_buffer");
+          
+            pterms["FB3_16"]=new Array("/data_buffer0COMB_SPECSIG");
+          
+            pterms["FB3_17"]=new Array("data_buffer7COMB_SPECSIG","program_b_cnt0_SPECSIG","program_b_cnt1_SPECSIG","program_b_cnt2_SPECSIG","program_b_cnt3_SPECSIG","program_b_cnt4_SPECSIG","program_b_cnt5_SPECSIG");
+          
+            pterms["FB3_18"]=new Array("/data_buffer7COMB_SPECSIG","program_b_cnt6_SPECSIG");
+          
+            pterms["FB3_19"]=new Array("data_buffer7COMB_SPECSIG","program_b_cnt0_SPECSIG","program_b_cnt1_SPECSIG","program_b_cnt2_SPECSIG","program_b_cnt3_SPECSIG","program_b_cnt4_SPECSIG","program_b_cnt5_SPECSIG","program_b_cnt6_SPECSIG");
+          
+            pterms["FB3_20"]=new Array("/data_buffer7COMB_SPECSIG","program_b_cnt7_SPECSIG");
+          
+            pterms["FB3_21"]=new Array("data_buffer7COMB_SPECSIG","program_b_cnt0_SPECSIG","program_b_cnt1_SPECSIG","program_b_cnt2_SPECSIG","program_b_cnt3_SPECSIG","program_b_cnt4_SPECSIG","program_b_cnt5_SPECSIG","program_b_cnt6_SPECSIG","program_b_cnt7_SPECSIG");
+          
+            pterms["FB3_22"]=new Array("/data_buffer7COMB_SPECSIG","program_b_cnt8_SPECSIG");
+          
+            pterms["FB3_23"]=new Array("data_buffer7COMB_SPECSIG","program_b_cnt0_SPECSIG","program_b_cnt1_SPECSIG","program_b_cnt2_SPECSIG","program_b_cnt3_SPECSIG","program_b_cnt4_SPECSIG","program_b_cnt5_SPECSIG","program_b_cnt6_SPECSIG","program_b_cnt7_SPECSIG","program_b_cnt8_SPECSIG");
+          
+            pterms["FB3_24"]=new Array("/data_buffer7COMB_SPECSIG","program_b_cnt9_SPECSIG");
+          
+            pterms["FB3_25"]=new Array("/data_buffer7COMB_SPECSIG");
+          
+            pterms["FB3_26"]=new Array("data_buffer7COMB_SPECSIG","program_b_cnt0_SPECSIG","program_b_cnt1_SPECSIG","program_b_cnt2_SPECSIG","program_b_cnt3_SPECSIG","program_b_cnt4_SPECSIG","program_b_cnt5_SPECSIG","program_b_cnt6_SPECSIG","program_b_cnt7_SPECSIG","program_b_cnt8_SPECSIG","program_b_cnt9_SPECSIG");
+          
+            pterms["FB3_27"]=new Array("/data_buffer7COMB_SPECSIG","program_b_cnt10_SPECSIG");
+          
+            pterms["FB3_28"]=new Array("/ftdi_gpio_0");
+          
+            pterms["FB3_52"]=new Array("fpga_done");
+          
+            pterms["FB3_55"]=new Array("data_buffer7COMB_SPECSIG","/program_b_cnt0_SPECSIG");
+          
+            pterms["FB4_0"]=new Array("/cnt_debounce0_SPECSIG","/cnt_debounce1_SPECSIG","data_buffer_cnt2_SPECSIG","data_buffer_cnt3_SPECSIG");
+          
+            pterms["FB4_1"]=new Array("/cnt_debounce0_SPECSIG","/cnt_debounce1_SPECSIG","data_buffer_cnt1_SPECSIG","data_buffer_cnt3_SPECSIG");
+          
+            pterms["FB4_2"]=new Array("/cnt_debounce0_SPECSIG","/cnt_debounce1_SPECSIG","data_buffer_cnt0_SPECSIG","data_buffer_cnt3_SPECSIG");
+          
+            pterms["FB4_3"]=new Array("/cnt_debounce0_SPECSIG","/cnt_debounce1_SPECSIG","/data_buffer_cnt2_SPECSIG","/data_buffer_cnt1_SPECSIG","data_buffer_cnt0_SPECSIG","/data_buffer0_SPECSIG");
+          
+            pterms["FB4_4"]=new Array("ftdi_clk");
+          
+            pterms["FB4_5"]=new Array("/cnt_debounce0_SPECSIG","/cnt_debounce1_SPECSIG","/data_buffer_cnt2_SPECSIG","data_buffer_cnt1_SPECSIG","/data_buffer_cnt0_SPECSIG","/data_buffer1_SPECSIG");
+          
+            pterms["FB4_6"]=new Array("/cnt_debounce0_SPECSIG","/cnt_debounce1_SPECSIG","/data_buffer_cnt2_SPECSIG","data_buffer_cnt1_SPECSIG","data_buffer_cnt0_SPECSIG","/data_buffer2_SPECSIG");
+          
+            pterms["FB4_7"]=new Array("/Mtrien_fpga_bl_data_buffer");
+          
+            pterms["FB4_8"]=new Array("/cnt_debounce0_SPECSIG","/cnt_debounce1_SPECSIG","data_buffer_cnt2_SPECSIG","/data_buffer_cnt1_SPECSIG","/data_buffer_cnt0_SPECSIG","/data_buffer3_SPECSIG");
+          
+            pterms["FB4_9"]=new Array("/cnt_debounce0_SPECSIG","/cnt_debounce1_SPECSIG","/data_buffer4_SPECSIG","data_buffer_cnt2_SPECSIG","/data_buffer_cnt1_SPECSIG","data_buffer_cnt0_SPECSIG");
+          
+            pterms["FB4_10"]=new Array("/data_buffer5_SPECSIG","/cnt_debounce0_SPECSIG","/cnt_debounce1_SPECSIG","data_buffer_cnt2_SPECSIG","data_buffer_cnt1_SPECSIG","/data_buffer_cnt0_SPECSIG");
+          
+            pterms["FB4_11"]=new Array("/data_buffer6_SPECSIG","/cnt_debounce0_SPECSIG","/cnt_debounce1_SPECSIG","data_buffer_cnt2_SPECSIG","data_buffer_cnt1_SPECSIG","data_buffer_cnt0_SPECSIG");
+          
+            pterms["FB4_12"]=new Array("/cnt_debounce0_SPECSIG","/cnt_debounce1_SPECSIG","data_buffer_cnt3_SPECSIG","/data_buffer7_SPECSIG");
+          
+            pterms["FB4_13"]=new Array("cnt_debounce0_SPECSIG","/fpga_bl_data");
+          
+            pterms["FB4_14"]=new Array("cnt_debounce1_SPECSIG","/fpga_bl_data");
+          
+            pterms["FB4_15"]=new Array("/ftdi_rd_n","/Mtrien_ftdi_rd_n_buffer","data_buffer5COMB_SPECSIG");
+          
+            pterms["FB4_16"]=new Array("data_buffer5COMB_SPECSIG","/fpga_bl_data");
+          
+            pterms["FB4_17"]=new Array("data_buffer7COMB_SPECSIG");
+          
+            pterms["FB4_28"]=new Array("clk_prescaled");
+          
+          d1["clk_prescaler_cnt2_SPECSIG"]=new Array("FB1_10");
+          
+              gblclk["clk_prescaler_cnt2_SPECSIG"]=new Array("clk");
+            prld["clk_prescaler_cnt2_SPECSIG"]="GND";
+          d1["clk_prescaler_cnt1_SPECSIG"]=new Array("FB1_13");
+          
+              gblclk["clk_prescaler_cnt1_SPECSIG"]=new Array("clk");
+            prld["clk_prescaler_cnt1_SPECSIG"]="GND";
+          d2["clk_prescaler_cnt0_SPECSIG"]=new Array("GND");
+          
+              gblclk["clk_prescaler_cnt0_SPECSIG"]=new Array("clk");
+            prld["clk_prescaler_cnt0_SPECSIG"]="GND";
+          d2["Mtrien_fpga_bl_data_buffer"]=new Array("FB1_12");
+          
+              clk["Mtrien_fpga_bl_data_buffer"]=new Array("FB1_4");
+              
+          ce["Mtrien_fpga_bl_data_buffer"]=new Array("FB1_19");
+          prld["Mtrien_fpga_bl_data_buffer"]="GND";
+          d2["Mtrien_fpga_bl_clk_buffer"]=new Array("FB1_21","FB1_20","FB1_23","FB1_22");
+          
+              clk["Mtrien_fpga_bl_clk_buffer"]=new Array("FB1_4");
+              prld["Mtrien_fpga_bl_clk_buffer"]="GND";
+          d2["cnt_debounce1_SPECSIG"]=new Array("FB1_16","FB1_17","FB1_18");
+          
+              clk["cnt_debounce1_SPECSIG"]=new Array("FB1_4");
+              prld["cnt_debounce1_SPECSIG"]="GND";
+          d2["data_buffer_cnt0_SPECSIG"]=new Array("FB1_9","FB1_11");
+          
+              clk["data_buffer_cnt0_SPECSIG"]=new Array("FB1_4");
+              prld["data_buffer_cnt0_SPECSIG"]="GND";
+          d2["data_buffer_cnt1_SPECSIG"]=new Array("FB1_7","FB1_8");
+          
+              clk["data_buffer_cnt1_SPECSIG"]=new Array("FB1_4");
+              prld["data_buffer_cnt1_SPECSIG"]="GND";
+          d2["Mtrien_ftdi_rd_n_buffer"]=new Array("FB1_12");
+          
+              clk["Mtrien_ftdi_rd_n_buffer"]=new Array("FB1_4");
+              
+          ce["Mtrien_ftdi_rd_n_buffer"]=new Array("FB1_34");
+          prld["Mtrien_ftdi_rd_n_buffer"]="GND";
+              clk["data_buffer4_SPECSIG"]=new Array("FB1_4");
+              
+          ce["data_buffer4_SPECSIG"]=new Array("FB1_37");
+          prld["data_buffer4_SPECSIG"]="GND";
+          inreg["data_buffer4_SPECSIG"]=new Array("ftdi_data4_SPECSIG");
+        
+              clk["data_buffer5_SPECSIG"]=new Array("FB1_4");
+              
+          ce["data_buffer5_SPECSIG"]=new Array("FB1_37");
+          prld["data_buffer5_SPECSIG"]="GND";
+          inreg["data_buffer5_SPECSIG"]=new Array("ftdi_data5_SPECSIG");
+        
+              clk["data_buffer6_SPECSIG"]=new Array("FB1_4");
+              
+          ce["data_buffer6_SPECSIG"]=new Array("FB1_37");
+          prld["data_buffer6_SPECSIG"]="GND";
+          inreg["data_buffer6_SPECSIG"]=new Array("ftdi_data6_SPECSIG");
+        
+              clk["data_buffer7_SPECSIG"]=new Array("FB1_4");
+              
+          ce["data_buffer7_SPECSIG"]=new Array("FB1_37");
+          prld["data_buffer7_SPECSIG"]="GND";
+          inreg["data_buffer7_SPECSIG"]=new Array("ftdi_data7_SPECSIG");
+        
+          d2["data_buffer_cnt2_SPECSIG"]=new Array("FB1_5","FB1_6");
+          
+              clk["data_buffer_cnt2_SPECSIG"]=new Array("FB1_4");
+              prld["data_buffer_cnt2_SPECSIG"]="GND";
+          d2["data_buffer_cnt3_SPECSIG"]=new Array("FB1_2","FB1_37","FB1_3");
+          
+              clk["data_buffer_cnt3_SPECSIG"]=new Array("FB1_4");
+              prld["data_buffer_cnt3_SPECSIG"]="GND";
+          d2["cnt_debounce0_SPECSIG"]=new Array("FB1_1","FB1_0");
+          
+              clk["cnt_debounce0_SPECSIG"]=new Array("FB1_4");
+              prld["cnt_debounce0_SPECSIG"]="GND";
+          d2["data_buffer4COMB_SPECSIG"]=new Array("FB1_12","FB1_14","FB1_15");
+          
+          d2["data_buffer5COMB_SPECSIG"]=new Array("FB1_24");
+          
+          d2["data_buffer6COMB_SPECSIG"]=new Array("FB1_12","FB1_25","FB1_14");
+          
+          d2["data_buffer7COMB_SPECSIG"]=new Array("FB1_26");
+          
+          d2["program_b_cnt11_SPECSIG"]=new Array("FB2_20","FB2_19");
+          
+              clk["program_b_cnt11_SPECSIG"]=new Array("FB2_10");
+              prld["program_b_cnt11_SPECSIG"]="GND";
+          d2["program_b_cnt12_SPECSIG"]=new Array("FB2_18","FB2_17");
+          
+              clk["program_b_cnt12_SPECSIG"]=new Array("FB2_10");
+              prld["program_b_cnt12_SPECSIG"]="GND";
+          d2["program_b_cnt13_SPECSIG"]=new Array("FB2_6","FB2_9","FB2_8");
+          
+              clk["program_b_cnt13_SPECSIG"]=new Array("FB2_10");
+              prld["program_b_cnt13_SPECSIG"]="GND";
+          d2["clk_prescaled"]=new Array("FB2_5","FB2_34");
+          
+              gblclk["clk_prescaled"]=new Array("clk");
+            prld["clk_prescaled"]="GND";
+              clk["data_buffer0_SPECSIG"]=new Array("FB2_4");
+              
+          ce["data_buffer0_SPECSIG"]=new Array("FB2_22");
+          prld["data_buffer0_SPECSIG"]="GND";
+          inreg["data_buffer0_SPECSIG"]=new Array("ftdi_data0_SPECSIG");
+        
+              clk["data_buffer1_SPECSIG"]=new Array("FB2_4");
+              
+          ce["data_buffer1_SPECSIG"]=new Array("FB2_22");
+          prld["data_buffer1_SPECSIG"]="GND";
+          inreg["data_buffer1_SPECSIG"]=new Array("ftdi_data1_SPECSIG");
+        
+              clk["data_buffer2_SPECSIG"]=new Array("FB2_4");
+              
+          ce["data_buffer2_SPECSIG"]=new Array("FB2_22");
+          prld["data_buffer2_SPECSIG"]="GND";
+          inreg["data_buffer2_SPECSIG"]=new Array("ftdi_data2_SPECSIG");
+        
+              clk["data_buffer3_SPECSIG"]=new Array("FB2_4");
+              
+          ce["data_buffer3_SPECSIG"]=new Array("FB2_22");
+          prld["data_buffer3_SPECSIG"]="GND";
+          inreg["data_buffer3_SPECSIG"]=new Array("ftdi_data3_SPECSIG");
+        
+          d1["clk_prescaler_cnt7_SPECSIG"]=new Array("FB2_34");
+          
+              gblclk["clk_prescaler_cnt7_SPECSIG"]=new Array("clk");
+            prld["clk_prescaler_cnt7_SPECSIG"]="GND";
+          d2["program_b_cnt15_SPECSIG"]=new Array("FB2_15","FB2_14");
+          
+              clk["program_b_cnt15_SPECSIG"]=new Array("FB2_10");
+              prld["program_b_cnt15_SPECSIG"]="GND";
+          d1["clk_prescaler_cnt6_SPECSIG"]=new Array("FB2_40");
+          
+              gblclk["clk_prescaler_cnt6_SPECSIG"]=new Array("clk");
+            prld["clk_prescaler_cnt6_SPECSIG"]="GND";
+          d2["program_b_cnt14_SPECSIG"]=new Array("FB2_12","FB2_11");
+          
+              clk["program_b_cnt14_SPECSIG"]=new Array("FB2_10");
+              prld["program_b_cnt14_SPECSIG"]="GND";
+          d2["fpga_bl_clk"]=new Array("FB2_0","FB2_1","FB2_3","FB2_2");
+          
+              clk["fpga_bl_clk"]=new Array("FB2_4");
+              
+              trst["fpga_bl_clk"]=new Array("FB2_7");
+              prld["fpga_bl_clk"]="GND";
+          d1["clk_prescaler_cnt5_SPECSIG"]=new Array("FB2_49");
+          
+              gblclk["clk_prescaler_cnt5_SPECSIG"]=new Array("clk");
+            prld["clk_prescaler_cnt5_SPECSIG"]="GND";
+          d1["clk_prescaler_cnt4_SPECSIG"]=new Array("FB2_52");
+          
+              gblclk["clk_prescaler_cnt4_SPECSIG"]=new Array("clk");
+            prld["clk_prescaler_cnt4_SPECSIG"]="GND";
+          d1["clk_prescaler_cnt3_SPECSIG"]=new Array("FB2_55");
+          
+              gblclk["clk_prescaler_cnt3_SPECSIG"]=new Array("clk");
+            prld["clk_prescaler_cnt3_SPECSIG"]="GND";
+          d2["data_buffer0COMB_SPECSIG"]=new Array("FB2_21");
+          
+          d2["ftdi_rd_n"]=new Array("FB3_0","FB3_1");
+          
+              clk["ftdi_rd_n"]=new Array("FB3_13");
+              
+              trst["ftdi_rd_n"]=new Array("FB3_7");
+              prld["ftdi_rd_n"]="VCC";
+          d2["ftdi_gpio_1"]=new Array("FB3_52");
+          
+              clk["ftdi_gpio_1"]=new Array("FB3_4");
+              
+              trst["ftdi_gpio_1"]=new Array("FB3_15");
+              
+          ce["ftdi_gpio_1"]=new Array("FB3_16");
+          prld["ftdi_gpio_1"]="GND";
+          d2["program_b_cnt6_SPECSIG"]=new Array("FB3_18","FB3_17");
+          
+              clk["program_b_cnt6_SPECSIG"]=new Array("FB3_4");
+              prld["program_b_cnt6_SPECSIG"]="GND";
+          d2["program_b_cnt5_SPECSIG"]=new Array("FB3_14","FB3_12");
+          
+              clk["program_b_cnt5_SPECSIG"]=new Array("FB3_4");
+              prld["program_b_cnt5_SPECSIG"]="GND";
+          d2["Mtrien_ftdi_gpio_1_buffer"]=new Array("FB3_28");
+          
+              clk["Mtrien_ftdi_gpio_1_buffer"]=new Array("FB3_4");
+              
+          ce["Mtrien_ftdi_gpio_1_buffer"]=new Array("FB3_25");
+          prld["Mtrien_ftdi_gpio_1_buffer"]="GND";
+          d2["program_b_cnt4_SPECSIG"]=new Array("FB3_11","FB3_10");
+          
+              clk["program_b_cnt4_SPECSIG"]=new Array("FB3_4");
+              prld["program_b_cnt4_SPECSIG"]="GND";
+          d2["program_b_cnt3_SPECSIG"]=new Array("FB3_9","FB3_8");
+          
+              clk["program_b_cnt3_SPECSIG"]=new Array("FB3_4");
+              prld["program_b_cnt3_SPECSIG"]="GND";
+          d2["program_b_cnt2_SPECSIG"]=new Array("FB3_6","FB3_5");
+          
+              clk["program_b_cnt2_SPECSIG"]=new Array("FB3_4");
+              prld["program_b_cnt2_SPECSIG"]="GND";
+          d2["program_b_cnt10_SPECSIG"]=new Array("FB3_27","FB3_26");
+          
+              clk["program_b_cnt10_SPECSIG"]=new Array("FB3_4");
+              prld["program_b_cnt10_SPECSIG"]="GND";
+          d2["program_b_cnt9_SPECSIG"]=new Array("FB3_24","FB3_23");
+          
+              clk["program_b_cnt9_SPECSIG"]=new Array("FB3_4");
+              prld["program_b_cnt9_SPECSIG"]="GND";
+          d2["program_b_cnt8_SPECSIG"]=new Array("FB3_22","FB3_21");
+          
+              clk["program_b_cnt8_SPECSIG"]=new Array("FB3_4");
+              prld["program_b_cnt8_SPECSIG"]="GND";
+          d2["program_b_cnt1_SPECSIG"]=new Array("FB3_3","FB3_2");
+          
+              clk["program_b_cnt1_SPECSIG"]=new Array("FB3_4");
+              prld["program_b_cnt1_SPECSIG"]="GND";
+          d2["program_b_cnt7_SPECSIG"]=new Array("FB3_20","FB3_19");
+          
+              clk["program_b_cnt7_SPECSIG"]=new Array("FB3_4");
+              prld["program_b_cnt7_SPECSIG"]="GND";
+          d1["dbg"]=new Array("FB3_52");
+          
+          d1["program_b_cnt0_SPECSIG"]=new Array("FB3_55");
+          
+              clk["program_b_cnt0_SPECSIG"]=new Array("FB3_4");
+              prld["program_b_cnt0_SPECSIG"]="GND";
+          d2["fpga_bl_data"]=new Array("FB4_16","FB4_13","FB4_14","FB4_15","FB4_0","FB4_1","FB4_2","FB4_12","FB4_10","FB4_11","FB4_9","FB4_8","FB4_6","FB4_5","FB4_3");
+          
+              clk["fpga_bl_data"]=new Array("FB4_4");
+              
+              trst["fpga_bl_data"]=new Array("FB4_7");
+              prld["fpga_bl_data"]="GND";
+          d2["fpga_program_b"]=new Array("FB4_17");
+          
+              clk["fpga_program_b"]=new Array("FB4_28");
+              prld["fpga_program_b"]="GND";
+
+      uimSignals = new Array();
+
+      uimSigNegs = new Array();
+
+      uimPterms = new Array();
+      
+
+      
+        function getEqnList() {
+          var str = "<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>";
+          str += "<center><h3>Equations</h3></center>";
+          str += "<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>";
+          for (s=0; s<uimSignals.length; s++) {
+            str += "<tr><td>";
+            str += retUimEqn(uimSignals[s]);
+            str += "</td></tr>";
+          }
+          for (s=0; s<signals.length; s++) {
+            str += "<tr><td>";
+            str += retEqn(signals[s]);
+            str += "</td></tr>";
+          }
+
+          var legend = retLegend();
+		      if (legend != "") {
+		        str += "<tr><td>" + legend + "</td></tr>";
+		      }
+
+          str += "</table>";
+          str += "<form><span class='pgRef'>";
+
+          if (!parent.leftnav.IsNS()) {
+            str += "<table width='90%' align='center'>";
+            str += "<tr><td align='left'><input type='button' value='back to top' ";
+            str += "onclick='javascript:parent.leftnav.showEqnAll()' ";
+            str += "onmouseover=\"window.status='goto top of page'; return true;\" ";
+            str += "onmouseout=\"window.status=''\">";
+            str += "</td>";
+            str += "<td align='right'>";
+            str += "<input type='button' value='print page' ";
+            str += "onclick='javascript:window.print()' ";
+            str += "onmouseover=\"window.status='print page'; return true;\" ";
+            str += "onmouseout=\"window.status=''\">";
+            str += "</td>";
+            str += "</tr></table>";
+          }
+          else {
+            str += "<table width='90%' align='center'>";
+            str += "<tr><td align='left'><a href='javascript:parent.leftnav.showEqnAll()'>back to top</a>";
+            str += "</td>";
+            str += "<td align='right'>";
+            str += "<a href='javascript:window.print()'>";
+            str += "print page</a>";
+            str += "</td>";
+            str += "</tr></table>";
+          }
+
+          str += "</span></form>";
+          str += "</body></html>";
+          return str;
+        }
+      
+    </script>
+</head></html>
