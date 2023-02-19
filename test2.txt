@@ -1,0 +1,170 @@
+import header
+import os.path
+import shutil
+from threading import Thread
+import time
+import glob
+import os
+import winshell
+from win32com.client import Dispatch
+
+
+if header.__pyqt__:
+    from PyQt6.QtCore import *
+    from PyQt6.QtGui import *
+    from PyQt6.QtWidgets import *
+if header.__pyside__:
+    from PySide6.QtWidgets import *
+    from PySide6.QtGui import *
+    from PySide6.QtCore import *
+
+class EventHandler:
+    def __init__(self, mutex=None, composition=None):
+        self.mutex = mutex
+        self.composition = composition
+
+        self.install_progress = 0
+        self.install_progress_msg = ''
+        self.install_path = ''
+        self.create_shortcut = False
+        self.install_drivers = False
+        self.install_build_tools = False
+
+        self._progress_extension = 100
+        self._step_base_progress = 0
+
+    def verify_options(self):
+        self.install_path = self.composition.tabs['options'].install_path_entry.get_info()
+        self.create_shortcut = self.composition.tabs['options'].shortcut_option.get_switch()
+        self.install_drivers = self.composition.tabs['options'].driver_option.get_switch()
+        self.install_build_tools = self.composition.tabs['options'].binary_gen_option.get_switch()
+
+        self.composition.switch_to_tab("progress")
+        self.start_installation()
+
+    def start_installation(self):
+        self.thread = InstallThread(self.mutex, self)
+        self.thread.start()
+
+    def cancel_installation(self):
+        #self.thread.stop()
+        self.composition.exit()
+
+    def installation_finished(self):
+        if self.install_progress == 100:
+            self.composition.switch_to_tab("finish")
+        else:
+            self.composition.exit()
+
+    def launch_kirlab(self):
+        pass
+
+class InstallThread(Thread):
+    def __init__(self, mutex, event_handler):
+        super().__init__()
+        self.mutex=mutex
+        self.event_handler=event_handler
+
+    #@Slot()  # QtCore.Slot
+    def run(self):
+        self.event_handler.install_progress = 0
+        self._progress_extension = 90 if not self.event_handler.install_build_tools else 5
+        self._step_base_progress = self.event_handler.install_progress
+        self.event_handler.install_progress_msg = "Copying KirLab executable..."
+        self.copy_std_files()
+
+        if self.event_handler.install_drivers:
+            self.install_drivers()
+
+        if self.event_handler.install_build_tools:
+            self._step_base_progress = self.event_handler.install_progress
+            self._progress_extension = 40
+            self.download_build_tools()
+
+            self._step_base_progress = self.event_handler.install_progress
+            self._progress_extension = 40
+            self.copy_build_tools()
+
+        if self.event_handler.create_shortcut:
+            self._step_base_progress = self.event_handler.install_progress
+            self._progress_extension = 10 if not self.event_handler.install_build_tools else 5
+            self.create_shortcut()
+
+        self.event_handler.install_progress = 100
+        self.event_handler.install_progress_msg = "Finished..."
+
+    def install_drivers(self):
+        self.event_handler.install_progress_msg = "Installing drivers..."
+        os.system(os.path.join(header.__relpath__, "embedded", "FTD3XXDriver_WHQLCertified_v1.3.0.4_Installer.exe"))
+
+    def copy_std_files(self):
+        all_size = 0
+        total_copied = 0
+
+        base_path = os.path.join(header.__relpath__, "install")
+        std_files = [os.path.relpath(f, base_path) for f in glob.glob(base_path + "**/*.*", recursive=True)]
+
+        if os.path.exists(os.path.normpath(self.event_handler.install_path)):
+            shutil.rmtree(os.path.normpath(self.event_handler.install_path))
+
+        for f in std_files:
+            path = os.path.join(header.__relpath__, "install", f)
+            all_size += os.stat(path).st_size
+            print("Found file:"+path)
+
+        for f in std_files:
+            src_path = os.path.join(header.__relpath__, "install", f)
+            dst_path = os.path.join(self.event_handler.install_path, f)
+            if not os.path.exists(os.path.dirname(dst_path)):
+                os.makedirs(os.path.dirname(dst_path))
+            with open(src_path, "rb") as source:
+                with open(dst_path, "wb") as target:
+                    while True:
+                        chunk = source.read(1024)
+                        if not chunk:
+                            break
+                        target.write(chunk)
+                        total_copied += len(chunk)
+
+                        progress = (total_copied/all_size)
+                        self.event_handler.install_progress = int(self._step_base_progress + progress*self._progress_extension)
+                        #time.sleep(0.01)
+                        #print("Total size: "+str(all_size)+" "+str(total_copied)+" "+str(progress))
+
+        self.event_handler.install_progress = self._step_base_progress + self._progress_extension
+        time.sleep(4)
+
+    def download_build_tools(self):
+        self.event_handler.install_progress_msg = "Downloading build tools..."
+        time.sleep(1)
+
+    def copy_build_tools(self):
+        self.event_handler.install_progress_msg = "Copying build tools..."
+        time.sleep(1)
+
+    def create_shortcut(self):
+        print("Creating shortcut???????????!!!!!!!!!!")
+        print("Creating shortcut???????????!!!!!!!!!!")
+        print("Creating shortcut???????????!!!!!!!!!!")
+        print("Creating shortcut???????????!!!!!!!!!!")
+        print("Creating shortcut???????????!!!!!!!!!!")
+        print("Creating shortcut???????????!!!!!!!!!!")
+        self.event_handler.install_progress_msg = "Creating shortcut..."
+
+        desktop = winshell.desktop()
+        path = os.path.join(desktop, "KirLab.lnk")
+
+        target = os.path.normpath(os.path.join(self.event_handler.install_path, "KirLab.exe"))
+        wDir = os.path.normpath(self.event_handler.install_path)
+        icon = os.path.normpath(os.path.join(self.event_handler.install_path, "KirLab.exe"))
+
+        shell = Dispatch('WScript.Shell')
+        print("Creating shortcut???????????!!!!!!!!!!1")
+        shortcut = shell.CreateShortCut(path)
+        print("Creating shortcut???????????!!!!!!!!!!2")
+        shortcut.Targetpath = target
+        shortcut.WorkingDirectory = wDir
+        shortcut.IconLocation = icon
+        print("Creating shortcut???????????!!!!!!!!!!3")
+        shortcut.save()
+        print("Creating shortcut???????????!!!!!!!!!4")
